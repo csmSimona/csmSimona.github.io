@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文本转字幕</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+</head>
+<body>
+    <h2>文本转字幕</h2>
+    <textarea id="text" cols="60" rows="10" placeholder="请在这里输入需要转换的文本"></textarea>
+    <br><br>
+    <button id="convert">convert</button>
+    <br><br>
+    <textarea id="result" cols="60" rows="10" placeholder="转换后的文本逐行展示"></textarea>
+    <script>
+        var text
+        $("#text").on('input propertychange', function () {
+            text = $(this).val();
+        });
+        $("#convert").click(function(){
+            var str = text.replace(/[`~!@#$%^&*()_\-+=<>?:"{}|,.\/;'\\[\]·~！@#￥%……&*（）——\-+={}|《》？：“”【】、；‘'，。、]/g,"\n")
+            $("#result").val(str);
+        });
+    </script>
+</body>
+</html>
