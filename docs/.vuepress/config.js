@@ -7,7 +7,6 @@ import { readingTimePlugin } from '@vuepress/plugin-reading-time'
 
 export default defineUserConfig({
   lang: 'zh-CN',
-  base: '/csmSimona.github.io/',
   title: 'myDocs',
   description: '我的学习笔记文档',
 
