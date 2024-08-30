@@ -48,6 +48,8 @@ export default defineUserConfig({
           { text: "Three.js学习笔记", link: "/其他/Three.js学习笔记" },
           { text: "《CSS揭秘》学习笔记", link: "/其他/《CSS揭秘》学习笔记/《CSS揭秘》学习笔记" },
           { text: "Vue.js源码全方位深入解析", link: "/慕课/Vue.js源码全方位深入解析" },
+          { text: "Canvas入门", link: "/其他/Canvas入门" },
+          { text: "SVG入门", link: "/其他/SVG入门" },
         ]
       },
       {
