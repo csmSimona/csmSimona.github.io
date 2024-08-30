@@ -45,6 +45,7 @@ export default defineUserConfig({
           { text: "正则表达式入门", link: "/其他/正则表达式入门" },
           { text: "Linux基本命令", link: "/其他/Linux基本命令" },
           { text: "Vue.js源码全方位深入解析", link: "/慕课/Vue.js源码全方位深入解析" },
+          { text: "antv G6的基础入门及树图的实际应用", link: "/antv G6的基础入门及树图的实际应用/antv G6的基础入门及树图的实际应用" },
         ]
       },
       {
