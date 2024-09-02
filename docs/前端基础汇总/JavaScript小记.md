@@ -78,7 +78,7 @@ ECMAScript和JavaScript的关系是，前者是后者的规格，后者是前者
 
 ### 3、JavaScript的优缺点
 
-[看这里~](zh-cn/JavaScript/JavaScript的优缺点)
+[看这里~](../JavaScript/JavaScript的优缺点.md)
 
 ### 4、JS内置对象
 
@@ -861,7 +861,7 @@ arr.length = 0;
 
 ### 9、数组去重的方法
 
-https://csmsimona.github.io/myDocs/#/zh-cn/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E6%B1%87%E6%80%BB/%E6%89%8B%E5%86%99js?id=%e6%95%b0%e7%bb%84%e5%8e%bb%e9%87%8d
+[数组去重](https://csmsimona.github.io/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E6%B1%87%E6%80%BB/%E6%89%8B%E5%86%99js.html#%E2%88%9A9%E3%80%81%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D)
 
 **1、利用ES6 Set去重（ES6中最常用）**
 
@@ -1034,7 +1034,7 @@ console.log(unique(arr));
 
 ### 10、数组拍平
 
-https://csmsimona.github.io/myDocs/#/zh-cn/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E6%B1%87%E6%80%BB/%E6%89%8B%E5%86%99js?id=%e6%95%b0%e7%bb%84%e6%89%81%e5%b9%b3%e5%8c%96
+[数组扁平化](https://csmsimona.github.io/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E6%B1%87%E6%80%BB/%E6%89%8B%E5%86%99js.html#%E2%88%9A10%E3%80%81%E6%95%B0%E7%BB%84%E6%89%81%E5%B9%B3%E5%8C%96)
 
 **1、递归**
 
@@ -1134,7 +1134,7 @@ console.log(arr.sort((a,b) => a.age - b.age));
 
 ### :star:1、深拷贝和浅拷贝
 
-https://csmsimona.github.io/myDocs/#/zh-cn/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E6%B1%87%E6%80%BB/%E6%89%8B%E5%86%99js?id=%e6%b7%b1%e6%b5%85%e6%8b%b7%e8%b4%9d
+[深浅拷贝](https://csmsimona.github.io/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E6%B1%87%E6%80%BB/%E6%89%8B%E5%86%99js.html#%E2%88%9A12%E3%80%81%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D)
 
 **区别**
 
@@ -1313,7 +1313,7 @@ function deepAssign() {
 
 ### 1、正则表达式
 
-[正则表达式入门](zh-cn/JavaScript/正则表达式入门)
+[正则表达式入门](https://csmsimona.github.io/%E5%85%B6%E4%BB%96/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%85%A5%E9%97%A8.html)
 
 #### 元字符
 

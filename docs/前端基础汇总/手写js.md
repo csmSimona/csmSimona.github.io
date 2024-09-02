@@ -149,7 +149,7 @@ partialAdd(2, 3)
 
 ### √9、数组去重
 
-https://csmsimona.github.io/myDocs/#/zh-cn/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E6%B1%87%E6%80%BB/JavaScript%E5%B0%8F%E8%AE%B0?id=_9%e3%80%81%e6%95%b0%e7%bb%84%e5%8e%bb%e9%87%8d%e7%9a%84%e6%96%b9%e6%b3%95
+[数组去重的方法](https://csmsimona.github.io/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E6%B1%87%E6%80%BB/JavaScript%E5%B0%8F%E8%AE%B0.html#_9%E3%80%81%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E7%9A%84%E6%96%B9%E6%B3%95)
 
 ```js
 var unique = arr => [...new Set(arr)]
@@ -194,7 +194,7 @@ function unique(arr){
 
 ### √10、数组扁平化
 
-https://csmsimona.github.io/myDocs/#/zh-cn/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E6%B1%87%E6%80%BB/JavaScript%E5%B0%8F%E8%AE%B0?id=_10%e3%80%81%e6%95%b0%e7%bb%84%e6%8b%8d%e5%b9%b3
+[数组拍平](https://csmsimona.github.io/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E6%B1%87%E6%80%BB/JavaScript%E5%B0%8F%E8%AE%B0.html#_10%E3%80%81%E6%95%B0%E7%BB%84%E6%8B%8D%E5%B9%B3)
 
 ```js
 // 数组方法flat()，默认打平一层，Infinity打平任意层
@@ -339,7 +339,7 @@ function quickSort(arr) {
 
 ### √:star:12、深浅拷贝
 
-https://csmsimona.github.io/myDocs/#/zh-cn/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E6%B1%87%E6%80%BB/JavaScript%E5%B0%8F%E8%AE%B0?id=_1%e3%80%81%e6%b7%b1%e6%8b%b7%e8%b4%9d%e5%92%8c%e6%b5%85%e6%8b%b7%e8%b4%9d
+[深拷贝和浅拷贝](https://csmsimona.github.io/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E6%B1%87%E6%80%BB/JavaScript%E5%B0%8F%E8%AE%B0.html#_1%E3%80%81%E6%B7%B1%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B5%85%E6%8B%B7%E8%B4%9D)
 
 #### 普通数组深拷贝
 
@@ -502,6 +502,8 @@ randomArr(arr)
 
 ### √14、防抖
 
+防抖是指在事件被触发后延迟一段时间后再执行回调，如果在这段延迟时间内事件又被触发，则重新计算延迟时间。
+
 ```js
 function debounce(fn, wait = 100) {
   let timer = 0;
@@ -518,7 +520,7 @@ function debounce(fn, wait = 100) {
 
 ### √15、节流
 
-函数的节流和函数的去抖都是通过减少实际逻辑处理过程的执行来提高事件处理函数运行性能的手段，并没有实质上减少事件的触发次数
+节流是指在一段时间内，不管事件触发了多少次，只执行一次回调。 
 
 ```js
 function throttle(fn, duration) {

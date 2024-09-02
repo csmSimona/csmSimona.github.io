@@ -101,6 +101,10 @@ v-html：会有XSS风险，会覆盖子组件（可以使用`<pre>`标签）
 
   - 双向数据绑定：`v-model`
 
+    其实，`v-model` 就是 `v-bind` 和 `v-on` 的语法糖。
+  
+    `v-model="message"` 相当于 `v-bind:value="message" v-on:input="message = $event.target.value"`
+  
     ```html
     <body>
     	<div id="root">
@@ -119,9 +123,9 @@ v-html：会有XSS风险，会覆盖子组件（可以使用`<pre>`标签）
     	</script>
     </body>
     ```
-
+  
   - `v-if`,`v-else`指令
-
+  
     ```html
     <body>
     	<div id="root">
@@ -149,9 +153,9 @@ v-html：会有XSS风险，会覆盖子组件（可以使用`<pre>`标签）
     	</script>
     </body>
     ```
-
+  
   - v-show指令
-
+  
     ```html
     <body>
     	<div id="root">
@@ -183,9 +187,9 @@ v-html：会有XSS风险，会覆盖子组件（可以使用`<pre>`标签）
     **v-for中的key的用处**
 
     使用`v-for`更新已渲染的元素列表时,默认用`就地复用`策略;
-
+  
     列表数据修改的时候,他会根据key值去判断某个值是否修改,如果修改,则重新渲染这一项,否则复用之前的元素;
-
+  
     ```html
     <body>
     	<div id="root">
@@ -688,7 +692,7 @@ v-show仅仅控制元素的显示方式，将display属性在block和none来回�
 
 输出结果：![3](..\picture\3.png)
 
-- v-for 和 v-if 不能一起使用
+- **v-for 和 v-if 不能一起使用**
 
   v-for比v-if的优先级更高，这就说明在v-for的每次循环运行中每一次都会调用v-if的判断，所以不推荐v-if和v-for在同一个标签内同时使用。
 
@@ -710,32 +714,6 @@ vm.object={
 方法一：`Vue.set(vm.object,"address","hangzhou")`
 
 方法二：`vm.$set(vm.object,"address","hangzhou")`
-
-结果：![4](..\picture\4.png)
-
-- 变异方法
-
-  Vue 包含一组观察数组的变异方法，所以它们也将会触发视图更新。这些方法如下：
-
-  - `push()`
-  - `pop()`
-  - `shift()`
-  - `unshift()`
-  - `splice()`
-  - `sort()`
-  - `reverse()`
-
-- 非变异方法
-
-  `filter()`, `concat()` 和 `slice()` 。这些不会改变原始数组，但**总是返回一个新数组**。
-
-  当使用非变异方法时，可以用新数组替换旧数组：
-
-  ```js
-  example1.items = example1.items.filter(function (item) {
-    return item.message.match(/Foo/)
-  })
-  ```
 
 - 注意事项
 
@@ -888,7 +866,7 @@ vm.object={
   </script>
 ```
 
-#### 2、父子组件传值
+#### 父子组件传值
 
 扩展阅读：
 
@@ -959,7 +937,7 @@ vm.object={
 	</script>
 ```
 
-#### 3、vue中父组件调用子组件方法
+#### vue中父组件调用子组件方法
 
 用法： 子组件上定义`ref="refName"`,  父组件的方法中用 `this.$refs.refName.method` 去调用子组件方法
 
@@ -975,7 +953,7 @@ vm.object={
 
 5、在父组件的方法中调用子组件的方法，很重要 `this.$refs.mychild.parentHandleclick("嘿嘿嘿");`
 
-#### 4、组件参数校验
+#### 组件参数校验
 
 ```html
 	<div id="root">
@@ -1004,7 +982,7 @@ vm.object={
 	</script>
 ```
 
-#### 5、给子组件绑定原生事件
+#### 给子组件绑定原生事件
 
 ```html
 <div id="root">
@@ -1027,7 +1005,7 @@ vm.object={
 	</script>
 ```
 
-#### 6、非父子组件的传值（Bus/总线/发布订阅模式/观察者模式）
+#### 非父子组件的传值（Bus/总线/发布订阅模式/观察者模式）
 
 ```html
   <div id="root">
@@ -1077,7 +1055,7 @@ vm.object={
   </script>
 ```
 
-#### 7、组件生命周期
+#### 组件生命周期
 
 - 单个组件
 
@@ -1115,6 +1093,10 @@ vm.object={
 
 #### 自定义组件的v-model
 
+在自定义组件中使用 v-model 时，需要分别为组件设置 value props 和 input 事件，并在组件内部使用 $emit 方法触发 input 事件。
+
+在父组件中使用 v-model 指令绑定到子组件的 value 上即可完成数据的双向绑定。
+
 index.vue
 
 ```vue
@@ -1151,8 +1133,10 @@ CustomVModel.Vue
 </templete>
 <script>
 export default{
+    // 一个组件上的 v-model 默认会利用名为 value 的 prop 和名为 input 的事件
+    // model.prop 可以定义父组件通过 v-model 传入的值应该对应自定义组件 props 的那个属性
 	model: {
-    	prop: 'content',
+    	prop: 'content', // 用来接收 v-model 传进来的值
         event: 'change'
 	},
     props:{
@@ -1165,9 +1149,11 @@ export default{
 </script>
 ```
 
-#### :star:2、$nextTick
+#### :star:$nextTick
 
-由于Vue是异步渲染，所以data改变之后，DOM不会立刻渲染，$nextTick会在DOM渲染之后被触发，以获取最新DOM节点
+- Vue是异步渲染
+- data改变之后，DOM不会立刻渲染
+- $nextTick会在DOM渲染之后被触发，以获取最新DOM节点
 
 ##### 定义
 
@@ -1211,14 +1197,27 @@ export default{
 
 ##### 应用场景
 
-下面了解下`nextTick`的主要应用的场景及原因。
+`$nextTick` 主要用于处理那些需要等待 Vue 完成 DOM 更新的场景，确保你的代码在正确的时机执行。这有助于避免因为 DOM 尚未更新而产生的问题。
 
-- **在Vue生命周期的`created()`钩子函数进行的DOM操作一定要放在`Vue.nextTick()`的回调函数中**
+- **`created()`里进行的DOM操作**
 
-**在`created()`钩子函数执行的时候DOM 其实并未进行任何渲染，而此时进行DOM操作无异于徒劳**，所以此处一定要将DOM操作的js代码放进`Vue.nextTick()`的回调函数中。**与之对应的就是`mounted()`钩子函数，因为该钩子函数执行时所有的DOM挂载和渲染都已完成，此时在该钩子函数中进行任何DOM操作都不会有问题 。**
+​		在`created()`钩子函数执行的时候DOM 其实并未进行任何渲染，而此时进行DOM操作无异于徒劳，所以此处一定要将DOM操作的js代码放进`$nextTick`的回调函数中。与之对应的就是`mounted()`钩子函数，因为该钩子函数执行时所有的DOM挂载和渲染都已完成，此时在该钩子函数中进行任何DOM操作都不会有问题 。
 
-- 在数据变化后要执行的某个操作，而这个操作需要使用随数据改变而改变的DOM结构的时候，这个操作都应该放进`Vue.nextTick()`的回调函数中。
-- **在使用某个第三方插件时 ，希望在vue生成的某些dom动态发生变化时重新应用该插件**，也会用到该方法，这时候就需要在 $nextTick 的回调函数中执行重新应用插件的方法。
+- **数据更新后的DOM操作**
+
+  在数据变化后要执行的某个操作，而这个操作需要使用随数据改变而改变的DOM结构的时候，这个操作都应该放进`$nextTick`的回调函数中。
+
+- **嵌套更新**
+
+  如果你在一个方法中连续多次修改同一个数据属性，或者进行了嵌套的数据更新，可以使用 `$nextTick` 来确保所有更改完成后再进行操作。
+
+- **动态组件切换**
+
+  当动态切换组件时，可能需要知道新组件已经被渲染到了 DOM 中。在这种情况下，可以在组件切换后使用 `$nextTick`。
+
+- **与第三方库集成**
+
+  当你需要和一些依赖于 DOM 的第三方库一起工作时，要确保这些库是在 DOM 更新之后调用。
 
 
 
@@ -1230,134 +1229,251 @@ export default{
 
 
 
-#### 8、插槽
+#### 插槽
 
-- 单个插槽
+没有插槽的情况下在组件标签内写一些内容是不起任何作用的，当在组件中声明了slot元素后，在组件元素内写的内容就会替换slot。
 
-  ```html
-    <div id="root">
-      <child>
-        <h1>hello</h1>
-      </child>
-    </div>
-  
-    <script>
-  
-      var child = {
-        template: '<div><slot>默认插槽的内容</slot></div>'
-      }
-  
-      var vm = new Vue({
-        components: {
-          child
-        },
-        el: "#root"
-      })
-    </script>
-  ```
+用于父组件中往子组件中插入一段内容。
 
-- 具名插槽
+##### 单个插槽
 
-  ```html
-    <div id="root">
-      <child>
-        <h1 slot="header">header</h1>
-        <h1 slot="footer">footer</h1>
-      </child>
-    </div>
-  
-    <script>
-  
-      var child = {
-        template: `<div>
-                    <slot name="header"></slot>
-                    <div>
-                      <h2>content</h2>
-                    </div>
-                    <slot name="footer"></slot>
-                  </div>`
-      }
-  
-      var vm = new Vue({
-        components: {
-          child: child
-        },
-        el: "#root"
-      })
-    </script>
-  ```
-
-- 作用域插槽
-
-  使用场景：当子组件作循环，或某一部分的DOM结构由外部传递进来时
-
-  ```html
+```html
   <div id="root">
-  		<child>
-  			<template slot-scope="props">
-  				<h1>{{props.item}}</h1>
-  			</template>
-  		</child>
-  	</div>
-  
-  	<script>
-  
-  		Vue.component('child', {
-  			data: function() {
-  				return {
-  					list: [1, 2, 3, 4]
-  				}
-  			},
-  			template: `<div>
-  						<ul>
-  							<slot 
-  								v-for="item of list"
-  								:item=item
-  							></slot>
-  						</ul>
-  					   </div>`
-  		})
-  
-  		var vm = new Vue({
-  			el: '#root'
-  		})
-  	</script>
+    <child>
+      <h1>hello</h1>
+    </child>
+  </div>
+
+  <script>
+
+    var child = {
+      template: '<div><slot>默认内容，即父组件没设置内容时，这里显示</slot></div>'
+    }
+
+    var vm = new Vue({
+      components: {
+        child
+      },
+      el: "#root"
+    })
+  </script>
+```
+
+##### 具名插槽
+
+通过给 `<slot>` 元素添加 `name` 属性来定义不同的插槽，这样就可以在父组件中指定具体的内容应该出现在哪个位置。
+
+```html
+  <div id="root">
+    <child>
+        <!-- 缩写 <template #header> -->
+        <template v-slot:header>
+            <h1>将插入header slot中</h1>
+        </template>
+        <p>将插入到main slot中，即未命名的slot</p>
+        <template v-slot:footer>
+            <h1>将插入footer slot中</h1>
+        </template>
+    </child>
+  </div>
+
+  <script>
+
+    var child = {
+      template: `<div>
+                  <slot name="header"></slot>
+                  <div>
+                    <h2>content</h2>
+                  </div>
+                  <slot name="footer"></slot>
+                </div>`
+    }
+
+    var vm = new Vue({
+      components: {
+        child: child
+      },
+      el: "#root"
+    })
+  </script>
+```
+
+##### 作用域插槽
+
+允许子组件向父组件传递数据，并且在父组件中根据这些数据动态地生成内容。这通常通过 `<slot>` 标签的 `v-bind` 绑定来实现。
+
+```html
+<div id="root">
+		<child>
+            <template v-slot="{ items }">
+                <ul>
+                  <li v-for="item in items" :key="item">{{ item }}</li>
+                </ul>
+            </template>
+		</child>
+	</div>
+
+	<script>
+
+		Vue.component('child', {
+			data: function() {
+				return {
+					items: [1, 2, 3, 4]
+				}
+			},
+			template: `<div>
+						<ul>
+							<slot :items="items"></slot>
+						</ul>
+					   </div>`
+		})
+
+		var vm = new Vue({
+			el: '#root'
+		})
+	</script>
+```
+
+
+
+#### 动态组件与v-once指令
+
+- 用法 `<component :is="component-name" />`  传组件名
+- 需要根据数据，动态渲染的场景，如常见的有文本，视频，图片组件的新闻详情页。即组件类型不确定。
+- 每次都会销毁和重建，为了性能优化，也可以使用keep-alive缓存
+
+```html
+	<div id="root">
+	    // 动态组件
+		// <component :is="type"></component>
+		<child-one v-if="type ==='child-one'"></child-one>
+		<child-two v-if="type ==='child-two'"></child-two>
+		<button @click="handleBtnClick">change</button>
+	</div>
+
+	<script>
+// v-once修饰的组件会把该dom隐藏掉,它还在内存里面,等到你需要它的时候就可以迅速渲染,从而提升性能。
+		Vue.component('child-one', {
+			template: '<div v-once>child-one</div>'
+		})
+
+		Vue.component('child-two', {
+			template: '<div v-once>child-two</div>'
+		})
+
+		var vm = new Vue({
+			el: '#root',
+			data: {
+				type: 'child-one'
+			},
+			methods: {
+				handleBtnClick: function() {
+					this.type = (this.type === 'child-one' ? 'child-two': 'child-one');
+				}
+			}
+		})
+	</script>
+```
+
+
+
+#### 异步组件
+
+- import()函数
+
+  同步引入组件：`import formDemo from './formDemo'`
+
+  异步引入组件：
+
+  ```vue
+  components:{
+  	formDemo: () => import('./formDemo')
+  }
   ```
 
-  #### 8、动态组件与v-once指令
+- 按需加载，异步加载大组件
 
-  ```html
-  	<div id="root">
-  	    // 动态组件
-  		// <component :is="type"></component>
-  		<child-one v-if="type ==='child-one'"></child-one>
-  		<child-two v-if="type ==='child-two'"></child-two>
-  		<button @click="handleBtnClick">change</button>
-  	</div>
-  
-  	<script>
-  // v-once修饰的组件会把该dom隐藏掉,它还在内存里面,等到你需要它的时候就可以迅速渲染,从而提升性能。
-  		Vue.component('child-one', {
-  			template: '<div v-once>child-one</div>'
-  		})
-  
-  		Vue.component('child-two', {
-  			template: '<div v-once>child-two</div>'
-  		})
-  
-  		var vm = new Vue({
-  			el: '#root',
-  			data: {
-  				type: 'child-one'
-  			},
-  			methods: {
-  				handleBtnClick: function() {
-  					this.type = (this.type === 'child-one' ? 'child-two': 'child-one');
-  				}
-  			}
-  		})
-  	</script>
-  ```
+
+
+#### keep-alive
+
+```vue
+<keep-alive>
+	<KeepAliveStageA v-if="state === 'A'" />
+    <KeepAliveStageB v-if="state === 'B'" />
+    <KeepAliveStageC v-if="state === 'C'" />
+</keep-alive>
+```
+
+- 缓存组件
+
+- 频繁切换，不需要重复渲染，用于tab切换等
+
+- Vue常见性能优化
+
+- v-show和keep-alive的区别：
+
+  v-show是在css层面，控制元素的显示方式，将display属性在block和none来回切换；
+
+  keep-alive是vue中的一个抽象组件，用于保存组件的渲染状态。
+
+```vue
+<keep-alive :include="whiteList" :exclude="blackList" :max="amount">
+    <router-view></router-view>
+</keep-alive>
+```
+
+**include**定义缓存白名单，keep-alive会缓存命中的组件；**exclude**定义缓存黑名单，被命中的组件将不会被缓存；**max**定义缓存组件上限，超出上限使用LRU的策略置换缓存数据。
+
+> [内存管理](https://links.jianshu.com/go?to=https%3A%2F%2Fbaike.baidu.com%2Fitem%2F%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%2F5633616)的一种页面置换算法，对于在内存中但又不用的[数据块](https://links.jianshu.com/go?to=https%3A%2F%2Fbaike.baidu.com%2Fitem%2F%E6%95%B0%E6%8D%AE%E5%9D%97%2F107672)（内存块）叫做LRU，操作系统会根据哪些数据属于LRU而将其移出内存而腾出空间来加载另外的数据。
+
+
+
+#### mixin
+
+mixin.js
+
+```js
+export default {
+    data() {
+        return {
+            city: ''
+        }
+    },
+    methods: {
+        showName() {
+            console.log(this.name)
+        }
+    }
+}
+```
+
+index.Vue
+
+```vue
+<script>
+import myMixin from './mixin'
+export default {
+    mixins: [myMixin], // 可以添加多个，会自动合并起来
+    data() {
+        return {
+            name: ''
+        }
+    },
+    methods: {
+    }
+}
+</script>
+```
+
+- 多个组件有相同逻辑，抽离出来
+- mixin并不是完美的解决方案，会有一些问题
+  - 变量来源不明确，不利于阅读
+  - 多mixin可能造成命名冲突
+  - mixin和组件可能出现多对多的关系，复杂度较高
+- Vue3提出的Composition API旨在解决这些问题
+
+### 
 
 
 

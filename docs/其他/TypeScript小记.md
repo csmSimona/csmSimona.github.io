@@ -610,7 +610,7 @@ let point3d: Point3d = {x: 1, y: 2, z: 3};
 
 #### ES6中类的用法
 
-基本概念可以看这里 :point_right: [ES6 中类的用法](https://csmsimona.github.io/myDocs/#/zh-cn/前端基础汇总/JavaScript小记?id=_13%e3%80%81class)
+基本概念可以看这里 :point_right: [ES6 中类的用法](https://csmsimona.github.io/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E6%B1%87%E6%80%BB/JavaScript%E5%B0%8F%E8%AE%B0.html#_13%E3%80%81class)
 
 
 
@@ -1104,7 +1104,7 @@ class Teacher {
 
 ### 模块化
 
-各种模块化 :point_right: [模块化](https://csmsimona.github.io/myDocs/#/zh-cn/前端基础汇总/JavaScript小记?id=%e6%a8%a1%e5%9d%97%e5%8c%96)
+各种模块化 :point_right: [模块化](https://csmsimona.github.io/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E6%B1%87%E6%80%BB/JavaScript%E5%B0%8F%E8%AE%B0.html#%E6%A8%A1%E5%9D%97%E5%8C%96)
 
 ts中模块化规则与ES6一致
 
