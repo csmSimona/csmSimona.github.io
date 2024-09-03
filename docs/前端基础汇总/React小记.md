@@ -378,7 +378,7 @@ TodoItem.defaultProps = {
 
 当父组件的render函数被运行时，它的子组件的render都将被重新运行一次。
 
-### :star:15、虚拟DOM
+### 15、虚拟DOM:star:
 
 什么是虚拟DOM？用JS模拟DOM结构，DOM变化的对比，放在JS层进行（因为前端语言中只有JS是图灵完备语言）[什么是图灵完备语言？](https://blog.csdn.net/Roselane_Begger/article/details/101176694)
 
