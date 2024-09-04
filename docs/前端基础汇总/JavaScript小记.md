@@ -5507,7 +5507,7 @@ Object.getOwnPropertyNames(target) concat(Object.getOwnPropertySymbols(target)
 
 ### 18、模块化
 
- [看上面~](# 1、模块化) 
+ [看上面~](#_1、模块化) 
 
 ### 19、字符串、数组、对象的扩展
 
