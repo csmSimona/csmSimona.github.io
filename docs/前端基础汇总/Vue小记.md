@@ -2585,6 +2585,18 @@ export default {
 
 请注意如果你解构了 `props` 对象，解构出的变量将会丢失响应性。因此我们推荐通过 `props.xxx` 的形式来使用其中的 props。
 
+**PS：在最新版本v3.5中，响应式props已支持解构**
+
+```js
+<script setup lang="ts">
+const { name } = defineProps({
+  name: String,
+});
+
+console.log(name);
+</script>
+```
+
 
 
 ##### **`<script setup>`中访问props**

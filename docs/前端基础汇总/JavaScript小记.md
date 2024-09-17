@@ -2963,7 +2963,7 @@ axios({
 
 因为你用的fetch post修改了请求头,导致fetch第一次发送一个options请求，询问服务器是否支持修改的请求头，如过服务器支持，那么将会再次发送真正的请求。
 
-## :star:跨域
+## 跨域:star:
 
 ### 1、跨域
 
@@ -2987,7 +2987,7 @@ PS：http默认端口：80，https默认端口：443
 
 - `<link href="xx">`   
 
-  PS：a和link的区别：a标签属于超链接，用来URL定向；link标签用来连接文件，一般用于CS 文件的引入
+  PS：a和link的区别：a标签属于超链接，用来URL定向；link标签用来连接文件，一般用于CSS 文件的引入
 
 - `<script src="xx">`
 
@@ -3043,19 +3043,19 @@ jsonp(
 - ajax和jsonp这两种技术再调用方式上“看起来很像”，目的也一样，都是请求一个url，然后把服务器返回的数据进行处理，因此jquery和ext等框架都把jsonp作为ajax的一种形式进行了封装。
 - 但ajax和jsonp在本质上是不同的东西。ajax的核心是通过XMLHttpRequest获取非本页内容，而jsonp的核心则是动态添加。
 
-2、document.domain + iframe跨域：两个页面都通过js强制设置document.domain为基础主域，就实现了同域。
+**2、document.domain + iframe跨域**：两个页面都**通过js强制设置document.domain为基础主域，就实现了同域**。
 
-该方式只能用于二级域名相同的情况下，比如a.test.com和b.test.com适用于该方法。
+该方式**只能用于二级域名相同的情况**下，比如a.test.com和b.test.com适用于该方法。
 
 只需要给页面添加document.domain = 'test.com'表示二级域名相同就可以实现跨域。
 
-3、location.hash + iframe跨域：a欲与b跨域相互通信，通过中间页c来实现。 三个页面，不同域之间利用iframe的location.hash传值，相同域之间直接js访问来通信。
+**3、location.hash + iframe跨域**：a欲与b跨域相互通信，通过中间页c来实现。 三个页面，**不同域之间利用iframe的location.hash传值**，相同域之间直接js访问来通信。
 
-4、window.name + iframe跨域：通过iframe的src属性由外域转向本地域，跨域数据即由iframe的window.name从外域传递到本地域。
+**4、window.name + iframe跨域**：通过iframe的src属性由外域转向本地域，**跨域数据即由iframe的window.name从外域传递到本地域**。
 
-5、postMessage跨域：可以跨域操作的window属性之一。
+**5、postMessage + iframe跨域**：可以跨域操作的window属性之一。
 
-postMessage和iframe相结合的方法。postMessage(data,origin)方法允许来自不同源的脚本采用异步方式进行通信，可以实现跨文本档、多窗口、跨域消息传递。
+postMessage(data,origin)方法允许来自不同源的脚本采用异步方式进行通信，可以实现跨文本档、多窗口、跨域消息传递。
 
 这种方式通常用于获取嵌入页面中的第三方页面数据。一个页面发送消息，另一个页面判断来源并接收消息。
 
@@ -3087,7 +3087,7 @@ response.setHeader("Access-Control-Allow-Credential", "true")
 
 
 
-## :star:异步
+## 异步:star:
 
 ### 1、defer和async
 
@@ -3120,7 +3120,7 @@ console.log(300)
 
 原因：避免DOM渲染的冲突
 
-解决方案：js是单线程的，一次只能完成一个任务，如果有多个任务，就需要排队，如果有一个任务耗时很长，那么后边任务就需要等待。为了解决这个问题，js将任务的执行分成两种模式：同步和异步
+解决方案：**js是单线程的，一次只能完成一个任务，如果有多个任务，就需要排队，如果有一个任务耗时很长，那么后边任务就需要等待。为了解决这个问题，js将任务的执行分成两种模式：同步和异步**
 
 ps：Web Worker（HTML5）可以为 JavaScript 创造多线程环境，但是不能访问DOM。具体可以看 [Web Worker 使用教程 - 阮一峰](http://www.ruanyifeng.com/blog/2018/07/web-worker.html)
 
@@ -3160,7 +3160,7 @@ console.log(300)
 
 Promise本身是同步的("resolve before" 在"同步"之前先执行)，而then()则是异步任务("success" 在"同步之后再执行")
 
-### :star:4、事件轮询（event-loop）
+### 4、事件轮询（event-loop）:star:
 
 事件轮询是JS实现异步的具体解决方案。
 
@@ -3211,69 +3211,38 @@ $.ajax({
 
 准确的说是：第一个setTimeout在100ms后才会被放到异步队列中，第二个setTimeout会立刻放入异步队列，而添加到异步队列的任务，只有等到主线程执行栈中的同步任务全部执行完毕之后，才会被执行。如果主线程执行任务很多，执行时间超过100ms，那么这个函数只能等待。
 
-### :star:（待重新整理）5、微任务和宏任务
+### 5、微任务和宏任务:star:
 
-宏任务（MacroTask）和微任务（MicroTask）有什么区别？
+以上的事件循环过程是一个宏观的表述，实际上因为异步任务之间并不相同，因此他们的执行优先级也有区别。
 
-https://blog.csdn.net/NancyFyn/article/details/118407548
+不同的异步任务被分为两类：微任务 `(micro task)` 和宏任务 `(macro task)`。
 
-https://juejin.cn/post/7020710294083092493
+#### 概念
 
-[微任务/宏任务和同步/异步之间的关系](https://juejin.cn/post/6962312899960242213)
+微任务（microtask）和宏任务（macrotask）是JavaScript中的两种异步任务执行机制，它们之间的主要区别在于执行顺序和优先级。
 
+- **宏任务**包括script (可以理解为外层同步代码)，setTimeout，setInterval，setImmediate，requestAnimationFrame，I/O（文件读写、网络请求等），UI rendering
 
-
-以上的事件循环过程是一个宏观的表述，实际上因为异步任务之间并不相同，因此他们的执行优先级也有区别。不同的异步任务被分为两类：微任务 `(micro task)` 和宏任务 `(macro task)`。
-
-- 微任务包括process.nextTick，Promise.then()，Object.observe，MutationObserver
-- 宏任务包括script (可以理解为外层同步代码)，setTimeout，setInterval，setImmediate，requestAnimationFrame，I/O，UI rendering 
+- **微任务**包括process.nextTick，Promise.then()，Object.observe，`queueMicrotask` API
 
 
 
-前面我们介绍过，在一个事件循环中，异步事件返回结果后会被放到一个任务队列中。然而，根据这个异步事件的类型，这个事件实际上会被对应的宏任务队列或者微任务队列中去。
+#### **微任务和宏任务的优先级**
 
-在当前执行栈为空的时候，主线程会 查看微任务队列是否有事件存在。如果不存在，那么再去宏任务队列中取出一个事件并把对应的回到加入当前执行栈；如果存在，则会依次执行队列中事件对应的回调，直到微任务队列为空，然后去宏任务队列中取出最前面的一个事件，把对应的回调加入当前执行栈...如此反复，进入循环。
+在同一事件循环中，微任务的优先级高于宏任务。这意味着：
 
-我们只需记住当前执行栈执行完毕时会立刻先处理所有微任务队列中的事件，然后再去宏任务队列中取出一个事件。同一次事件循环中，微任务永远在宏任务之前执行。
-
-同步代码 => 微任务 => 宏任务
-
-```js
-console.log('script start');
-
-setTimeout(function() {
-    console.log('setTimeout');
-}, 0);
-
-new Promise((resolve) => {		// 同步
-    console.log('Promise');
-    resolve();
-}).then(function() {			// 	异步
-    console.log('promise1');
-}).then(function() {
-    console.log('promise2');	// 异步
-});
-
-console.log('script end');
-
-// script start => Promise => script end => promise1 => promise2 => setTimeout
-```
+- 当一个宏任务执行完毕后，会立即执行所有已注册的微任务。
+- 在所有微任务执行完毕后，才会执行下一个宏任务。
 
 
 
-虽然setTimeout写在Promise之前，但是Promise属于微任务而setTimeout属于宏任务。Promise.then是异步执行的，而创建Promise实例（executor）是同步执行的。
-
-注意：Promise不等于异步，整个promise执行过程是同步的，Promise只是个**异步操作容器**，把异步操作包起来，以更易读更有条理更符合人类思维习惯的方式来写异步代码。
-
-可以看看这篇文章：[Promise≠异步，async函数≠异步](https://www.jianshu.com/p/dd9d35107f48)
-
-
+#### **同一事件循环中的执行顺序**
 
 很多人有个误区，认为微任务快于宏任务，其实是错误的。因为宏任务中包括了script，浏览器会先执行一个宏任务，接下来是异步代码的话就先执行微任务。
 
 所以正确的一次Event loop顺序是这样的
 
-1、执行同步代码，这属于宏任务
+1、执行同步代码，这属于宏任务（执行当前的宏任务）
 
 2、执行栈为空，查询是否有微任务需要执行
 
@@ -3281,19 +3250,69 @@ console.log('script end');
 
 4、必要的话渲染UI
 
-5、然后开始下一轮Event loop，执行宏任务中的异步代码
+5、在所有微任务执行完毕后，进入下一个宏任务
 
 
 
-1.主体代码（第一次事件循环开始，所有的script代码）作为宏任务进入任务执行栈，但在主线程执行之前要做一系列操作判断。
+#### **代码示例**
 
-2.判断当前任务是同步还是异步，同步的由主线程在任务栈中按先进后出顺序（先局部上下文，再全局上下文）执行，异步判断是宏任务还是微任务。
+```js
+console.log('script start');
 
-3.异步中的宏任务放入异步的宏任务event Table（异步队列分两种，宏任务队列和微任务队列,event Table也一样），微任务进入微任务event Table，在回调函数注册之后，再次进入它们对应的队列。
+setTimeout(() => {
+  console.log('setTimeout');
+}, 0);
 
-4.当主线程的任务执行完后，会检查微任务队列是否有任务，如果有就执行，如此循环，知道微任务队列没有任务。
+new Promise((resolve) => {		// 同步
+    console.log('Promise');
+    resolve();
+}).then(() => {					// 	异步
+  console.log('promise1');
+}).then(() => {					// 	异步
+  console.log('promise2');
+});
 
-5.当前事件的微任务执行完后，开始执行下一次事件，即会执行宏任务队列中的宏任务，如此循环下去，直到没有任务。
+console.log('script end');
+
+setTimeout(() => {
+  console.log('setTimeout2');
+}, 0);
+
+queueMicrotask(() => {
+  console.log('queueMicrotask');
+});
+
+setImmediate(() => {
+  console.log('setImmediate');
+}, 0);
+
+process.nextTick(() => {
+  console.log('process.nextTick');
+});
+
+=>
+script start
+Promise
+script end
+promise1
+promise2
+queueMicrotask
+process.nextTick
+setTimeout
+setTimeout2
+setImmediate
+```
+
+**分析**
+
+1. **script start**、**new Promise** 和 **script end**：这是主线程执行的脚本。
+2. **promise1** 和 **promise2**：Promise 的 `.then` 回调作为微任务，在当前宏任务结束后立即执行。
+3. **queueMicrotask**：作为微任务，在当前宏任务结束后立即执行。
+4. **process.nextTick**：作为微任务，在当前宏任务结束后立即执行。
+5. **setTimeout** 和 **setTimeout2**：作为宏任务，会在当前宏任务及其微任务执行完毕后执行。
+6. **setImmediate**：作为宏任务，在当前宏任务及其微任务执行完毕后执行，但在 I/O 事件之前。
+
+注意：Promise不等于异步，整个promise执行过程是同步的，Promise只是个**异步操作容器**，把异步操作包起来，以更易读更有条理更符合人类思维习惯的方式来写异步代码。
 
 
 
@@ -3311,44 +3330,44 @@ Node.js的运行机制如下。
 >
 > （4）V8引擎再将结果返回给用户。
 
-除了setTimeout和setInterval这两个方法，Node.js还提供了另外两个与"任务队列"有关的方法：[process.nextTick](http://nodejs.org/docs/latest/api/process.html#process_process_nexttick_callback)和[setImmediate](http://nodejs.org/docs/latest/api/timers.html#timers_setimmediate_callback_arg)。它们可以帮助我们加深对"任务队列"的理解。
 
-process.nextTick方法可以在当前"执行栈"的尾部----下一次Event Loop（主线程读取"任务队列"）之前----触发回调函数。也就是说，它指定的任务总是发生在所有异步任务之前。
 
-setImmediate方法则是在当前"任务队列"的尾部添加事件，也就是说，它指定的任务总是在下一次Event Loop时执行，这与setTimeout(fn, 0)很像。请看下面的例子（via [StackOverflow](http://stackoverflow.com/questions/17502948/nexttick-vs-setimmediate-visual-explanation)）。
+**Node.js 的事件循环模型**
 
-```js
-process.nextTick(function A() {
-    console.log(1);
-    process.nextTick(function B(){console.log(2);});
-});
+1. Timers 阶段
 
-setTimeout(function timeout() {
-	console.log('TIMEOUT FIRED');
-}, 0)
-// 1
-// 2
-// TIMEOUT FIRED
-```
+在这个阶段，Node.js 处理定时器相关的回调，如 `setTimeout` 和 `setInterval`。定时器回调会在指定的时间间隔后执行。如果存在多个定时器，它们会按照设定的时间顺序执行。
 
-上面代码中，由于process.nextTick方法指定的回调函数，总是在当前"执行栈"的尾部触发，所以不仅函数A比setTimeout指定的回调函数timeout先执行，而且函数B也比timeout先执行。这说明，如果有多个process.nextTick语句（不管它们是否嵌套），将全部在当前"执行栈"执行。
+2. I/O Callbacks 阶段
 
-现在，再看setImmediate。
+在这个阶段，Node.js 处理 I/O（输入/输出）相关的回调，如文件操作、网络请求等。当 I/O 操作完成时，相应的回调函数会被调用。这个阶段通常用于处理已完成的异步操作。
 
-```js
-setImmediate(function A() {
-    console.log(1);
-    setImmediate(function B(){console.log(2);});
-});
+3. Poll 阶段
 
-setTimeout(function timeout() {
-    console.log('TIMEOUT FIRED');
-}, 0);
-```
+Poll 阶段是事件循环的核心部分，它负责处理所有已完成的 I/O 操作。在这个阶段，Node.js 会检查是否有已完成的 I/O 操作需要处理。如果有，则会执行相应的回调函数。
 
-上面代码中，setImmediate与setTimeout(fn,0)各自添加了一个回调函数A和timeout，都是在下一次Event Loop触发。那么，哪个回调函数先执行呢？答案是不确定。运行结果可能是1--TIMEOUT FIRED--2，也可能是TIMEOUT FIRED--1--2。
+4. Check 阶段
 
-我们由此得到了process.nextTick和setImmediate的一个重要区别：多个process.nextTick语句总是在当前"执行栈"一次执行完，多个setImmediate可能则需要多次loop才能执行完。
+在 Check 阶段，Node.js 处理 `setImmediate` 回调。`setImmediate` 是一种特殊的回调机制，它的回调会在当前事件循环的 I/O 回调之后执行，但在下一个事件循环之前执行。这意味着 `setImmediate` 的回调不会被推迟到下一个事件循环。
+
+5. Close Callbacks 阶段
+
+在这个阶段，Node.js 处理所有与关闭操作相关的回调，如关闭文件、关闭网络连接等。
+
+
+
+微任务（Microtasks）
+
+除了上述五个阶段之外，Node.js 还支持微任务（Microtasks），这些微任务会在当前宏任务执行完毕后立即执行。微任务包括：
+
+1. **Promise**：Promise 的 `.then` 回调。
+2. **Mutation**：DOM 变更。
+3. **Queue Microtasks**：`queueMicrotask` API。
+4. **Process.nextTick**：Node.js 中的 `process.nextTick`。
+
+在 Node.js 中，微任务是在当前宏任务结束后立即执行的，而在下一阶段（如 Timers 阶段）之前执行。
+
+
 
 ### 7、处理异步的几种方法
 
