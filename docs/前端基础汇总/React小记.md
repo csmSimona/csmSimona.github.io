@@ -1200,13 +1200,13 @@ mapDispatchToProps：将store.dispatch挂载到props上
 - 路由模式（hash、H5 history），同vue-router
 - 路由配置（动态路由、懒加载），同vue-router
 
-![react-router路由模式](D:\study\csmSimona.github.io\docs\picture\react-router路由模式.jpg)
+![react-router路由模式](..\picture\react-router路由模式.jpg)
 
-![react-router动态路由](D:\study\csmSimona.github.io\docs\picture\react-router动态路由.jpg)
+![react-router动态路由](..\picture\react-router动态路由.jpg)
 
-![react-router跳转路由](D:\study\csmSimona.github.io\docs\picture\react-router跳转路由.jpg)
+![react-router跳转路由](..\picture\react-router跳转路由.jpg)
 
-![react-router懒加载](D:\study\csmSimona.github.io\docs\picture\react-router懒加载.jpg)
+![react-router懒加载](..\picture\react-router懒加载.jpg)
 
 
 
