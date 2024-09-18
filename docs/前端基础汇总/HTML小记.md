@@ -258,7 +258,7 @@ filter: progid:DXImageTransform.Microsoft.Alpha(style = 0, opacity = 50);（ie�
 8、两个块级元素，父元素设置了overflow:auto；子元素设置了position:relative ;且高度大于父元素，在IE6、IE7会被隐藏而不是溢出；
 解决方案：父级元素设置position:relative
 
-### 16、浏览器渲染页面的过程
+### 16、浏览器渲染页面的过程:star:
 
 - 根据 HTML 结构生成 DOM 树
 
@@ -322,7 +322,7 @@ scrollTop：滚动后被隐藏的高度，获取对象相对于由offsetParent�
 
 offsetTop：子元素的外边框到父元素的内边框的垂直距离 （没边框时自然就是content到content的距离）
 
-### 21、重绘（repaint）和重排（reflow）
+### 21、重绘（repaint）和重排（reflow）:star:
 
 **重排**
 
@@ -379,7 +379,7 @@ offsetTop：子元素的外边框到父元素的内边框的垂直距离 （没�
 
 
 
-### 22、图片懒加载和预加载
+### 22、图片懒加载和预加载:star:
 
 参考：https://www.cnblogs.com/psxiao/p/11542930.html
 

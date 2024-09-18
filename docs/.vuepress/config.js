@@ -73,6 +73,23 @@ export default defineUserConfig({
           },
         ],
       },
+      {
+        text: "项目开发",
+        children: [
+          {
+            text: "低代码数据可视化平台开发记录",
+            link: "/项目开发/低代码数据可视化平台开发记录",
+          },
+          {
+            text: "中后台管理系统模板记录",
+            link: "/项目开发/中后台管理系统模板记录",
+          },
+          {
+            text: "多页签开发记录",
+            link: "/项目开发/多页签开发记录",
+          },
+        ],
+      },
       { text: "Github", link: "https://github.com/csmSimona" },
     ],
     sidebarDepth: 5,
