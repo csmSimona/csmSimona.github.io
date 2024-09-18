@@ -3695,3 +3695,35 @@ const proxyData = reactive(data)
 
 
 ### 8、Pinia
+
+#### vuex和pinia的区别
+
+Vuex 和 Pinia 都是用于 Vue.js 应用程序的状态管理库，但是它们在设计哲学和技术实现上有一定的区别：
+
+1、架构设计
+
+- Vuex 是 Vue.js 官方提供的状态管理模式与库，它使用集中式存储管理本应用所有组件的状态，并以 map 的形式提供更丰富的功能。**状态以 store 的形式保存，可以通过 mutations 来更改状态，actions 可用来触发 mutations 并执行异步操作。**
+- Pinia 同样由 Vue 核心成员开发，但它采用了不同的设计理念，**更注重于简化状态管理和提供更好的 TypeScript 支持**。Pinia 使用了 Store API，允许用户定义自己的状态存储，可以更自由地组织状态逻辑。
+
+2、状态变更方式
+
+- Vuex 使用 mutations 来提交状态变更，这有助于保持状态变更的可预测性和追踪性。
+- Pinia **不强制使用 mutations，允许直接修改状态，这使得状态管理更加直观**，但可能会减少对状态变更的追踪。
+
+3、模块化
+
+- Vuex 支持模块化，可以方便地组织大型应用的状态，每个模块可以有自己的 state、mutations、actions 和 getters。
+- Pinia 同样支持模块化的状态管理，但是它的模块化概念可能略有不同，通常更简洁且易于理解和维护。
+
+4、代码风格和语法
+
+- Vuex 的代码风格更传统，需要定义 mutations 和 actions 来处理状态。
+- Pinia 的语法更加现代和直观，通常更接近于普通的 JavaScript 对象定义。
+
+5、体积和性能
+
+- Pinia 的体积相对较小，这可能会带来性能上的优势。
+
+6、TypeScript 支持
+
+- Pinia 提供了更好的 TypeScript 支持，使得类型检查更加准确，对于使用 TypeScript 开发的项目来说更有吸引力。
