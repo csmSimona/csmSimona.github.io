@@ -329,7 +329,7 @@ CSS中的盒子模型包括IE盒子模型和标准的W3C盒子模型。
 
 
 
-### 12、关于定位（position属性）
+### 12、关于定位（position属性）:star:
 
 #### 1、absolute
 
@@ -676,7 +676,7 @@ div
 
 
 
-### 21、animation（动画）、transition（过渡）、transform（变形）、translate（移动）
+### 21、animation（动画）、transition（过渡）、transform（变形）、translate（移动）:star:
 
 来源：http://www.imooc.com/article/79030 
 

@@ -100,7 +100,7 @@ Function.prototype.myBind = function(thisArg, ...args) {
 
 
 
-### √7、函数科里化
+### √7、函数科里化:star:
 
 将使用多个参数的函数转换成一系列使用一个参数的函数
 

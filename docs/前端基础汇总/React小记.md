@@ -1739,6 +1739,10 @@ export default FriendStatus
 
 #### useRef
 
+它允许你在渲染之间持久地引用值
+
+useRef通常用于两种主要情况：访问 DOM 节点和保留渲染之间的值。
+
 ```js
 import React, { useRef, useEffect } from 'react'
 
