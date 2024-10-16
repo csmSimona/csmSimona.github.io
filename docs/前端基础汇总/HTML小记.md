@@ -200,18 +200,11 @@ a，img，span，i（斜体），em（强调），sub（下标），sup（上标
 3.常见的行块级元素（拥有内在尺寸，可设置宽高，不会自动换行）有：
 button，input，textarea，select等。
 
-### 11、position: relative 不会使div脱离文档流，只是相对常规流偏移
-
-所谓的文档流，指的是元素排版布局过程中，元素会自动从左往右，从上往下的流式排列。脱离文档流即是元素打乱了这个排列，或是从排版中拿走。
-position:absolute;和position:fixed;会直接将元素从排版中拿走从而脱离文档流之外，设置float对象也会“打乱这个排列”从而也被称为脱离文档流。
-
-### 12、手动写动画最小时间间隔为16.7ms
+### 11、手动写动画最小时间间隔为16.7ms
 
 显示器默认频率60hz，时间为1/60hz=16.7ms
 
-### 13、HTML5中，area, base, br, col, command, embed, hr, img, input, keygen, link, meta, param, source, track, wbr等空标签可以不用自闭合（/>）了
-
-### 14、白屏时间first paint和可交互时间dom ready的关系
+### 12、白屏时间first paint和可交互时间dom ready的关系:star:
 
 先触发first paint，后触发dom ready
 
@@ -225,7 +218,7 @@ position:absolute;和position:fixed;会直接将元素从排版中拿走从而�
 
 总下载时间：页面所有资源都加载完成并呈现出来所花的时间，即页面onload的时间
 
-### 15、浏览器兼容性问题
+### 13、浏览器兼容性问题
 
 参考：[前端常见的浏览器兼容性问题及解决方案](https://blog.csdn.net/wanmeiyinyue315/article/details/79654984)
 
@@ -258,7 +251,7 @@ filter: progid:DXImageTransform.Microsoft.Alpha(style = 0, opacity = 50);（ie�
 8、两个块级元素，父元素设置了overflow:auto；子元素设置了position:relative ;且高度大于父元素，在IE6、IE7会被隐藏而不是溢出；
 解决方案：父级元素设置position:relative
 
-### 16、浏览器渲染页面的过程:star:
+### 14、浏览器渲染页面的过程:star:
 
 - 根据 HTML 结构生成 DOM 树
 
@@ -274,7 +267,7 @@ filter: progid:DXImageTransform.Microsoft.Alpha(style = 0, opacity = 50);（ie�
 
 当HTML解析到script标签时，会暂停构建DOM，完成后才会从暂停的地方重新开始。也就是说，如果你想首屏渲染的越快，就越不应该在首屏就加载js文件。并且CSS也会影响js的执行，只有当解析完样式表才会执行js，所以也可以认为这种情况下，css也会暂停构建DOM。
 
-### 17、对语义化的理解
+### 15、对语义化的理解
 
 1、去掉或者丢失样式的时候能够让页面呈现出清晰的结构
 
@@ -284,7 +277,7 @@ filter: progid:DXImageTransform.Microsoft.Alpha(style = 0, opacity = 50);（ie�
 
 4，便于团队开发和维护，语义化更具可读性，遵循W3C标准的团队都遵循这个标准，可以减少差异化。
 
-### 18、XHTML与HTML的区别
+### 16、XHTML与HTML的区别
 
 1.所有的标记都必须要有一个相应的结束标记
 
@@ -302,13 +295,13 @@ filter: progid:DXImageTransform.Microsoft.Alpha(style = 0, opacity = 50);（ie�
 
 8.图片必须有说明文字
 
-### 19、优雅降级和渐进增强
+### 17、优雅降级和渐进增强
 
 优雅降级：Web站点在所有新式浏览器中都能正常工作，如果用户使用的是老式浏览器，则代码会检查以确认它们是否能正常工作。由于IE独特的盒模型布局问题，针对不同版本的IE的hack实践过优雅降级了,为那些无法支持功能的浏览器增加候选方案，使之在旧式浏览器上以某种形式降级体验却不至于完全失效.
 
 渐进增强：从被所有浏览器支持的基本功能开始，逐步地添加那些只有新式浏览器才支持的功能,向页面增加无害于基础浏览器的额外样式和功能的。当浏览器支持时，它们会自动地呈现出来并发挥作用。
 
-### 20、clientHeight，scrollHeight，offsetHeight 以及scrollTop，offsetTop，clientTop
+### 18、clientHeight，scrollHeight，offsetHeight 以及scrollTop，offsetTop，clientTop:star:
 
 clientHeight：表示的是可视区域的高度，不包含border和滚动条
 
@@ -322,7 +315,7 @@ scrollTop：滚动后被隐藏的高度，获取对象相对于由offsetParent�
 
 offsetTop：子元素的外边框到父元素的内边框的垂直距离 （没边框时自然就是content到content的距离）
 
-### 21、重绘（repaint）和重排（reflow）:star:
+### 19、重绘（repaint）和重排（reflow）:star:
 
 **重排**
 
@@ -379,7 +372,7 @@ offsetTop：子元素的外边框到父元素的内边框的垂直距离 （没�
 
 
 
-### 22、图片懒加载和预加载:star:
+### 20、图片懒加载和预加载:star:
 
 参考：https://www.cnblogs.com/psxiao/p/11542930.html
 

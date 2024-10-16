@@ -315,7 +315,7 @@ screen.height
 
 ​	堆通常是一个可以被看做一棵完全二叉树的数组对象。  逻辑上：完全二叉树 存储上：数组（顺序存储） 
 
-### 3、JS中数据类型的判断（ typeof，instanceof，constructor，Object.prototype.toString.call() ）
+### 3、JS中数据类型的判断（ typeof，instanceof，constructor，Object.prototype.toString.call() ）:star:
 
 #### typeof
 
@@ -526,9 +526,9 @@ Number函数转化规则中，如果是null，返回零；如果是undefined，�
 
 
 
-## String:star:
+## String
 
-### 1、String对象中slice()、substring()、substr()的用法与区别
+### 1、String对象中slice()、substring()、substr()的用法与区别:star:
 
 - **slice() 方法**可提取字符串的某个部分，并以新的字符串返回被提取的部分。
   - 语法：`stringObject.slice(start,end)`
@@ -597,14 +597,14 @@ padstart最常见的用途
 
 
 
-## Array:star:
+## Array
 
-### 1、Array对象中slice() 、splice（）的区别
+### 1、Array对象中slice() 、splice（）的区别:star:
 
 **slice() 方法**可从已有的数组中返回选定的元素。
 
 - 语法：`arrayObject.slice(start,end)`
-- 返回一个新的数组，包含从 start 到 end （不包括该元素）的 arrayObject 中的元素。在只有一个参数的情况下，返回从该参数指定位置开始到当前数组末尾的所有项。
+- **返回一个新的数组**，包含从 start 到 end （不包括该元素）的 arrayObject 中的元素。在只有一个参数的情况下，返回从该参数指定位置开始到当前数组末尾的所有项。
 - 该方法不改变原数组，而是返回新的数组。如果想删除数组中的一段元素，应该使用方法 Array.splice()。
 - 如果slice()方法的参数中有一个负数，则用数组长度加上该数来确定相应的位置。
 - 如果结束位置小于起始位置，则返回空数组。
@@ -613,12 +613,12 @@ padstart最常见的用途
 
 - 语法：`arrayObject.splice(index,howmany,item1,.....,itemX)`
 
-  
-
 - | index             | 必需。整数，规定添加/删除项目的位置，使用负数可从数组结尾处规定位置。 |
   | ----------------- | ------------------------------------------------------------ |
   | howmany           | 必需。要删除的项目数量。如果设置为 0，则不会删除项目。       |
   | item1, ..., itemX | 可选。向数组添加的新项目。                                   |
+
+- splice()方法会改变原数组
 
 - splice()方法始终都会返回一个数组，该数组中包含从原始数组中删除的项（如果没有删除任何项，则返回一个空数组）
 
@@ -684,7 +684,7 @@ console.log(find) // 3 (返回的是值，只输出符合的第一个值，没�
 
 返回找到值的位置：findIndex
 
-### 5、Array.of
+### 5、Array.of:star:
 
 转自[ES6核心，教你 玩转 ES6新特性](http://www.imooc.com/article/67156)
 
@@ -714,7 +714,7 @@ function arrayof{
 }
 ```
 
-### 6、Array.from()  
+### 6、Array.from():star:
 
 Array.from()方法就是将一个类数组对象或者可遍历对象转换成一个真正的数组。
 
@@ -859,7 +859,7 @@ arr.length = 0;
 
 这种方式为将arr重新复制为空数组，之前的数组如果没有被引用，将等待垃圾回收。
 
-### 9、数组去重的方法
+### 9、数组去重的方法:star:
 
 [数组去重](https://csmsimona.github.io/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E6%B1%87%E6%80%BB/%E6%89%8B%E5%86%99js.html#%E2%88%9A9%E3%80%81%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D)
 
@@ -1032,7 +1032,7 @@ console.log(unique(arr));
 // [1, "true", 15, false, undefined, null, NaN, 0, "a", {…}]
 ```
 
-### 10、数组拍平
+### 10、数组拍平:star:
 
 [数组扁平化](https://csmsimona.github.io/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E6%B1%87%E6%80%BB/%E6%89%8B%E5%86%99js.html#%E2%88%9A10%E3%80%81%E6%95%B0%E7%BB%84%E6%89%81%E5%B9%B3%E5%8C%96)
 
@@ -1439,7 +1439,7 @@ var foo = 1;
 
 
 
-## 作用域:star:
+## 作用域
 
 ### 1、变量提升
 
@@ -1594,7 +1594,7 @@ function fn(name) {
   fn2.call(b);
   ```
 
-### 3、apply，call与bind
+### 3、apply，call与bind:star:
 
 共同点：
 
@@ -1698,7 +1698,7 @@ F1()             // 200
 
 ### 1、闭包以及实际应用
 
-**闭包就是能够读取其他函数内部变量的函数。**只有函数内部的子函数才能读取局部变量，所以闭包可以理解成“定义在一个函数内部的函数“。在本质上，闭包是将函数内部和函数外部连接起来的桥梁。
+**闭包就是能够读取其他函数内部变量的函数。**只有函数内部的子函数才能读取局部变量，所以**闭包可以理解成“定义在一个函数内部的函数“**。在本质上，闭包是将函数内部和函数外部连接起来的桥梁。
 
 简单来说：闭包是在 A 函数里面返回的 B 函数，然后 B 函数里面一直引用着 A 函数的局部变量。
 
@@ -2650,9 +2650,9 @@ console.log(stu1.age);
 
 
 
-## 事件:star:
+## 事件
 
-### 1、事件捕获、事件冒泡、事件委托（代理）
+### 1、事件捕获、事件冒泡、事件委托（代理）:star:
 
 **事件捕获**：事件从最不精确的对象(document对象)开始触发，然后到最精确
 
@@ -3008,7 +3008,7 @@ ajax请求受**同源策略**影响，不允许进行跨域请求，而**script�
 </script>
 ```
 
-在开发中可能会遇到多个JSONP请求的回调函数名是相同的，这时候就需要自己封装一个JSONP
+在开发中可能会遇到多个JSONP请求的回调函数名是相同的，这时候就需要**自己封装一个JSONP**
 
 ```js
 function jsonp(url, jsonpCallback, success) {

@@ -39,7 +39,7 @@ function objCreate(obj) {
 
 
 
-### :star:4、实现 new 关键字
+### 4、实现 new 关键字
 
 new 一个对象的过程
 
@@ -127,7 +127,7 @@ curry(1, 2)(3)(4)
 
 
 
-### √8、偏函数
+### √8、偏函数:star:
 
 将一个 n 参的函数转换成固定 x 参的函数，剩余参数（n - x）将在下次调用全部传入
 
@@ -147,7 +147,7 @@ partialAdd(2, 3)
 
 
 
-### √9、数组去重
+### √9、数组去重:star:
 
 [数组去重的方法](https://csmsimona.github.io/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E6%B1%87%E6%80%BB/JavaScript%E5%B0%8F%E8%AE%B0.html#_9%E3%80%81%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E7%9A%84%E6%96%B9%E6%B3%95)
 
@@ -192,7 +192,7 @@ function unique(arr){
 
 
 
-### √10、数组扁平化
+### √10、数组扁平化:star:
 
 [数组拍平](https://csmsimona.github.io/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E6%B1%87%E6%80%BB/JavaScript%E5%B0%8F%E8%AE%B0.html#_10%E3%80%81%E6%95%B0%E7%BB%84%E6%8B%8D%E5%B9%B3)
 
@@ -242,7 +242,7 @@ function flatArr(arr) {
 
 
 
-### √:star:11、数组排序
+### √11、数组排序:star:
 
 #### 冒泡排序
 
@@ -337,7 +337,7 @@ function quickSort(arr) {
 
 
 
-### √:star:12、深浅拷贝
+### √12、深浅拷贝:star:
 
 [深拷贝和浅拷贝](https://csmsimona.github.io/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E6%B1%87%E6%80%BB/JavaScript%E5%B0%8F%E8%AE%B0.html#_1%E3%80%81%E6%B7%B1%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B5%85%E6%8B%B7%E8%B4%9D)
 
@@ -500,7 +500,7 @@ randomArr(arr)
 
 
 
-### √14、防抖
+### √14、防抖:star:
 
 防抖是指在事件被触发后延迟一段时间后再执行回调，如果在这段延迟时间内事件又被触发，则重新计算延迟时间。
 
@@ -518,7 +518,7 @@ function debounce(fn, wait = 100) {
 
 
 
-### √15、节流
+### √15、节流:star:
 
 节流是指在一段时间内，不管事件触发了多少次，只执行一次回调。 
 
@@ -952,7 +952,7 @@ render(template, person); // 我是ccc，年龄12，性别undefined
 
 
 
-### 22、Promise
+### 22、Promise:star:
 
 #### promise的使用
 
@@ -1286,7 +1286,7 @@ xhr.send()    // 如果是post  send(data)
 
 
 
-### 25、封装一个jsonp
+### √25、封装一个jsonp:star:
 
 ```js
 function jsonp({url, params, callbackName}) {
