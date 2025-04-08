@@ -460,7 +460,7 @@ registerServiceWorker
 
 Portal是一种特殊的渲染方式，它允许你将子节点渲染到位于父组件以外的DOM节点中。
 
-Portal的主要用途是将组件的输出从其常规位置移动到文档中的另一个位置，这对于创建**模态对话框、弹出窗口、悬浮菜单**等组件非常有用。
+Portal的主要用途是**将组件的输出从其常规位置移动到文档中的另一个位置**，这对于创建**模态对话框、弹出窗口、悬浮菜单**等组件非常有用。
 
 ##### 基础使用
 
@@ -597,7 +597,7 @@ export default App
 
 
 
-#### 异步组件
+#### 异步组件:star:
 
 - import()
 - **React.lazy**
@@ -1210,7 +1210,7 @@ mapDispatchToProps：将store.dispatch挂载到props上
 
 
 
-## 二、React原理
+## 二、React原理:star:
 
 ### 1、函数式编程
 
@@ -1370,9 +1370,9 @@ React Fiber 是React16版本中引入的一种新的协调算法，它彻底改�
 
 #### **传统Reconciliation算法的缺点**
 
-- 同步执行：传统的Reconciliation算法在每次更新时都会同步执行整个Virtual DOM树的比较，如果树很大，就会导致渲染卡顿，影响用户体验。
+- **同步执行**：传统的Reconciliation算法在每次更新时都会同步执行整个Virtual DOM树的比较，如果树很大，就会导致渲染卡顿，影响用户体验。
 
-- 无法中断：一旦开始比较，就无法中途停止，这会导致长时间的操作阻塞主线程，影响其他任务的执行。
+- **无法中断**：一旦开始比较，就无法中途停止，这会导致长时间的操作阻塞主线程，影响其他任务的执行。
 
 
 
@@ -1380,7 +1380,7 @@ React Fiber 是React16版本中引入的一种新的协调算法，它彻底改�
 
 1、**可中断性**：
 
-- 在传统的 diff 算法中，整个过程是一次性的，并且必须在一次事件循环内完成。如果这个过程非常耗时，那么它可能会阻塞用户界面。Fiber 架构使得 React 能够在必要的时候中断工作，并在稍后的时间继续执行。这意味着即使在复杂的用户界面中，React 也能够保持流畅的用户体验。
+- 在传统的 diff 算法中，整个过程是一次性的，并且必须在一次事件循环内完成。如果这个过程非常耗时，那么它可能会阻塞用户界面。**Fiber 架构使得 React 能够在必要的时候中断工作，并在稍后的时间继续执行。这意味着即使在复杂的用户界面中，React 也能够保持流畅的用户体验。**
 
 2、**优先级调度**：
 
@@ -1404,7 +1404,7 @@ React Fiber 是React16版本中引入的一种新的协调算法，它彻底改�
 
 2、**链表结构**：
 
-- 与以前的单链表结构相比，Fiber 节点形成了一个双向链表结构，每个节点都有指向父节点和子节点的指针。这使得 React 可以更容易地在树中导航，并且可以方便地进行回溯和重试。
+- 与以前的单链表结构相比，Fiber 节点形成了一个**双向链表结构**，每个节点都有指向父节点和子节点的指针。这使得 React 可以更容易地在树中导航，并且可以方便地进行回溯和重试。
 
 3、**工作单元**：
 
@@ -1422,30 +1422,122 @@ React Fiber 是React16版本中引入的一种新的协调算法，它彻底改�
 
 - Commit Phase：当Work in ProgressTree 建立完成之后，React 会将WorkinProgress Tree 中的更新应用到真实的DOM树上，这个过程称为Commit Phase。
 
-  
-
-#### Reconciliation 过程概述
-
-在 React 的 Fiber 架构中，比较新旧虚拟 DOM 的过程被称为 Reconciliation。这个过程涉及到了一系列复杂的步骤，以便高效地确定需要在实际 DOM 中进行哪些更新。
-
-1. **初始化**：
-   - 当组件的状态或属性发生变化时，React 会调度一个更新。此时，React 会开始创建新的虚拟 DOM 树（我们称之为“新树”），并将其与旧的虚拟 DOM 树（“旧树”）进行比较。
-2. **创建 Fiber 树**：
-   - React 会为每个虚拟 DOM 节点创建一个对应的 Fiber 节点。Fiber 节点包含了虚拟 DOM 节点的信息，还包括了额外的状态，如工作进度、优先级等。
-3. **递归比较**：
-   - React 从根节点开始，递归地比较新旧虚拟 DOM 树。这个过程涉及到了多个步骤，包括但不限于：
-     - **比较元素类型**：如果新旧元素的类型不同（例如，从 `<div>` 变为 `<span>`），那么旧的子树将被丢弃，新的子树将被创建。
-     - **比较元素 key**：如果元素有 key 属性，React 会使用 key 来识别元素，并尽可能地复用旧的元素。如果 key 不同，则认为是不同的元素。
-     - **比较属性**：如果元素类型相同且 key 相同，React 会比较元素的属性是否发生变化。如果有变化，React 会在实际 DOM 中更新这些属性。
-     - **比较子元素**：如果元素有子元素，React 会递归地对子元素进行相同的比较过程。
-4. **标记更新**：
-   - 如果发现有需要更新的地方，React 会在对应的 Fiber 节点上标记需要执行的操作，如插入、删除或更新。
-5. **提交阶段**：
-   - 在 Reconciliation 完成后，React 会进入提交阶段（Commit phase），在这个阶段，React 会按照标记的操作来更新实际的 DOM。提交阶段也是分批次进行的，以减少浏览器的重绘和回流。
 
 
 
-### 3、合成事件
+#### **Fiber 协调流程（两阶段提交）**
+
+**阶段 1：Reconciliation（协调/渲染阶段）**
+
+- **可中断的增量计算**：React 将组件树遍历拆解为多个 **Fiber 工作单元**，通过循环（而非递归）逐个处理。
+  - 每次循环执行一个 Fiber 节点，生成子 Fiber 并连接成树。
+  - 通过 **[`requestIdleCallback`](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestIdleCallback)（或 Scheduler 包）**在浏览器空闲时段执行，避免阻塞主线程。
+- **对比策略**： 根据 `key` 和 `type` 复用节点，标记 `Placement`（新增）、`Update`（更新）、`Deletion`（删除）等副作用。
+
+**阶段 2：Commit（提交阶段）**
+
+- **不可中断的 DOM 更新**： 同步执行所有标记的副作用（如 DOM 操作、生命周期调用），确保 UI 一致性。
+- **副作用分类：**
+  - **BeforeMutation**：`getSnapshotBeforeUpdate`。
+  - **Mutation**：DOM 插入/更新/删除。
+  - **Layout**：`useLayoutEffect`、`componentDidMount`/`Update`。
+
+
+
+#### 与旧架构的关键差异
+
+| 特性           | Stack Reconciler（React 15-） | Fiber Reconciler（React 16+） |
+| :------------- | :---------------------------- | :---------------------------- |
+| **遍历方式**   | 递归（不可中断）              | 循环（可中断 + 恢复）         |
+| **任务调度**   | 同步执行，阻塞主线程          | 异步分片，空闲时段执行        |
+| **优先级控制** | 无                            | 基于 Lane 模型的优先级抢占    |
+| **数据结构**   | 虚拟 DOM 树                   | Fiber 链表树（含调度信息）    |
+
+
+
+### 4、Fiber 结构和普通 VNode 区别
+
+#### 本质差异
+
+| 维度         | 普通 VNode（虚拟 DOM）          | Fiber 结构                           |
+| :----------- | :------------------------------ | :----------------------------------- |
+| **设计目标** | 减少真实 DOM 操作，提升渲染性能 | 实现可中断的异步渲染 + 优先级调度    |
+| **数据结构** | 树形结构（递归遍历）            | 双向链表树（循环遍历）               |
+| **功能范畴** | 仅描述 UI 结构                  | 描述 UI 结构 + 调度任务 + 副作用管理 |
+
+
+
+#### **数据结构对比**
+
+**普通 VNode（React 15 及之前）**
+
+```js
+const vNode = {
+  type: 'div', // 节点类型（组件/原生标签）
+  props: { className: 'container' }, // 属性
+  children: [vNode1, vNode2], // 子节点（树形结构）
+  key: 'unique-id', // 优化 Diff 性能
+  // 无状态、调度、副作用信息
+}
+```
+
+**核心字段**：仅包含 UI 描述相关属性（type、props、children）。
+
+**Fiber 节点（React 16+）**
+
+```js
+const fiberNode = {
+  tag: HostComponent, // 节点类型（函数组件/类组件/DOM元素）
+  type: 'div', // 原生标签或组件构造函数
+  key: 'unique-id', // Diff 优化标识
+  stateNode: domNode, // 关联的真实 DOM 节点
+  pendingProps: { className: 'container' }, // 待处理的 props
+  memoizedProps: {}, // 已生效的 props
+  memoizedState: {
+    // Hooks 状态（函数组件）
+    hooks: [state1, effectHook],
+  },
+  updateQueue: [], // 状态更新队列（类组件）
+  lanes: Lanes.HighPriority, // 调度优先级（Lane 模型）
+  child: childFiber, // 第一个子节点
+  sibling: siblingFiber, // 下一个兄弟节点
+  return: parentFiber, // 父节点（构成双向链表）
+  effectTag: Placement, // 副作用标记（插入/更新/删除）
+  nextEffect: nextEffectFiber, // 副作用链表指针
+}
+```
+
+**核心扩展**
+
+- **调度控制**：`lanes` 优先级、任务到期时间。
+- **状态管理**：Hooks 链表（函数组件）、类组件状态队列。
+- **副作用追踪**：`effectTag` 标记和副作用链表。
+- **遍历结构**：`child`/`sibling`/`return` 构成双向链表。
+
+
+
+#### **协调机制对比**
+
+| 流程           | VNode（Stack Reconciler） | Fiber Reconciler              |
+| :------------- | :------------------------ | :---------------------------- |
+| **遍历方式**   | 递归遍历（不可中断）      | 循环遍历链表（可中断 + 恢复） |
+| **任务调度**   | 同步执行，阻塞主线程      | 异步分片，空闲时间执行        |
+| **优先级控制** | 无                        | Lane 模型（31 个优先级车道）  |
+| **副作用处理** | 统一提交 DOM 更新         | 构建副作用链表，分阶段提交    |
+
+
+
+#### **性能影响对比**
+
+| 场景                      | VNode 架构         | Fiber 架构                   |
+| :------------------------ | :----------------- | :--------------------------- |
+| **大型组件树渲染**        | 主线程阻塞导致掉帧 | 分片渲染，保持 UI 响应       |
+| **高频更新（如动画）**    | 多次渲染合并困难   | 基于优先级合并或跳过中间状态 |
+| **SSR 水合（Hydration）** | 全量同步处理       | 增量水合，优先交互部分       |
+
+
+
+### 5、合成事件**SyntheticEvent**
 
 React 的合成事件（Synthetic Events）是一种跨浏览器的封装事件，它为开发者提供了一套统一的事件处理接口，使得在不同浏览器中处理事件变得更为一致和可靠。React 使用合成事件来解决浏览器之间的事件处理差异，并提供了一些额外的功能，如事件池化，以提高性能。
 
@@ -1480,7 +1572,7 @@ function handleClick(event) {
 
 
 
-### 4、setState之后发生了哪些事情
+### 6、setState之后发生了哪些事情
 
 1. **状态更新**：`setState`接收新的状态值，并合并到当前状态中。
 2. **调度更新**：React将状态更新加入队列，并可能与其他更新一起批量处理。
@@ -1493,7 +1585,9 @@ function handleClick(event) {
 
 
 
-### 5、batchUpdate（批处理）
+### 7、batchUpdate（批处理）
+
+React 的 **batchUpdate（批处理更新）机制** 是一种优化策略，旨在将多个状态更新合并为一次渲染，减少不必要的组件重新渲染次数，从而提高性能。
 
 在 React 中，当组件的状态或属性发生变化时，通常会触发重新渲染。如果短时间内多次调用 `setState` 或者有多个更新被调度，React 会将这些更新合并在一起，一次性地更新 DOM。这种策略有助于减少浏览器的重绘（repainting）和回流（reflow），从而提高性能。
 
@@ -1512,6 +1606,56 @@ function handleClick(event) {
 1. **调度更新**：当状态或属性发生变化时，React 会调度一个更新。这些更新被放入一个队列中等待处理。
 2. **工作循环**：React 的工作循环会检查是否有待处理的更新。如果有，它会开始 Reconciliation 过程，生成新的虚拟 DOM 树，并与旧的虚拟 DOM 树进行比较。
 3. **提交更新**：在 Reconciliation 完成后，React 会进入提交阶段（Commit phase），在这个阶段，React 会批量执行 DOM 更新。这意味着即使有多个更新，React 也会尽量一次性地将所有的变更应用到实际的 DOM 中。
+
+
+
+**触发批处理的场景**
+
+1. **React 合成事件：** 如 `onClick`、`onChange` 等事件处理函数中的多次状态更新会自动批处理。
+
+   ```js
+   const handleClick = () => {
+     setCount(1) // 更新入队
+     setName('Alice') // 更新入队
+     // 最终合并为一次渲染
+   }
+   ```
+
+2. **React 生命周期函数：** 在 `componentDidMount`、`componentDidUpdate` 等生命周期方法中的更新会被批处理。
+
+3. **React 18+ 的自动批处理增强：** React 18 引入 `createRoot` 后，即使在异步操作（如 `setTimeout`、`Promise`、原生事件回调）中的更新也会自动批处理：
+
+   ```js
+   setTimeout(() => {
+     setCount(1) // React 18 中自动批处理
+     setName('Alice') // 合并为一次渲染
+   }, 1000)
+   ```
+
+
+
+**绕过批处理的场景**
+
+1. **React 17 及之前的异步代码：** 在 `setTimeout`、`Promise` 或原生事件回调中的更新默认**不会**批处理，每次 `setState` 触发一次渲染：
+
+   ```js
+   // React 17 中会触发两次渲染
+   setTimeout(() => {
+     setCount(1) // 渲染一次
+     setName('Alice') // 渲染第二次
+   }, 1000)
+   ```
+
+2. **手动强制同步更新：** 使用 `flushSync`（React 18+）可强制立即更新，绕过批处理：
+
+   ```js
+   import { flushSync } from 'react-dom'
+   
+   flushSync(() => {
+     setCount(1) // 立即渲染
+   })
+   setName('Alice') // 再次渲染
+   ```
 
 
 
@@ -1540,7 +1684,7 @@ function handleClick(event) {
 
 
 
-### 6、组件渲染过程
+### 8、组件渲染过程
 
 1. **状态更新**：当组件的状态（state）或属性（props）发生变化时，React 会触发组件的重新渲染。这通常是通过调用 `setState` 方法或通过外部传递新的 `props` 来实现的。
 

@@ -1696,7 +1696,7 @@ F1()             // 200
 
 ## 闭包:star:
 
-### 1、闭包以及实际应用
+### 1、闭包
 
 **闭包就是能够读取其他函数内部变量的函数。**只有函数内部的子函数才能读取局部变量，所以**闭包可以理解成“定义在一个函数内部的函数“**。在本质上，闭包是将函数内部和函数外部连接起来的桥梁。
 
@@ -1738,133 +1738,164 @@ F1()             // 200
     f = null;
 ```
 
-**闭包的实际应用**
+### **2、闭包的实际应用**
 
-**1.通过闭包可以让内层函数延迟执行，只有需要时再执行它**
+#### **1.节流（throttle）和防抖（debounce）函数**
+
+节流（throttle）和防抖（debounce）函数的实现通常依赖闭包的特性。
+
+它们的核心逻辑是通过闭包保存函数执行所需的上下文状态（如定时器、上一次执行时间等），从而实现对高频事件的有效控制。
+
+#### **2.模块化开发（Module Pattern）**
+
+**用途**：通过闭包实现私有变量和公共接口的隔离，避免全局污染。
+**示例**：
 
 ```js
-function highLevelFunct2() {
-    var arr = ['a', 'b', 'c'];
-    var size = function () {
-        alert(arr.length);
+const counterModule = (function() {
+  let count = 0; // 闭包保护的私有变量
+
+  return {
+    increment: function() {
+      count++;
+      console.log(count);
+    },
+    reset: function() {
+      count = 0;
+    }
+  };
+})();
+
+counterModule.increment(); // 1
+counterModule.count; // undefined（无法直接访问私有变量）
+```
+
+#### **3. 函数柯里化（Currying）**
+
+**用途：将多参数函数转换为单参数链式调用的高阶函数，增强复用性。**
+**示例**：
+
+```js
+function multiply(a) {
+  return function(b) { // 闭包保存参数 a
+    return a * b;
+  };
+}
+
+const double = multiply(2);
+console.log(double(5)); // 10
+```
+
+```js
+function curry(fn) {
+  return function curried(...args) {
+    // 如果参数足够，直接执行原函数
+    if (args.length >= fn.length) {
+      return fn.apply(this, args);
+    } 
+    // 参数不足，返回新函数继续收集参数
+    else {
+      return function(...nextArgs) {
+        return curried.apply(this, args.concat(nextArgs));
+      };
+    }
+  };
+}
+
+// 使用示例
+const curriedAdd = curry(function(a, b, c, d) {
+  return a + b + c + d;
+});
+
+// 多种调用方式
+curriedAdd(1)(2)(3)(4); // 10
+curriedAdd(1, 2)(3, 4); // 10
+curriedAdd(1)(2, 3, 4); // 10
+```
+
+#### **4. 私有变量（Encapsulation）**
+
+**用途**：通过闭包隐藏数据，实现面向对象的私有属性。
+**示例**：
+
+```js
+function createPerson(name) {
+  let _age = 0; // 私有变量，外部无法直接访问
+
+  return {
+    getName: () => name,
+    getAge: () => _age,
+    setAge: (newAge) => { _age = newAge; }
+  };
+}
+
+const person = createPerson("Alice");
+person.setAge(30);
+console.log(person.getAge()); // 30
+```
+
+#### **5. 解决循环中的异步问题**
+
+**用途**：在事件监听或异步操作中，通过闭包保留循环变量的值。
+**示例**：
+
+```js
+// 错误写法：所有按钮点击都会输出 5（循环结束时 i=5）
+for (var i = 0; i < 5; i++) {
+  document.getElementById(`btn-${i}`).onclick = function() {
+    console.log(i);
+  };
+}
+
+// 正确写法：闭包保存每个循环的 i 值
+for (var i = 0; i < 5; i++) {
+  (function(index) { // 立即执行函数创建闭包
+    document.getElementById(`btn-${index}`).onclick = function() {
+      console.log(index);
     };
-    return size;
-}
-
-
-function testClosure() {
-    var f = highLevelFunct2();
-    f();
+  })(i);
 }
 ```
 
-**2.通过闭包，内层函数可以将外层函数的局部变量进行封装，封闭后就只有内层函数才能访问到外层函数的局部变量。**
+#### **6. 缓存与记忆化（Memoization）**
+
+**用途**：缓存计算结果，避免重复运算。
+**示例**：
 
 ```js
-//  计数器
-function myCounter() {
-    var counter = 0;
-    return function add () {
-        return counter += 1;
-    }
+function memoize(fn) {
+  const cache = {}; // 闭包保存缓存对象
+  return function(...args) {
+    const key = JSON.stringify(args);
+    return cache[key] || (cache[key] = fn.apply(this, args));
+  };
 }
 
-function testClosure() {
-    var increase = myCounter();
-    increase();	// 1
-    increase(); // 2
-    increase(); // 3
-}
+const memoizedAdd = memoize((a, b) => a + b);
+memoizedAdd(2, 3); // 计算并缓存结果
+memoizedAdd(2, 3); // 直接读取缓存
 ```
 
-**3.定义JS模块**
+#### **7. 高阶组件（HOC）与 React Hooks**
 
-- 将所有的数据和功能都封装在一个函数内部(私有的)
-- 只向外暴露一个包含多个方法的对象或函数
-- 模块的使用者, 只需要通过模块暴露的对象调用方法来实现对应的功能
+**用途**：在 React 中，Hooks（如 `useState`）依赖闭包保存组件状态。
+**示例**：
 
 ```js
-// MyTool.js
-function myTool() {
-    // 1. 私有的数据
-    var money = 1000;
-    // 2. 提供操作私有数据的函数
-    function get() {
-        money *= 10;
-        console.log('赚了一笔钱, 总资产:' + money + '元');
-    }
-
-    function send() {
-        money --;
-        console.log('花了一笔钱, 总资产:' + money + '元');
-    }
-
-    return {
-        'get': get,
-        'send': send
-    }
+function useState(initialValue) {
+  let state = initialValue; // 闭包保存状态
+  const setState = (newValue) => {
+    state = newValue;
+    // 触发组件重新渲染...
+  };
+  return [state, setState];
 }
 
-<script type="text/javascript" src="js/MyTool.js"></script>
-<script type="text/javascript">
-   var toolObj = myTool();
-   toolObj.get();
-   toolObj.send();
-</script>
+// 使用示例
+const [count, setCount] = useState(0);
 ```
 
-```js
-// MyTool1.js
-(function (w) {
-    // 1. 私有的数据
-    var money = 1000;
-    // 2. 提供操作私有数据的函数
-    function get() {
-        money *= 10;
-        console.log('赚了一笔钱, 总资产:' + money + '元');
-    }
 
-    function send() {
-        money --;
-        console.log('花了一笔钱, 总资产:' + money + '元');
-    }
-
-    // 向外部暴露对象
-    w.myTool = {
-        'get': get,
-        'send': send
-    }
-
-})(window);
-
-<script src="js/MyTool1.js"></script>
-<script>
-    (function () {
-        console.log(window.myTool, myTool);
-        myTool.get();
-        myTool.send();
-
-        var str = 'zhangsan';
-        console.log(str);
-        console.log(window.str);
-    })();
-</script>
-```
-
-**4.实现防抖函数**
-
-```js
-   function debounce(fn, delay) {
-        var timer = null;
-        return function () {
-            clearTimeout(timer);
-            timer = setTimeout(fn, delay);
-        }
-    }
-   debounce(function () {
-       console.log('大家好!!!');
-   }, 200)();
-```
 
 ## 内存泄漏:star:
 
@@ -1944,36 +1975,32 @@ for(var i=0; i<100000000; i++){
     f = null;
 ```
 
-### 3、V8下的垃圾回收机制
+### 3、垃圾回收机制
 
-转载自https://yuchengkai.cn/docs/frontend
+垃圾回收（Garbage Collection, GC）是自动管理内存的过程。JavaScript 引擎会自动检测不再使用的对象，并释放它们所占用的内存。常用的垃圾回收算法是**标记-清除（Mark-and-Sweep）算法**。
 
-V8将内存（堆）分为新生代和老生代两部分
+**垃圾回收过程**
 
-#### 新生代算法
+1. 标记阶段
 
-新生代中的对象一般存活时间较短，使用Scavenge GC算法。
+- 垃圾回收器会从根对象（如全局对象、局部变量）开始，遍历所有对象，标记所有可达的对象
+- 可达对象：从根对象可以通过引用链访问到的对象
 
-在新生代空间中，内存空间分为两部分，分别为From空间和To空间。在这两个空间中，必定有一个空间是使用的，另一个空间是空闲的。新分配的对象就会被放入From空间中，当From空间被占满时，新生代GC就会启动了。算法会检查From空间中存活的对象并复制到To空间中，如果有失活的对象就会销毁。当复制完成后将From空间和To空间互换，这样GC就结束了。
+1. 清除阶段
 
-#### 老生代算法
+- 标记阶段结束后，所有未被标记的对象被视为不可达对象
+- 垃圾回收器会清除这些不可达对象，释放它们所占用的内存
 
-老生代中的对象一般存活时间较长且数量也多，使用了两个算法，分别是标记清除算法和标记压缩算法。
+**常用算法**
 
-什么情况下对象会出现在老生代空间中：
+- 标记-清除
+  - 最常用的垃圾回收算法
+- 引用计数
+  - 每个对象有一个引用计数器，当对象被引用时，计数器加1，当对象不再被引用时，计数器减1，当引用计数为 0 时，表示该对象不再被使用，可以被回收。无法解决循环引用的问题，如今已很少使用
+- 分代回收
+  - 现代 JavaScript 引擎通常使用分代回收策略，将内存分为新生代和老生代。新生代存储生命周期短的对象，老生代存储生命周期长的对象。不同代的对象使用不同的回收策略，以提高效率。
 
-- 新生代的对象是否已经经历过一次Scavenge算法，如果经历过的话，会将对象从新生代空间移到老生代空间中
-- To空间的对象占比大小超过25%。在这种情况下，为了不影响到内存分配，会将对象从新生代空间移到老生代空间中
 
-老生代中的空间很复杂。
-
-在老生代中，以下情况会先启动标记清除算法：
-
-- 某一个空间没有分块的时候
-- 空间中被对象超过一定限制
-- 空间不能保证新生代中的对象移动到老生代中
-
-清除对象后会造成堆内存出现碎片的情况，当碎片超过一定限制后会启动压缩算法。在压缩过程中，将活的对象向一端移动，直到所有对象都移动完成然后清理掉不需要的内存。
 
 ## 对象
 
@@ -5669,34 +5696,9 @@ console.log(2 ** 5) 			// 32
 
 节流（Throttle）和防抖（Debounce）是两种常用的优化高频率执行JavaScript代码的技术。
 
-#### 防抖
+**节流（throttle）和防抖（debounce）函数**的实现通常依赖**闭包**的特性。
 
-**防抖是指在事件被触发后延迟一段时间后再执行回调，如果在这段延迟时间内事件又被触发，则重新计算延迟时间。** 
-
-在日常开发中，像在滚动事件中需要做个复杂计算或者实现一个按钮的防二次点击操作这些需求都可以通过函数防抖动来实现。
-
-- 当事件触发时，相应的函数并不会立即触发，而是会等待一定的时间；
-- 当事件密集触发时，函数的触发会被频繁的推迟；
-- 只有等待了一段时间也没有事件触发，才会真正的执行响应函数
-
-**应用场景**： 输入框中频繁的输入内容、频繁的点击按钮、触发某个事件、监听浏览器滚动事件，完成某些特定操作、用户缩放浏览器的resize事件等等
-
-整体实现：
-
-- 对于按钮防点击来说的实现：一旦我开始一个定时器，只要定时器还在，不管你怎么点击都不会执行回调函数。一旦定时器结束并设置为null，就可以再次点击了。
-- 对于延时执行函数来说的实现：每次调用防抖动函数都会判断本次调用和之前的时间间隔，如果小于需要的时间间隔，就会重新创建一个定时器，并且定时器的延迟为设定时间减去之前的时间间隔。一旦时间到了，就会执行相应的回调函数。
-
-```js
-function debounce(fn, wait = 100) {
-  let timer = 0;
-  return function(...args) {
-    clearTimeout(timer)
-    timer = setTimeout(() => {
-      fn.apply(this, args)
-    }, wait)
-  }
-}
-```
+它们的核心逻辑是通过闭包保存函数执行所需的上下文状态（如定时器、上一次执行时间等），从而实现对高频事件的有效控制。
 
 
 
@@ -5732,6 +5734,37 @@ function throttle(fn, delay) {
       fn.call(this, ...args)
       flag = true
     }, delay)
+  }
+}
+```
+
+
+
+#### 防抖
+
+**防抖是指在事件被触发后延迟一段时间后再执行回调，如果在这段延迟时间内事件又被触发，则重新计算延迟时间。** 
+
+在日常开发中，像在滚动事件中需要做个复杂计算或者实现一个按钮的防二次点击操作这些需求都可以通过函数防抖动来实现。
+
+- 当事件触发时，相应的函数并不会立即触发，而是会等待一定的时间；
+- 当事件密集触发时，函数的触发会被频繁的推迟；
+- 只有等待了一段时间也没有事件触发，才会真正的执行响应函数
+
+**应用场景**： 输入框中频繁的输入内容、频繁的点击按钮、触发某个事件、监听浏览器滚动事件，完成某些特定操作、用户缩放浏览器的resize事件等等
+
+整体实现：
+
+- 对于按钮防点击来说的实现：一旦我开始一个定时器，只要定时器还在，不管你怎么点击都不会执行回调函数。一旦定时器结束并设置为null，就可以再次点击了。
+- 对于延时执行函数来说的实现：每次调用防抖动函数都会判断本次调用和之前的时间间隔，如果小于需要的时间间隔，就会重新创建一个定时器，并且定时器的延迟为设定时间减去之前的时间间隔。一旦时间到了，就会执行相应的回调函数。
+
+```js
+function debounce(fn, wait = 100) {
+  let timer = 0;
+  return function(...args) {
+    clearTimeout(timer)
+    timer = setTimeout(() => {
+      fn.apply(this, args)
+    }, wait)
   }
 }
 ```
