@@ -27,6 +27,7 @@ export default defineUserConfig({
           { text: "前端工程化", link: "/前端基础汇总/前端工程化" },
           { text: "前端性能优化", link: "/前端基础汇总/前端性能优化" },
           { text: "前端常见面试题", link: "/前端基础汇总/前端常见面试题" },
+          { text: "Typescript面试题", link: "/前端基础汇总/Typescript面试题" },
         ],
       },
       {
@@ -48,6 +49,8 @@ export default defineUserConfig({
             text: "Vue.js源码全方位深入解析",
             link: "/其他/Vue.js源码全方位深入解析",
           },
+          { text: "PixiJS的基本使用", link: "/其他/PixiJS的基本使用" },
+          { text: "PixiJS实现一镜到底", link: "/其他/PixiJS实现一镜到底" },
         ],
       },
       {
@@ -87,6 +90,10 @@ export default defineUserConfig({
           {
             text: "多页签开发记录",
             link: "/项目开发/多页签开发记录",
+          },
+          {
+            text: "浙政钉、浙里办、浙江政务服务网应用上架指南",
+            link: "/项目开发/浙政钉、浙里办、浙江政务服务网应用上架指南",
           },
         ],
       },
