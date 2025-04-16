@@ -3488,7 +3488,7 @@ createApp({
 
 
 
-### 6、Vue3如何实现响应式
+### 6、Vue3如何实现响应式:star:
 
 #### 回顾Vue2.x的Object.defineProperty
 
@@ -3651,7 +3651,7 @@ const proxyData = reactive(data)
 
 
 
-### 7、vue3为何比vue2快
+### 7、vue3为何比vue2快:star:
 
 可以在[Vue3 Templete Expolorer](https://vue-next-template-explorer.netlify.app/)源码编译尝试
 

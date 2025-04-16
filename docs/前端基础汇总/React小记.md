@@ -1254,7 +1254,7 @@ mapDispatchToProps：将store.dispatch挂载到props上
 
 - 创建真实DOM损耗的性能远大于创建虚拟DOM损耗的性能。
 
-- 虚拟DOM提高性能，不是说不操作DOM，而是减少操作DOM的次数，减少回流和重绘。
+- 虚拟DOM提高性能，不是说不操作DOM，而是**减少操作DOM的次数，减少回流和重绘**。
 
 - 虚拟 dom 相当于在 js 和真实 dom 中间加了一个缓存，利用 **dom diff 算法避免了没有必要的 dom 操作**，从而提高性能。
 
