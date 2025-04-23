@@ -61,7 +61,7 @@ export default defineUserConfig({
           { text: "Echarts基本使用", link: "/数据可视化/Echarts基本使用" },
           {
             text: "antv G6的基础入门及树图的实际应用",
-            link: "/antvG6/antv G6的基础入门及树图的实际应用",
+            link: "/数据可视化/antvG6/antv G6的基础入门及树图的实际应用",
           },
           { text: "Three.js", link: "/数据可视化/Three.js/Three.js基础课程" },
         ],
