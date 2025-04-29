@@ -97,6 +97,12 @@ export default defineUserConfig({
           },
         ],
       },
+      {
+        text: "Reading",
+        children: [
+          { text: "2023年", link: "/Reading/2023年" },
+        ],
+      },
       { text: "Github", link: "https://github.com/csmSimona" },
     ],
     sidebarDepth: 5,
