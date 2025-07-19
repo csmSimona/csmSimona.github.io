@@ -1,6 +1,6 @@
 ## 手写js代码
 
-### √1、数据类型判断
+### 1、数据类型判断
 
 ```js
 function typeOf(obj) {
@@ -100,7 +100,7 @@ Function.prototype.myBind = function(thisArg, ...args) {
 
 
 
-### √7、函数科里化:star:
+### 7、函数科里化:star:
 
 将使用多个参数的函数转换成一系列使用一个参数的函数
 
@@ -127,7 +127,7 @@ curry(1, 2)(3)(4)
 
 
 
-### √8、偏函数:star:
+### 8、偏函数:star:
 
 将一个 n 参的函数转换成固定 x 参的函数，剩余参数（n - x）将在下次调用全部传入
 
@@ -147,9 +147,7 @@ partialAdd(2, 3)
 
 
 
-### √9、数组去重:star:
-
-[数组去重的方法](https://csmsimona.github.io/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E6%B1%87%E6%80%BB/JavaScript%E5%B0%8F%E8%AE%B0.html#_9%E3%80%81%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E7%9A%84%E6%96%B9%E6%B3%95)
+### 9、数组去重:star:
 
 ```js
 var unique = arr => [...new Set(arr)]
@@ -192,9 +190,7 @@ function unique(arr){
 
 
 
-### √10、数组扁平化:star:
-
-[数组拍平](https://csmsimona.github.io/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E6%B1%87%E6%80%BB/JavaScript%E5%B0%8F%E8%AE%B0.html#_10%E3%80%81%E6%95%B0%E7%BB%84%E6%8B%8D%E5%B9%B3)
+### 10、数组扁平化:star:
 
 ```js
 // 数组方法flat()，默认打平一层，Infinity打平任意层
@@ -242,7 +238,7 @@ function flatArr(arr) {
 
 
 
-### √11、数组排序:star:
+### 11、数组排序:star:
 
 #### 冒泡排序
 
@@ -337,14 +333,11 @@ function quickSort(arr) {
 
 
 
-### √12、深浅拷贝:star:
-
-[深拷贝和浅拷贝](https://csmsimona.github.io/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E6%B1%87%E6%80%BB/JavaScript%E5%B0%8F%E8%AE%B0.html#_1%E3%80%81%E6%B7%B1%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B5%85%E6%8B%B7%E8%B4%9D)
+### 12、深浅拷贝:star:
 
 #### 普通数组深拷贝
 
 ```js
-
 var arr = [1,2,3,4,5]
 var objArr = [{name: 'ccc'}, {age: 1}]
 
@@ -357,30 +350,17 @@ function copyArr(arr) {
   return newArr
 }
 
-var arr1 = copyArr(arr)
-var objArr1 = copyArr(objArr)
-arr[0] = 2
-objArr[0].name = 'qq'
-console.log(arr1[0]);           // 1
-console.log(objArr1[0].name);   // qq
-
 // 2.slice()
 var arr1 = arr.slice()
 var objArr1 = objArr.slice()
-
-arr[0] = 2
-objArr[0].name = 'qq'
-console.log(arr1[0]);           // 1
-console.log(objArr1[0].name);   // qq
 
 // 3.concat()
 var arr1 = arr.concat()
 var objArr1 = objArr.concat()
 
-arr[0] = 2
-objArr[0].name = 'qq'
-console.log(arr1[0]);           // 1
-console.log(objArr1[0].name);   // qq
+// 4.扩展运算符
+var arr1 = [...arr]
+var objArr1 = [...objArr]
 ```
 
 
@@ -445,7 +425,6 @@ var obj = {
   }
 }
 
-
 // 序列化反序列化法
 var newObj = JSON.parse(JSON.stringify(obj))
 ```
@@ -484,7 +463,7 @@ function deepAssign() {
 
 
 
-### √13、数组随机排序
+### 13、数组随机排序
 
 ```js
 function randomArr(arr) {
@@ -500,7 +479,7 @@ randomArr(arr)
 
 
 
-### √14、防抖:star:
+### 14、防抖:star:
 
 防抖是指在事件被触发后延迟一段时间后再执行回调，如果在这段延迟时间内事件又被触发，则重新计算延迟时间。
 
@@ -518,7 +497,7 @@ function debounce(fn, wait = 100) {
 
 
 
-### √15、节流:star:
+### 15、节流:star:
 
 节流是指在一段时间内，不管事件触发了多少次，只执行一次回调。 
 
@@ -549,7 +528,7 @@ function throttle(fn, delay) {
 
 
 
-### √16、随机数
+### 16、随机数
 
 ```js
 function randomNum(min, max) {
@@ -560,7 +539,7 @@ function randomNum(min, max) {
 
 
 
-### √17、随机字符串
+### 17、随机字符串
 
 toString(36)将数值转换成36进制，包含了0-9和a-z的所有字符
 
@@ -576,7 +555,7 @@ function randomStr(len) {
 
 
 
-### √18、斐波那契数列
+### 18、斐波那契数列
 
 ```js
 function fibonacci(n) {
@@ -1243,7 +1222,7 @@ promiseAll([p1, p2, p3]).then(results => {
 
 
 
-### √23、根据数组中对象的某一个属性值进行排序
+### 23、根据数组中对象的某一个属性值进行排序
 
 ```js
 var arr = [
@@ -1286,7 +1265,7 @@ xhr.send()    // 如果是post  send(data)
 
 
 
-### √25、封装一个jsonp:star:
+### 25、封装一个jsonp:star:
 
 ```js
 function jsonp({url, params, callbackName}) {
@@ -1614,3 +1593,229 @@ function formatSizeUnits(kb) {
   return `${kb.toFixed(2)} ${units[unitIndex]}`;
 }
 ```
+
+
+
+### 31、求两个数组的并集、交集和差集
+
+```js
+const arr1 = [1, 3, 4, 6, 7]
+const arr2 = [2, 5, 3, 6, 1]
+
+// 并集
+function getUnion(arr1, arr2) {
+  const res = new Set(arr1)
+  for (let item of arr2) {
+    res.add(item) // 利用 Set 自动去重的特性
+  }
+  return Array.from(res)
+}
+
+// 交集
+function getIntersection(arr1, arr2) {
+  const res = new Set()
+  const set2 = new Set(arr2)
+  for (let item of arr1) {
+    if (set2.has(item)) {
+      // 注意，这里要用 Set has 方法，比数组的 includes 快很多
+      res.add(item)
+    }
+  }
+  return Array.from(res)
+}
+
+// 差集
+function getDifference(arr1, arr2) {
+  const res = new Set()
+  const set2 = new Set(arr2)
+  for (let item of arr1) {
+    if (!set2.has(item)) {
+      res.add(item)
+    }
+  }
+  return Array.from(res)
+}
+```
+
+
+
+### 32、数组转树:star:
+
+通常我们有一个包含父子关系的数组，目标是将其转化为树形结构。
+
+示例数据：
+
+```javascript
+const arr = [
+  { id: 1, parentId: null, name: 'Root' },
+  { id: 2, parentId: 1, name: 'Child 1' },
+  { id: 3, parentId: 1, name: 'Child 2' },
+  { id: 4, parentId: 2, name: 'Grandchild 1' },
+]
+```
+
+目标生成：
+
+```javascript
+const tree = [
+  {
+    id: 1,
+    name: 'Root',
+    children: [
+      {
+        id: 2,
+        name: 'Child 1',
+        children: [{ id: 4, name: 'Grandchild 1', children: [] }],
+      },
+      {
+        id: 3,
+        name: 'Child 2',
+        children: [],
+      },
+    ],
+  },
+]
+```
+
+参考答案:
+
+实现思路：
+
+1. 遍历数组，将每个元素存储到一个以 `id` 为键的 Map 中。
+2. 再次遍历数组，根据 `parentId` 将子节点挂载到父节点的 `children` 属性上。
+3. 提取 `parentId` 为 `null` 的顶层节点作为树的根。
+
+代码实现
+
+```js
+function arrayToTree(arr) {
+  const idMap = new Map()
+  const result = []
+
+  // 初始化 Map
+  arr.forEach((item) => {
+    idMap.set(item.id, { ...item, children: [] })
+  })
+
+  // 构建树
+  arr.forEach((item) => {
+    const parent = idMap.get(item.parentId)
+    if (parent) {
+      parent.children.push(idMap.get(item.id))
+    } else {
+      result.push(idMap.get(item.id))
+    }
+  })
+
+  return result
+}
+
+console.log(JSON.stringify(arrayToTree(arr), null, 2))
+```
+
+注意点：
+
+- 确保 `parentId` 为 `null` 的节点是根节点。
+- 避免循环依赖：输入数据需要合法，否则会导致死循环。
+
+
+
+### 33、树转数组:star:
+
+将树形结构扁平化为数组，保留原有的层级关系。
+
+示例数据：
+
+```javascript
+const tree = [
+  {
+    id: 1,
+    name: 'Root',
+    children: [
+      {
+        id: 2,
+        name: 'Child 1',
+        children: [{ id: 4, name: 'Grandchild 1', children: [] }],
+      },
+      {
+        id: 3,
+        name: 'Child 2',
+        children: [],
+      },
+    ],
+  },
+]
+```
+
+目标生成：
+
+```javascript
+const arr = [
+  { id: 1, name: 'Root', parentId: null },
+  { id: 2, name: 'Child 1', parentId: 1 },
+  { id: 3, name: 'Child 2', parentId: 1 },
+  { id: 4, name: 'Grandchild 1', parentId: 2 },
+]
+```
+
+参考答案:
+
+实现思路：
+
+1. 使用递归遍历树。
+2. 在每次递归中记录当前节点的 `parentId`。
+3. 将节点及其子节点逐一添加到结果数组中。
+
+代码实现：
+
+```javascript
+function treeToArray(tree, parentId = null) {
+  const result = []
+
+  tree.forEach((node) => {
+    const { id, name, children } = node
+    result.push({ id, name, parentId })
+    if (children && children.length > 0) {
+      result.push(...treeToArray(children, id))
+    }
+  })
+
+  return result
+}
+
+console.log(JSON.stringify(treeToArray(tree), null, 2))
+```
+
+注意点：
+
+- 递归中需避免重复引用。
+- 树节点的 `children` 属性需要有效（可以为空数组但不能为 `undefined`）。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

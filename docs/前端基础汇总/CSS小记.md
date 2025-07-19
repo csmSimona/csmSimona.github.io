@@ -557,7 +557,7 @@ hyphens: auto;
 
 
 
-### 17、CSS3新增属性：
+### 17、CSS3新增属性:star:
 
 1、box-shadow(阴影效果)
 
@@ -1314,4 +1314,85 @@ Flex 布局是轴线布局，只能指定"项目"针对轴线的位置，可以�
 Grid 布局则是将容器划分成"行"和"列"，产生单元格，然后指定"项目所在"的单元格，可以看作是**二维布局**。
 
 Grid 布局远比 Flex 布局强大。
+
+
+
+### 31、如何实现响应式布局？
+
+1、使用媒体查询（Media Queries）。媒体查询是响应式布局的核心技术，通过检测设备的宽度、高度、分辨率等条件应用不同的样式。可根据屏幕宽度调整字体大小、布局样式等
+
+```css
+/* 默认样式 */
+body {
+  font-size: 16px;
+  padding: 20px;
+}
+
+/* 屏幕宽度小于等于768px时的样式 */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+/* 屏幕宽度大于1200px时的样式 */
+@media (min-width: 1200px) {
+  body {
+    font-size: 18px;
+    padding: 30px;
+  }
+}
+```
+
+2、使用弹性盒子（Flexbox）。创建水平或垂直方向上的自适应布局，比如导航栏、网格布局。
+
+```css
+.container {
+  display: flex;
+  flex-wrap: wrap; /* 允许换行 */
+}
+
+.item {
+  flex: 1 1 200px; /* 每个子项占据至少200px，随空间调整 */
+  margin: 10px;
+  background-color: #f0f0f0;
+}
+```
+
+3、使用网格布局（CSS Grid Layout）。 创建复杂的自适应网格布局，比如图片库、商品列表。
+
+```css
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.item {
+  background-color: #d4edda;
+  padding: 10px;
+}
+```
+
+4、使用百分比和单位 vh/vw 实现宽度和高度的自适应。实现宽度和高度随窗口变化而调整。
+
+```css
+.container {
+  width: 80%; /* 占父容器的80% */
+  height: 50vh; /* 占视口高度的50% */
+  background-color: #e9ecef;
+}
+```
+
+### 32、你用过哪些 CSS 相关的技术，如库、框架、预处理语言、后处理语言等
+
+- CSS 框架：TailwindCSS BootStrap Unocss
+- CSS 预处理语言：Less Sass Stylus
+- CSS 后处理语言：PostCSS Autoprefixer
+- CSS 组件库：ElementUI AntDesign
+- CSS-in-JS：Styled-Components Emotion
+- CSS 工具：Normalize.css Animate.css
+
+
 

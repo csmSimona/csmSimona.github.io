@@ -26,8 +26,10 @@ export default defineUserConfig({
           { text: "手写js", link: "/前端基础汇总/手写js" },
           { text: "前端工程化", link: "/前端基础汇总/前端工程化" },
           { text: "前端性能优化", link: "/前端基础汇总/前端性能优化" },
-          { text: "前端常见面试题", link: "/前端基础汇总/前端常见面试题" },
+          { text: "实际项目开发", link: "/前端基础汇总/实际项目开发" },
           { text: "Typescript面试题", link: "/前端基础汇总/Typescript面试题" },
+          { text: "Nodejs面试题", link: "/前端基础汇总/Nodejs面试题" },
+          { text: "小程序", link: "/其他/小程序" },
         ],
       },
       {
@@ -45,10 +47,6 @@ export default defineUserConfig({
           { text: "TypeScript小记", link: "/其他/TypeScript小记" },
           { text: "正则表达式入门", link: "/其他/正则表达式入门" },
           { text: "Linux基本命令", link: "/其他/Linux基本命令" },
-          {
-            text: "Vue.js源码全方位深入解析",
-            link: "/其他/Vue.js源码全方位深入解析",
-          },
           { text: "PixiJS的基本使用", link: "/其他/PixiJS的基本使用" },
           { text: "PixiJS实现一镜到底", link: "/其他/PixiJS实现一镜到底" },
         ],
@@ -97,12 +95,12 @@ export default defineUserConfig({
           },
         ],
       },
-      {
-        text: "Reading",
-        children: [
-          { text: "2023年", link: "/Reading/2023年" },
-        ],
-      },
+      // {
+      //   text: "Reading",
+      //   children: [
+      //     { text: "2023年", link: "/Reading/2023年" },
+      //   ],
+      // },
       { text: "Github", link: "https://github.com/csmSimona" },
     ],
     sidebarDepth: 5,
