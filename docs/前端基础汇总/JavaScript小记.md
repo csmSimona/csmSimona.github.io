@@ -318,6 +318,25 @@ const alsoHuge = BigInt(9007199254740991);
 
 （占用空间不固定，保存在堆中。存储在栈中的是指向堆中的数组或者对象的地址）
 
+
+
+**如何强制数据类型转换**
+
+1. **转换为数字（Number）**：
+    - 使用`Number()`函数：可以用于任何类型，遵循类型转换规则。
+    - 使用`parseInt()`和`parseFloat()`：专门用于将字符串转换为整数或浮点数。
+    - 使用一元加号操作符（+）：例如 `+"123"` 会转换为`123`。
+    - 位运算符 `~~`：快速转整数（截断小数），如`~~2.22`会转换为2
+ 2. **转换为字符串（String）**：
+    - 使用`String()`函数：可以用于任何类型。
+    - 使用`toString()`方法：注意，`null`和`undefined`没有这个方法。
+    - 使用加号操作符与空字符串相加：例如 123 + '' 得到 "123"。
+ 3. **转换为布尔值（Boolean）**：
+    - 使用Boolean()函数：可以用于任何类型。
+    - 使用两次逻辑非操作符（!!）：例如 !!0 得到 false。
+
+
+
 ### 2、堆区和栈区
 
 栈区的特点：操作性能高，速度快，存储量小
@@ -847,6 +866,14 @@ const myMap = new Map().set(true, 7)
 console.log(myMap); //Map(1) {true => 7}
 console.log([...myMap]); //[true ,7]
 ```
+
+**例5：创建初始化为0的m*n二维数组**
+
+```js
+const arr = Array.from({length: m}, () => Array(n).fill(0))
+```
+
+
 
 ### 7、伪数组转化为数组的方法
 
@@ -3112,11 +3139,11 @@ console.log(item) //undefined
 
 ### **2、闭包的实际应用**
 
-#### **1.节流（throttle）和防抖（debounce）函数**
+#### **1.[节流（throttle）和防抖（debounce）函数](https://csmsimona.github.io/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E6%B1%87%E6%80%BB/JavaScript%E5%B0%8F%E8%AE%B0.html#_2%E3%80%81%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96)**
 
 节流（throttle）和防抖（debounce）函数的实现通常依赖闭包的特性。
 
-它们的核心逻辑是通过闭包保存函数执行所需的上下文状态（如定时器、上一次执行时间等），从而实现对高频事件的有效控制。
+它们的核心逻辑是**通过闭包保存函数执行所需的上下文状态（如定时器、上一次执行时间等）**，从而实现对高频事件的有效控制。
 
 #### **2.模块化开发（Module Pattern）**
 
@@ -3431,11 +3458,14 @@ JavaScript 的内存管理是自动的，主要通过 **垃圾回收（GC）** �
 
 **常用算法**
 
-- 标记-清除
+- **标记-清除**
+  
   - 最常用的垃圾回收算法
-- 引用计数
+- **引用计数**
+  
   - 每个对象有一个引用计数器，当对象被引用时，计数器加1，当对象不再被引用时，计数器减1，当引用计数为 0 时，表示该对象不再被使用，可以被回收。无法解决循环引用的问题，如今已很少使用
-- 分代回收
+- **分代回收**
+  
   - 现代 JavaScript 引擎通常使用分代回收策略，将内存分为新生代和老生代。新生代存储生命周期短的对象，老生代存储生命周期长的对象。不同代的对象使用不同的回收策略，以提高效率。
   
   - **新生代（短命对象）**
@@ -4426,9 +4456,9 @@ PS：http默认端口：80，https默认端口：443
 
 - `<script src="xx">`
 
-### **2、如何实现跨域**
+### **2、如何解决跨域问题**
 
-#### **1、CORS（跨域资源共享）**
+#### **1、CORS（跨域资源共享）:star:**
 
 - 服务器设置 Access-Control-Allow-Origin 等响应头
 - 可以配置允许的请求方法、请求头、是否允许携带认证信息等
@@ -4443,7 +4473,7 @@ response.setHeader("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, OPTI
 response.setHeader("Access-Control-Allow-Credential", "true")
 ```
 
-#### **2、JSONP：通过动态创建script，再请求一个带参网址实现跨域通信。**
+#### **2、JSONP：通过动态创建script，再请求一个带参网址实现跨域通信。**:star:
 
 **利用了 `<script>` 标签不受同源策略限制的特点**
 
@@ -4498,7 +4528,7 @@ jsonp(
 - 开发环境：webpack-dev-server、vite 等的 proxy 配置
 - 生产环境：Nginx 反向代理
 
-#### **4、postMessage**
+#### **4、postMessage:star:**
 
 - HTML5 标准中的 API
 - 用于不同窗口间的跨域通信
@@ -4510,22 +4540,175 @@ jsonp(
 
 ```js
 // 发送消息端
-window.parent.postMessage('message', 'http://test.com');
+window.postMessage('hello there!', 'http://test.com');
+
 // 接收消息端
-var mc = new MessageChannel();
-mc.addEventListener('message', (event) => {
+window.addEventListener('message', (event) => {
     var origin = event.origin || event.originalEvent.orign;
     if (origin === 'http://test.com') {
         console.log('验证通过');
+        console.log(event.data); // hello there!
     }
 })
 ```
 
-#### **5、WebSocket**
 
-- 建立在 TCP 之上的协议
-- 天然支持跨域
-- 适合需要实时通信的场景
+
+#### **5、WebSocket**:star:
+
+##### **核心概念**
+
+- **全双工通信**：客户端和服务端可同时双向传输数据
+- **单一 TCP 连接**：建立连接后持续复用，避免 HTTP 重复握手
+- **实时性**：数据到达立即推送（毫秒级延迟）
+- **协议标识**：`ws://`（非加密）或 `wss://`（SSL 加密）
+
+
+
+##### **客户端使用步骤（浏览器端）**
+
+1、创建 WebSocket 连接
+
+```js
+// 建立连接（推荐使用 wss 加密协议）
+const socket = new WebSocket('wss://api.example.com/ws');
+```
+
+2、监听关键事件
+
+```js
+// 连接成功
+socket.addEventListener('open', (event) => {
+  console.log('连接已建立');
+  socket.send('Hello Server!'); // 发送初始消息
+});
+
+// 接收消息
+socket.addEventListener('message', (event) => {
+  console.log('收到消息:', event.data);
+  // 数据处理...
+});
+
+// 错误处理
+socket.addEventListener('error', (error) => {
+  console.error('WebSocket 错误:', error);
+});
+
+// 连接关闭
+socket.addEventListener('close', (event) => {
+  console.log('连接关闭', event.code, event.reason);
+});
+```
+
+3、发送数据
+
+```js
+// 发送文本（JSON 格式推荐）
+socket.send(JSON.stringify({ type: 'chat', msg: '你好' }));
+
+// 发送二进制数据（如图片/文件）
+const buffer = new ArrayBuffer(128);
+socket.send(buffer);
+
+// 发送 Blob
+const blob = new Blob(['二进制数据'], { type: 'application/octet-stream' });
+socket.send(blob);
+```
+
+4、关闭连接
+
+```js
+// 正常关闭（状态码 1000）
+socket.close(1000, '用户主动断开');
+// 异常关闭（状态码列表见下文）
+socket.close(3000, '自定义原因');
+```
+
+
+
+##### **服务端实现（Node.js 示例）**
+
+使用 ws 库（最轻量方案）
+
+```shell
+npm install ws
+```
+
+```js
+const WebSocket = require('ws');
+const wss = new WebSocket.Server({ port: 8080 });
+
+// 监听连接
+wss.on('connection', (ws) => {
+  console.log('新客户端连接');
+  
+  // 接收消息
+  ws.on('message', (data) => {
+    console.log('收到消息:', data);
+    
+    // 广播给所有客户端
+    wss.clients.forEach((client) => {
+      if (client.readyState === WebSocket.OPEN) {
+        client.send(`服务器转发: ${data}`);
+      }
+    });
+  });
+  
+  // 发送欢迎消息
+  ws.send(JSON.stringify({ type: 'welcome', msg: '连接成功' }));
+  
+  // 关闭处理
+  ws.on('close', (code, reason) => {
+    console.log(`客户端断开: ${code} - ${reason}`);
+  });
+});
+```
+
+##### 关键注意事项
+
+1. **连接状态常量**
+
+| 常量                 | 值   | 说明           |
+| :------------------- | :--- | :------------- |
+| WebSocket.CONNECTING | 0    | 连接中         |
+| WebSocket.OPEN       | 1    | 已连接，可通信 |
+| WebSocket.CLOSING    | 2    | 关闭中         |
+| WebSocket.CLOSED     | 3    | 已关闭         |
+
+2. **标准关闭状态码**
+
+| 状态码 | 名称             | 说明               |
+| :----- | :--------------- | :----------------- |
+| 1000   | CLOSE_NORMAL     | 正常关闭           |
+| 1001   | CLOSE_GOING_AWAY | 客户端离开         |
+| 1006   | CLOSE_ABNORMAL   | 异常关闭（非主动） |
+| 1011   | SERVER_ERROR     | 服务端内部错误     |
+
+3. **心跳机制（防止断开）**
+
+```javascript
+// 客户端心跳
+setInterval(() => {
+  if (socket.readyState === WebSocket.OPEN) {
+    socket.send(JSON.stringify({ type: 'heartbeat' }));
+  }
+}, 30000); // 30秒一次
+
+// 服务端检测（ws 库）
+ws.isAlive = true;
+ws.on('pong', () => { ws.isAlive = true; });
+
+// 服务端定时检测
+setInterval(() => {
+  wss.clients.forEach((ws) => {
+    if (!ws.isAlive) return ws.terminate();
+    ws.isAlive = false;
+    ws.ping();
+  });
+}, 60000);
+```
+
+
 
 #### **6、document.domain（已废弃）**
 
@@ -4613,7 +4796,9 @@ console.log(300)
 - 网络请求：ajax请求、动态`<img>`加载
 - 事件绑定
 
-Promise本身是同步的("resolve before" 在"同步"之前先执行)，而then()则是异步任务("success" 在"同步之后再执行")
+- Promise本身是同步的("resolve before" 在"同步"之前先执行)，而then()则是异步任务("success" 在"同步之后再执行")
+
+
 
 ### 4、事件轮询（event-loop）:star:
 
@@ -4634,7 +4819,7 @@ js是单线程的，一次只能完成一个任务，如果有多个任务，就
 - 检查 微任务队列（MicroTask Queue） 是否有任务（如 Promise.then()、queueMicrotask()）。
 - 依次执行所有微任务，直到微任务队列清空。
 
-3、**执行宏任务**
+**3、执行宏任务**
 
 - 从 宏任务队列（MacroTask Queue） 取出 一个 任务（如 setTimeout 回调、I/O 任务），放入调用栈执行。
 
@@ -4642,7 +4827,7 @@ js是单线程的，一次只能完成一个任务，如果有多个任务，就
 
 - 宏任务执行完毕后，再次检查微任务队列，如果有新产生的微任务，立即执行所有微任务。
 
-5、**重复步骤 3（执行下一个宏任务）**
+**5、重复步骤 3（执行下一个宏任务）**
 
 - 继续取出下一个 宏任务，重复整个过程，形成循环（Event Loop）
 
@@ -4689,73 +4874,50 @@ $.ajax({
 
 不同的异步任务被分为两类：微任务 `(micro task)` 和宏任务 `(macro task)`。
 
-- **微任务优先：微任务队列会在每次 宏任务执行完毕 后立即执行，在所有微任务执行完毕后，才会执行下一个宏任务。**
-
-- **宏任务**：常见的宏任务包括 `setTimeout`，`setInterval`，`setImmediate`，`requestAnimationFrame`，`I/O（文件读写、网络请求等）`，`UI rendering`
-
-- **微任务**：常见的微任务包括`Promise.then`、`MutationObserver`、`queueMicrotask`、`process.nextTick（Node.js）`
-
+- **微任务优先级更高**：确保某些关键操作（如 Promise、DOM 更新）能**立即执行**
+- **宏任务优先级较低**：处理非紧急任务（如网络请求、定时器）
+- **宏任务**：常见的宏任务包括 `setTimeout`，`setInterval`，`setImmediate`，`requestAnimationFrame`，`I/O（文件读写、网络请求等）`，UI 渲染
+- **微任务**：常见的微任务包括`Promise.then`、`MutationObserver（DOM 变更观察）`、`queueMicrotask`、`process.nextTick（Node.js）`
 
 
-#### **代码示例**
+
+**代码示例**
 
 ```js
-console.log('script start');
+console.log("Start"); // 同步代码
 
-setTimeout(() => {
-  console.log('setTimeout');
-}, 0);
+setTimeout(() => console.log("宏任务"), 0); // 宏任务
 
-new Promise((resolve) => {		// 同步
-    console.log('Promise');
-    resolve();
-}).then(() => {					// 	异步
-  console.log('promise1');
-}).then(() => {					// 	异步
-  console.log('promise2');
-});
+Promise.resolve().then(() => console.log("微任务")); // 微任务
 
-console.log('script end');
+console.log("End"); // 同步代码
 
-setTimeout(() => {
-  console.log('setTimeout2');
-}, 0);
-
-queueMicrotask(() => {
-  console.log('queueMicrotask');
-});
-
-setImmediate(() => {
-  console.log('setImmediate');
-}, 0);
-
-process.nextTick(() => {
-  console.log('process.nextTick');
-});
-
-=>
-script start
-Promise
-script end
-promise1
-promise2
-queueMicrotask
-process.nextTick
-setTimeout
-setTimeout2
-setImmediate
+// 输出顺序：
+// Start → End → 微任务 → 宏任务
 ```
 
-**分析**
 
-1. **script start**、**new Promise** 和 **script end**：这是主线程执行的脚本。
-2. **promise1** 和 **promise2**：Promise 的 `.then` 回调作为微任务，在当前宏任务结束后立即执行。
-3. **queueMicrotask**：作为微任务，在当前宏任务结束后立即执行。
-4. **process.nextTick**：作为微任务，在当前宏任务结束后立即执行。
-5. **setTimeout** 和 **setTimeout2**：作为宏任务，会在当前宏任务及其微任务执行完毕后执行。
-6. **setImmediate**：作为宏任务，在当前宏任务及其微任务执行完毕后执行，但在 I/O 事件之前。
 
-**注意：Promise不等于异步，整个promise执行过程是同步的**，Promise只是个**异步操作容器**，把异步操作包起来，以更易读更有条理更符合人类思维习惯的方式来写异步代码。
+**为什么要区分宏任务和微任务？**
+
+JavaScript 是单线程语言，事件循环（Event Loop）通过**任务队列机制**管理异步操作。
+
+区分宏任务和微任务的核心目的是实现**更精细的任务调度优先级**，确保关键任务及时执行，同时维持应用的高响应性。
+
+
+
+**为什么微任务优先级更高？**
+
+- **设计目的**：微任务用于处理需要**立即执行**的轻量级操作（如更新状态、清理缓存），确保这些操作在下一个宏任务（如 UI 渲染）之前完成。
+- **避免渲染阻塞**：确保关键逻辑（如状态更新、依赖链）在浏览器渲染或其他耗时操作前完成，保证 DOM 更新及时生效。
+
+
+
+**为什么Promise.then()是微任务？**
+
+1. **保证异步操作的高优先级和顺序性：**若 Promise.then() 是宏任务，链式回调可能被其他宏任务（如 UI 事件、定时器）插队，导致执行顺序不可控。
+2. **避免渲染阻塞**：若将 Promise.then() 设为宏任务，频繁的 Promise 回调可能延迟渲染。而微任务队列的快速清空机制可以及时处理轻量级回调（如数据更新），减少对渲染的阻塞。
+3. **符合 Promise 的设计目标**：快速、可靠地处理依赖链式回调的异步逻辑。
 
 
 
@@ -5331,7 +5493,7 @@ if (isDev) {
 
 **节流（throttle）和防抖（debounce）函数**的实现通常依赖**闭包**的特性。
 
-它们的核心逻辑是通过闭包保存函数执行所需的上下文状态（如定时器、上一次执行时间等），从而实现对高频事件的有效控制。
+它们的核心逻辑是**通过闭包保存函数执行所需的上下文状态（如定时器、上一次执行时间等）**，从而实现对高频事件的有效控制。
 
 
 
@@ -5408,23 +5570,23 @@ function debounce(fn, wait = 100) {
 
 **`setTimeout`和`requestAnimationFrame`的区别**
 
-引擎层面：setTimeout 属于 **JS 引擎**，存在事件轮询，存在事件队列。requestAnimationFrame 属于 **GUI 引擎**，发生在渲染过程的中重绘重排部分，与电脑分辨率保持一致。
+**引擎层面：**setTimeout 属于 **JS 引擎**，存在事件轮询，存在事件队列。requestAnimationFrame 属于 **GUI 引擎**，发生在渲染过程的中重绘重排部分，与电脑分辨率保持一致。
 
-性能层面：当页面被隐藏或最小化时，定时器 **setTimeout 仍在后台执行动画任务**。当页面处于**未激活**的状态下，该页面的**屏幕刷新任务会被系统暂停，requestAnimationFrame 也会停止**。
+**性能层面：**当页面被隐藏或最小化时，定时器 **setTimeout 仍在后台执行动画任务**。当页面处于**未激活**的状态下，该页面的**屏幕刷新任务会被系统暂停，requestAnimationFrame 也会停止**。
 
-应用层面：利用 setTimeout，这种定时机制去做动画，**模拟固定时间刷新页面**。requestAnimationFrame 由浏览器**专门为动画提供**的 API，在运行时浏览器**会自动优化方法的调用**，在特定性环境下可以有效节省了CPU 开销
+**应用层面**：利用 setTimeout，这种定时机制去做动画，**模拟固定时间刷新页面**。requestAnimationFrame 由浏览器**专门为动画提供**的 API，在运行时浏览器**会自动优化方法的调用**，在特定性环境下可以有效节省了CPU 开销
 
 **三者的区别**
 
-| 特性                | `setTimeout`                     | `requestAnimationFrame`          | `requestIdleCallback`                              |
-| :------------------ | :------------------------------- | :------------------------------- | :------------------------------------------------- |
-| **执行时机**        | **设定时间后执行（不保证准时）** | **下一帧渲染前**（16.6ms 以内）  | **浏览器空闲时**（可能延迟执行）                   |
-| **主要用途**        | 延迟执行代码                     | **动画和流畅渲染**               | **低优先级任务**（如日志、分析）                   |
-| **帧率控制**        | **无**，可能丢帧                 | **跟随屏幕刷新率**（一般 60FPS） | **不受限制**，完全取决于浏览器                     |
-| **影响页面性能**    | **可能影响页面流畅度**           | **保证流畅动画**                 | **不会阻塞主线程**                                 |
-| **是否适用于动画**  | ❌ 可能卡顿                       | ✅ 适合                           | ❌ 不适合                                           |
-| **是否受 CPU 影响** | ✅ 受影响                         | ✅ 受影响                         | ✅ 受影响                                           |
-| **适用场景**        | **定时任务、轮询**               | **动画、过渡、流畅 UI 渲染**     | **后台任务、低优先级执行（如数据同步、日志收集）** |
+| 特性                | `setTimeout`                         | `requestAnimationFrame`                                     | `requestIdleCallback`                              |
+| :------------------ | :----------------------------------- | :---------------------------------------------------------- | :------------------------------------------------- |
+| **执行时机**        | **设定时间后执行（执行时机不可控）** | **下一帧渲染前**（16.6ms 以内）**与浏览器渲染周期同步执行** | **浏览器空闲时**（可能延迟执行）                   |
+| **主要用途**        | 延迟执行代码                         | **动画和流畅渲染**                                          | **低优先级任务**（如日志、分析）                   |
+| **帧率控制**        | **无**，可能丢帧                     | **跟随屏幕刷新率**（一般 60FPS）                            | **不受限制**，完全取决于浏览器                     |
+| **影响页面性能**    | **可能影响页面流畅度**               | **保证流畅动画**                                            | **不会阻塞主线程**                                 |
+| **是否适用于动画**  | ❌ 可能卡顿                           | ✅ 适合                                                      | ❌ 不适合                                           |
+| **是否受 CPU 影响** | ✅ 受影响                             | ✅ 受影响                                                    | ✅ 受影响                                           |
+| **适用场景**        | **定时任务、轮询**                   | **动画、过渡、流畅 UI 渲染**                                | **后台任务、低优先级执行（如数据同步、日志收集）** |
 
 **`setTimeout` - 定时执行**
 
@@ -5435,6 +5597,8 @@ setTimeout(() => {
 ```
 
 **`requestAnimationFrame` - 适用于动画**
+
+帧动画是**平滑视觉变化**的基础技术，而`requestAnimationFrame`是浏览器为帧动画提供的**高性能解决方案**，解决了传统定时器的**时机不准**和**资源浪费**问题，确保动画流畅且节能。
 
 ```js
 function animate() {

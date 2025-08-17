@@ -242,6 +242,7 @@ CSS中的盒子模型包括IE盒子模型和标准的W3C盒子模型。
 - 使元素以块级元素的形式呈现在行内。既具有宽度高度特性，又具有同行特性。不单独占满一行，可以看成是能够在一行里进行左右排列的块元素；
 - 设置 width/height 将会生效；
 - 设置 padding 和 margin 将会生效；
+- 常见的inline-block元素：`<input>`、`<textarea>`、`<select>` 、`<button>`、`<canvas>`、`<img>`、`<video>`、`<audio> `
 
 
 
@@ -638,7 +639,7 @@ css3  filter滤镜
 
 
 
-### 20、CSS3 动画
+### 20、CSS3 动画:star:
 
 @keyframes 规则用于创建动画。在 @keyframes 中规定某项 CSS 样式，就能创建由当前样式逐渐改为新样式的动画效果。
 

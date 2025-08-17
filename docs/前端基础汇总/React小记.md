@@ -564,61 +564,63 @@ Portal 的实现涉及到**将一部分虚拟 DOM 树渲染到页面上的不同
 
 #### context:star:
 
+**React Context** 是一种在组件树中共享数据的机制，避免了通过逐层传递 *props* 的繁琐操作。它适用于需要在多个组件间共享全局数据的场景，例如主题、用户信息或语言设置。
+
 优点：变量不用层层传递，省去无谓的传递props
 
 缺点：使用全局变量的方法，会让组件失去独立性，复用起来更困难，会让组件变得不纯粹，不应该大规模使用。
 
 使用场景：公共信息（语言、主题）传递给每个组件
 
+
+
+使用 Context 的基本步骤：
+
+1. **创建 Context**： 使用 *React.createContext* 创建一个 Context 对象，并设置默认值。
+2. **提供数据**： 使用 *Provider* 包裹组件树，并通过 *value* 属性传递共享数据。
+3. **消费数据**： 在子组件中使用 *useContext* Hook 或 *Consumer* 组件获取共享数据。
+
+
+
+以下是一个简单的主题切换示例：
+
 ```js
-import React from 'react'
+import React, { createContext, useState, useContext } from 'react';
 
-// 创建 Context 填入默认值（任何一个 js 变量）
-const ThemeContext = React.createContext('light')
+// 1、创建 Context
+const ThemeContext = createContext();
 
-// 底层组件使用context
-class ThemedButton extends React.Component {
-    // 指定 contextType 读取当前的 theme context。
-    // static contextType = ThemeContext 
-    // 也可以用 ThemedButton.contextType = ThemeContext
-    render() {
-        const theme = this.context // React 会往上找到最近的 theme Provider，然后使用它的值。
-        return <div>
-            <p>button's theme is {theme}</p>
-        </div>
-    }
+function App() {
+const [theme, setTheme] = useState('light');
+
+const toggleTheme = () => {
+	setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+};
+
+return (
+    // 2、提供数据
+    <ThemeContext.Provider value={theme}>
+    	<Toolbar toggleTheme={toggleTheme} />
+    </ThemeContext.Provider>
+  );
 }
-ThemedButton.contextType = ThemeContext // 指定 contextType 读取当前的 theme context。
 
-// 中间的组件
-function Toolbar(props) {
+function Toolbar({ toggleTheme }) {
     return (
-        <ThemedButton />
-    )
+        <div>
+            <ThemedButton />
+            <button onClick={toggleTheme}>切换主题</button>
+        </div>
+    );
 }
 
-class App extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            theme: 'light'
-        }
-    }
-    render() {
-        return <ThemeContext.Provider value={this.state.theme}>
-            <Toolbar />
-            <hr/>
-            <button onClick={this.changeTheme}>change theme</button>
-        </ThemeContext.Provider>
-    }
-    changeTheme = () => {
-        this.setState({
-            theme: this.state.theme === 'light' ? 'dark' : 'light'
-        })
-    }
+function ThemedButton() {
+    // 3、消费数据
+    const theme = useContext(ThemeContext);
+    return <button style={{ background: theme === 'light' ? '#fff' : '#333' }}>主题按钮</button>;
 }
 
-export default App
+export default App;
 ```
 
 
@@ -1513,9 +1515,7 @@ function App() {
 
 #### 什么是虚拟DOM？
 
-用JS模拟DOM结构，DOM变化的对比，放在JS层进行（因为前端语言中只有JS是图灵完备语言）
-
-[什么是图灵完备语言？](https://blog.csdn.net/Roselane_Begger/article/details/101176694)
+用JS模拟DOM结构，DOM变化的对比，放在JS层进行（因为前端语言中只有JS是[图灵完备语言](https://blog.csdn.net/Roselane_Begger/article/details/101176694)）
 
 - 创建真实DOM损耗的性能远大于创建虚拟DOM损耗的性能。
 
@@ -1582,7 +1582,7 @@ React.createElement("div", {
 
 #### 虚拟DOM的缺点
 
-1. **内存开销**：虚拟DOM本身占用内存，对于大型应用可能会增加内存使用。
+1. **内存开销**：**虚拟DOM需要在内存中维护一份DOM的副本，可能会导致内存消耗较大。同时，虚拟DOM的构建和比对过程会带来计算开销，尤其在数据量较大时，可能会比直接操作真实DOM更耗时。**
 2. **初始化成本**：创建虚拟DOM树需要计算资源，可能导致初次加载时性能下降。
 3. **过度渲染**：虽然React通过差异计算来最小化DOM操作，但如果组件频繁地重新渲染，即使只是局部更新，也可能导致性能问题。特别是在复杂的组件中，如果`render`方法中的逻辑较为复杂，那么频繁的重新渲染可能会降低应用性能。
 4. **生命周期方法的滥用**：不当使用生命周期方法可能导致不必要的重新渲染。
@@ -1929,7 +1929,7 @@ Vue 和 React 的 diff 算法核心目标相同：**高效地找出虚拟 DOM (V
 
   - Vue 2: 在同层级子节点列表比较时，采用 “**双端比较**” (Double-end Diff) 算法。它会同时从新旧子节点列表的头（`oldStartIdx`, `newStartIdx`）和尾（`oldEndIdx`, `newEndIdx`） 开始向中间遍历比较。这种策略能更高效地识别出头尾节点相同但位置移动的情况（如列表反转），减少不必要的 DOM 操作。
 
-  - Vue 3: 在双端比较的基础上，进行了重大优化，引入了 “**最长递增子序列” (Longest Increasing Subsequence - LIS) 算法**。在双端比较无法处理的中间节点乱序移动场景下（如 `[A, B, C, D]` -> `[D, A, B, C]`），**Vue 3 会利用 LIS 算法找出新列表中相对顺序保持不变的、最长的一组节点**。这样就能最小化移动节点的次数，仅移动那些不在最长稳定序列中的节点。这是 Vue 3 diff 性能提升的关键点之一。
+  - Vue 3: 在双端比较的基础上，进行了重大优化，引入了 “**最长递增子序列” (Longest Increasing Subsequence - LIS) 算法**。在双端比较无法处理的中间节点乱序移动场景下（如 `[A, B, C, D]` -> `[D, A, B, C]`），**Vue 3 会利用 LIS 算法找出新列表中相对顺序保持不变的、最长的一组节点**。这样就能**最小化移动节点的次数**，仅移动那些不在最长稳定序列中的节点。这是 Vue 3 diff 性能提升的关键点之一。
 
 ##### **组件粒度更新**
 
@@ -2492,9 +2492,7 @@ React 官方文档其实对这个问题进行了[解答](https://zh-hans.react.d
 
 #### useLayoutEffect
 
-与 useEffect 类似，但在 DOM 更新后同步执行，适用于需要直接操作 DOM 的场景。
-
-适用于需要在浏览器绘制之前同步执行的副作用操作，如测量 DOM 元素、同步更新 DOM 等。由于它是同步执行的，可能会阻塞浏览器的渲染，因此应谨慎使用。
+与 `useEffect `类似，但`useLayoutEffect`是**同步执行**的，**在 DOM 更新后、浏览器绘制前触发**，适用于需要**同步读取或修改DOM**的场景，例如**测量 DOM 元素、同步更新 DOM、动态布局调整、动画初始化**等。由于它是同步执行的，可能会阻塞浏览器的渲染，因此应谨慎使用。
 
 区别
 
@@ -3055,3 +3053,145 @@ function useEffect(callback, dependencies) {
 ```
 
 相比 useLayoutEffect，useEffect 是 异步执行，不会阻塞 UI 渲染。
+
+
+
+
+
+## 四、其他
+
+### 1、React16,17,18,19新特性更新对比:star:
+
+#### **React 16（2017） - Fiber 架构革命**
+
+- ‌**Fiber 架构引入**‌：16.8 版本首次引入 Fiber 架构，将组件渲染分解为独立节点，优化性能为并发模式奠基。 ‌
+- ‌**Hooks 机制**‌：新增多个生命周期钩子（如 useState、useEffect），解决函数组件状态管理问题，推动组件复用。 ‌
+
+- **Error Boundaries**：通过 `componentDidCatch` 捕获组件树错误
+- **Fragment / Portal**：`<></>` 片段语法、`ReactDOM.createPortal` 渲染到 DOM 外节点
+
+- **新生命周期**：`getDerivedStateFromProps`、`getSnapshotBeforeUpdate`
+
+#### **React 17（2020） - 平稳过渡版本**
+
+- ‌**事件委托优化**‌：事件绑定到根容器而非 `document`，支持多版本 React 共存。 ‌
+- ‌**无需引入 React 的 JSX**‌：不再需显式 `import React`（通过 Babel 自动注入），减少代码冗余。 ‌
+- ‌**副作用清理优化**‌：useEffect 的清理函数改为异步执行，减少渲染阻塞。 ‌
+
+#### **React 18（2022） - 并发模式时代**
+
+- **并发特性支持**‌：利用 Fiber 架构优势，函数组件可实现并发渲染。 ‌`createRoot` API 启用并发特性（非阻塞式渲染）
+- ‌**新生命周期废弃**‌：完全移除 `componentWillMount` 等生命周期方法，推荐使用 `getDerivedStateFromProps` 等替代方案。 ‌
+- **自动批处理优化**：异步操作中的 `setState` 自动合并更新
+- **Suspense 增强**：支持数据获取场景（与 `React.lazy` 配合）
+- **新 Hook API**：`useId`、`useSyncExternalStore`、`useInsertionEffect`
+- **流式服务端渲染**：`renderToPipeableStream` 提升首屏性能
+
+#### **React 19（2025 Beta） - 未来标准**
+
+- **Actions API**‌：简化异步操作管理，自动处理待处理状态、错误边界和乐观更新，支持表单提交状态共享。 ‌
+
+  ```js
+  // 使用表单的 Actions 和 useActionState
+  function ChangeName({ name, setName }) {
+    const [error, submitAction, isPending] = useActionState(
+      async (previousState, formData) => {
+        const error = await updateName(formData.get("name"));
+        if (error) {
+          return error;
+        }
+        redirect("/path");
+        return null;
+      },
+      null,
+    );
+  
+    return (
+      <form action={submitAction}>
+        <input type="text" name="name" />
+        <button type="submit" disabled={isPending}>Update</button>
+        {error && <p>{error}</p>}
+      </form>
+    );
+  }
+  ```
+
+- ‌**useTransition / useOptimistic**‌：提供更简洁的异步状态管理方式，支持预加载资源和自定义错误处理。 ‌
+
+  - 例：可以使用 `useTransition` 来为你处理待定状态
+
+    ```js
+    // 使用 Actions 中的待定状态
+    function UpdateName({}) {
+      const [name, setName] = useState("");
+      const [error, setError] = useState(null);
+      const [isPending, startTransition] = useTransition();
+    
+      const handleSubmit = () => {
+        startTransition(async () => {
+          const error = await updateName(name);
+          if (error) {
+            setError(error);
+            return;
+          } 
+          redirect("/path");
+        })
+      };
+    
+      return (
+        <div>
+          <input value={name} onChange={(event) => setName(event.target.value)} />
+          <button onClick={handleSubmit} disabled={isPending}>
+            Update
+          </button>
+          {error && <p>{error}</p>}
+        </div>
+      );
+    }
+    ```
+
+#### **关键差异总结**
+
+| 特性              | React 16 | React 17 | React 18   | React 19     |
+| :---------------- | :------- | :------- | :--------- | :----------- |
+| **Fiber 架构**    | ✓        | ✓        | ✓          | ✓            |
+| **并发模式**      | ✗        | ✗        | ✓          | ✓（优化）    |
+| **Suspense 数据** | ✗        | ✗        | ✓          | ✓（增强）    |
+| **服务端组件**    | ✗        | ✗        | 实验性     | **正式支持** |
+| **自动批处理**    | 仅同步   | 仅同步   | **全场景** | ✓            |
+| **Actions API**   | ✗        | ✗        | ✗          | ✓            |
+
+
+
+### 2、Jquery和框架的区别
+
+ 框架：数据和视图分离，以数据驱动视图，只关心数据变化，dom操作被封装。数据驱动
+
+ Jquery： 依靠dom操作去组合业务逻辑。事件驱动
+
+
+
+### 3、React和Vue对比:star:
+
+**共同点**
+
+- **组件化架构：** 两者都将 UI 分解为独立、可复用的组件。每个组件管理自己的状态和视图。
+- **虚拟 DOM：** 都使用虚拟 DOM 来提高渲染性能。当状态变化时，先在内存中构建新的虚拟 DOM 树，然后与旧的虚拟 DOM 树进行高效的对比（Diffing），最后只将实际变化的部分更新到真实 DOM。
+- **声明式渲染：** 开发者主要描述“UI 应该是什么样子”（基于当前状态），而不是手动操作 DOM（命令式）。框架负责根据状态变化自动更新 DOM。
+- **响应式数据绑定：** 都提供了机制让视图能够自动响应底层数据状态的变化。
+- **活跃的生态系统：** 两者都有庞大且活跃的社区，提供了丰富的第三方库、工具（路由、状态管理、构建工具等）和学习资源。
+- **适用于构建现代单页应用：** 都是构建复杂、交互丰富的单页应用程序的理想选择。
+- **支持服务端渲染：** 都提供了解决方案（React: Next.js, Vue: Nuxt.js）来支持服务端渲染，改善 SEO 和首屏加载速度。
+
+
+
+**主要差异点**
+
+- **核心库定位**：React 更灵活但需要自行选择路由、状态管理等配套方案；Vue 提供更开箱即用的集成体验。
+- **模板语法**：React使用JSX，Vue使用类似 HTML 的模板语法，指令 (`v-`) 提供逻辑。
+  - JSX 是 JavaScript 的语法扩展，能力更强更灵活（JS 里能做的它都能做）；Vue 模板更接近标准 HTML，对设计师/新手更友好，逻辑受限（需指令）。
+- **状态管理 (核心)**：React 需要显式调用更新函数；Vue 自动追踪依赖并在属性修改时更新。React 更强调不可变性；Vue 拥抱可变性但底层通过代理实现响应。
+- **学习曲线**：Vue 学习曲线相对平缓，通常被认为对新手更友好，更容易上手；React 学习曲线相对陡峭， JSX、函数式思想、Hooks 心智模型、不可变性概念、需要自行选型集成。
+- **API 风格**：Vue 提供了两种风格供选择（选项式 API & 组合式 API，组合式 API 是未来趋势）；React 已全面转向函数式 + Hooks。类组件已不推荐。
+- **构建工具**：两者都支持 Vite，但 Vue 与 Vite 的集成和推广更紧密。
+
