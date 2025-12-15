@@ -4,9 +4,9 @@ layout: home
 
 hero:
   name: "MyDocs"
-  text: "我的学习笔记文档"
+  text: "我的学习笔记"
   # tagline: 把这世上唯一版本的自己做好
-  heroImage: /public/images/bg.jpg
+  # image: /public/images/bg.jpg
   actions:
     - theme: brand
       text: 开始

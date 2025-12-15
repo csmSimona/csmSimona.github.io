@@ -3,8 +3,8 @@ import readingTime from 'reading-time'
 
 export default defineConfig({
   lang: 'zh-CN',
-  title: "myDocs",
-  description: "我的学习笔记文档",
+  title: "MyDocs",
+  description: "我的学习笔记",
   ignoreDeadLinks: true,
   markdown: {
     theme: {
@@ -115,6 +115,7 @@ export default defineConfig({
       '/前端基础汇总/': [
         {
           text: '前端基础汇总',
+          collapsed: true,
           items: [
             { text: "JavaScript小记", link: "/前端基础汇总/JavaScript小记" },
             { text: "HTML小记", link: "/前端基础汇总/HTML小记" },
@@ -134,6 +135,7 @@ export default defineConfig({
       '/算法/': [
         {
           text: '算法',
+          collapsed: true,
           items: [
             { text: "排序", link: "/算法/排序" },
             { text: "算法题", link: "/算法/算法题" },
@@ -143,6 +145,7 @@ export default defineConfig({
       '/其他/': [
          {
           text: '其他',
+          collapsed: true,
           items: [
             { text: "Git小记", link: "/其他/Git小记" },
             { text: "NodeJs小记", link: "/其他/NodeJs小记" },
@@ -158,20 +161,19 @@ export default defineConfig({
       '/数据可视化/': [
         {
           text: '数据可视化',
+          collapsed: true,
           items: [
             { text: "Canvas入门", link: "/数据可视化/Canvas入门" },
             { text: "SVG入门", link: "/数据可视化/SVG入门" },
             { text: "Echarts基本使用", link: "/数据可视化/Echarts基本使用" },
             {
                text: "antv G6",
-               collapsed: false,
                items: [
                  { text: "antv G6的基础入门及树图的实际应用", link: "/数据可视化/antvG6/antv G6的基础入门及树图的实际应用" }
                ]
             },
             {
                text: "Three.js",
-               collapsed: false,
                items: [
                  { text: "Three.js基础课程", link: "/数据可视化/Three.js/Three.js基础课程" }
                ]
@@ -182,6 +184,7 @@ export default defineConfig({
       '/读书笔记/': [
         {
           text: '读书笔记',
+          collapsed: true,
           items: [
              { text: "《CSS揭秘》", link: "/读书笔记/CSS揭秘/CSS揭秘" },
              { text: "《Python编程：从入门到实践》", link: "/读书笔记/Python编程：从入门到实践" },
@@ -191,6 +194,7 @@ export default defineConfig({
       '/项目开发/': [
         {
           text: '项目开发',
+          collapsed: true,
           items: [
             { text: "低代码数据可视化平台开发记录", link: "/项目开发/低代码数据可视化平台开发记录" },
             { text: "中后台管理系统模板记录", link: "/项目开发/中后台管理系统模板记录" },
@@ -228,6 +232,10 @@ export default defineConfig({
           }
         }
       }
-    }
-  }
+    },
+    // footer: {
+    //   message: "Released under the MIT License.",
+    //   copyright: "Copyright ©csm",
+    // },
+  },
 })
