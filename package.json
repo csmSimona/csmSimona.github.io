@@ -1,23 +1,19 @@
 {
-  "name": "my-vuepress-docs",
+  "name": "my-vitepress-docs",
   "version": "0.0.1",
-  "description": "vuepress-docs",
+  "description": "vitepress-docs",
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
-    "docs:clean-dev": "vuepress dev docs --clean-cache",
-    "docs:update-package": "pnpm dlx vp-update"
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
-    "@vuepress/bundler-vite": "2.0.0-rc.15",
-    "@vuepress/plugin-reading-time": "2.0.0-rc.42",
-    "@vuepress/plugin-search": "2.0.0-rc.42",
-    "@vuepress/plugin-shiki": "2.0.0-rc.42",
-    "@vuepress/theme-default": "^2.0.0-rc.11",
+    "reading-time": "^1.5.0",
     "sass-embedded": "^1.79.1",
-    "vue": "^3.4.0",
-    "vuepress": "^2.0.0-rc.7"
+    "shiki": "^3.20.0",
+    "vitepress": "^1.5.0",
+    "vue": "^3.4.0"
   }
 }
