@@ -1,26 +1,41 @@
 import { defineConfig } from 'vitepress'
-import readingTime from 'reading-time'
 
 export default defineConfig({
   lang: 'zh-CN',
   title: "MyDocs",
   description: "我的学习笔记",
-  ignoreDeadLinks: true,
+  cleanUrls: true, // 开启纯净链接无html
+  // Fav图标
+  head: [
+    ['link', { rel: 'icon', href: '/logo.png' }],
+  ],
   markdown: {
+    // 行号显示
+    lineNumbers: true,
+
+    // toc显示一级标题
+    toc: {level: [1,2,3]},
+
+    // 使用 `!!code` 防止转换
+    codeTransformers: [
+      {
+        postprocess(code) {
+          return code.replace(/\[\!\!code/g, '[!code')
+        }
+      }
+    ],
+
+    // 开启图片懒加载
+    image: {
+      lazyLoading: true
+    },
+
     theme: {
       light: 'min-light',
       dark: 'dark-plus',
     },
     config: (md) => {
       // 没有任何复杂的逻辑，只是简单的注册功能，确保构建正常
-    }
-  },
-  transformPageData(pageData) {
-    // @ts-ignore
-    const content = pageData.content || '';
-    if (content) {
-      const rTime = readingTime(content);
-      pageData.frontmatter.readingTime = rTime;
     }
   },
   themeConfig: {

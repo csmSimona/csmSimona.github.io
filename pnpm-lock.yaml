@@ -8,15 +8,9 @@ importers:
 
   .:
     devDependencies:
-      reading-time:
-        specifier: ^1.5.0
-        version: 1.5.0
       sass-embedded:
         specifier: ^1.79.1
         version: 1.96.0
-      shiki:
-        specifier: ^3.20.0
-        version: 3.20.0
       vitepress:
         specifier: 2.0.0-alpha.15
         version: 2.0.0-alpha.15(postcss@8.5.6)(sass-embedded@1.96.0)(sass@1.96.0)
@@ -771,9 +765,6 @@ packages:
   readdirp@4.1.2:
     resolution: {integrity: sha512-GDhwkLfywWL2s6vEjyhri+eXmfH6j1L7JE27WhqLeYzoh/A3DBaYGEj2H/HFZCn/kMfim73FXxEJTw06WtxQwg==}
     engines: {node: '>= 14.18.0'}
-
-  reading-time@1.5.0:
-    resolution: {integrity: sha512-onYyVhBNr4CmAxFsKS7bz+uTLRakypIe4R+5A824vBSkQy/hB3fZepoVEf8OVAxzLvK+H/jm9TzpI3ETSm64Kg==}
 
   regex-recursion@6.0.2:
     resolution: {integrity: sha512-0YCaSCq2VRIebiaUviZNs0cBz1kg5kVS2UKUfNIx8YVs1cN3AV7NTctO5FOKBA+UT2BPJIWZauYHPqJODG50cg==}
@@ -1663,8 +1654,6 @@ snapshots:
 
   readdirp@4.1.2:
     optional: true
-
-  reading-time@1.5.0: {}
 
   regex-recursion@6.0.2:
     dependencies:

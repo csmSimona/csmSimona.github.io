@@ -2,8 +2,6 @@ import { defaultTheme } from "@vuepress/theme-default";
 import { defineUserConfig } from "vuepress/cli";
 import { viteBundler } from "@vuepress/bundler-vite";
 import { searchPlugin } from "@vuepress/plugin-search";
-import { shikiPlugin } from "@vuepress/plugin-shiki";
-import { readingTimePlugin } from "@vuepress/plugin-reading-time";
 
 export default defineUserConfig({
   lang: "zh-CN",
@@ -118,14 +116,6 @@ export default defineUserConfig({
           placeholder: "搜索",
         },
       },
-    }),
-    shikiPlugin({
-      // 配置项：https://ecosystem.vuejs.press/zh/plugins/markdown/shiki.html#%E9%85%8D%E7%BD%AE%E9%A1%B9
-      // 主题：https://shiki.tmrs.site/themes
-      theme: "dark-plus",
-    }),
-    readingTimePlugin({
-      // 配置项
     }),
   ],
 });

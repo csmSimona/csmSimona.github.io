@@ -7,11 +7,14 @@ hero:
   text: "我的学习笔记"
   # tagline: 把这世上唯一版本的自己做好
   # image: /public/images/bg.jpg
+  image:
+    src: /logo.png
+    alt: VitePress
   actions:
     - theme: brand
       text: 开始
       link: /前端基础汇总/JavaScript小记.html
-    - theme: alt
+    - theme: sponsor
       text: GitHub
       link: https://github.com/csmSimona
 
