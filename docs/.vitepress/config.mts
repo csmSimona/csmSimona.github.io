@@ -13,8 +13,8 @@ export default defineConfig({
     // 行号显示
     lineNumbers: true,
 
-    // toc显示一级标题
-    toc: {level: [1,2,3]},
+    // toc显示1-6级标题
+    toc: {level: [1,2,3,4,5,6]},
 
     // 使用 `!!code` 防止转换
     codeTransformers: [
@@ -38,9 +38,42 @@ export default defineConfig({
       // 没有任何复杂的逻辑，只是简单的注册功能，确保构建正常
     }
   },
+  // 站点地图
+  sitemap: {
+    hostname: 'http://chenshimeng.top/',
+  },
+  // 上次更新时间 首次配置不会立即生效，需git提交后爬取时间戳
+  lastUpdated: true, 
   themeConfig: {
-    outline: 'deep',
-    // logo: undefined, // default is undefined
+    // 右侧大纲
+    outline: { 
+      level: 'deep', // 显示2-6级标题
+      label: '当前页大纲' // 文字显示
+    },
+    logo: '/logo.png',
+    siteTitle: false, // 隐藏标题
+
+    // 编辑本页 会被 Frontmatter配置 覆盖
+    editLink: { 
+      pattern: 'https://github.com/csmSimona/csmSimona.github.io/edit/update/docs/:path', // 改成自己的仓库
+      text: '在GitHub编辑本页'
+    },
+
+    // 自定义上下页名
+    docFooter: { 
+      prev: '上一页', 
+      next: '下一页', 
+    }, 
+
+    // 上次更新时间
+    lastUpdated: {
+      text: '最后更新于',
+      formatOptions: {
+        dateStyle: 'short', // 可选值full、long、medium、short
+        timeStyle: 'medium' // 可选值full、long、medium、short
+      },
+    },
+
     nav: [
       { text: "首页", link: "/" },
       {
@@ -224,9 +257,23 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/csmSimona' }
     ],
 
+    // 手机端深浅模式文字修改
+    darkModeSwitchLabel: '深浅模式',
+
+    // 侧边栏文字更改(移动端) 默认 Menu
+    sidebarMenuLabel: '目录', 
+
+    returnToTopLabel: '返回顶部', 
+
+    // Carbon 广告 https://www.carbonads.net/
+    // carbonAds: { 
+    //   code: 'your-carbon-code', 
+    //   placement: 'your-carbon-placement', 
+    // },
+
     search: {
       provider: 'local',
-       options: {
+      options: {
         locales: {
           root: {
             translations: {
@@ -248,9 +295,10 @@ export default defineConfig({
         }
       }
     },
-    // footer: {
-    //   message: "Released under the MIT License.",
-    //   copyright: "Copyright ©csm",
-    // },
+    footer: {
+      message: "Released under the MIT License.",
+      // 自动更新时间
+      copyright: `Copyright © 2024-${new Date().getFullYear()} 备案号：<a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备2025215771号</a>`,
+    },
   },
 })
