@@ -5,10 +5,10 @@ layout: home
 hero:
   name: "MyDocs"
   text: "我的个人文档"
-  # tagline: 把这世上唯一版本的自己做好
+  tagline: 把这世上唯一版本的自己做好
   image:
-    # src: /girl.png
-    src: /logo.png
+    src: /girl.png
+    # src: /logo.png
     alt: VitePress
   actions:
     - theme: brand
@@ -19,13 +19,6 @@ hero:
       link: https://github.com/csmSimona
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-# features:
   - icon: 📖
     title: 前端基础汇总
     details: 整理前端常用知识点
@@ -34,7 +27,7 @@ features:
   - icon: 📘
     title: 算法
     details: 了解各种库的实现原理<br />学习其中的小技巧和冷知识
-    link: 
+    link: /前端基础汇总/JavaScript小记
     linkText: 算法
   - icon: 💡
     title: Workflow
@@ -55,6 +48,7 @@ features:
     title: 吾志所向，一往无前。
     details: '<small class="bottom-small">一个想躺平的小开发</small>'
     link: 
+    linkText: 关于我
 ---
 
 <!-- 首页文字下划线 -->

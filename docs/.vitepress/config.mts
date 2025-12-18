@@ -50,7 +50,7 @@ export default defineConfig({
     // 右侧大纲
     outline: { 
       level: 'deep', // 显示2-6级标题
-      label: '当前页大纲' // 文字显示
+      label: '目录' // 文字显示
     },
     logo: '/logo.png',
     // siteTitle: false, // 隐藏标题

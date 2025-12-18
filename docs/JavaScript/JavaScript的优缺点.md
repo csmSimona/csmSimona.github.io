@@ -1,4 +1,4 @@
-## JavaScript的优缺点
+# JavaScript的优缺点
 
 ### 1.什么是javascript
 

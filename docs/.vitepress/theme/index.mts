@@ -1,6 +1,6 @@
 import { h, watch, onMounted, nextTick } from 'vue'
 import DefaultTheme from 'vitepress/theme'
-import './style/index.css'
+import './style/index.scss'
 import HomeUnderline from "./components/HomeUnderline.vue"
 import xgplayer from "./components/xgplayer.vue"
 import ArticleMetadata from "./components/ArticleMetadata.vue"
