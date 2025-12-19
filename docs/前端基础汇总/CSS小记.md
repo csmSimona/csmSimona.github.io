@@ -1,4 +1,4 @@
-## CSS小记
+# CSS小记
 
 部分参考[1.5 万字 CSS 基础拾遗（核心知识、常见需求）](https://juejin.cn/post/6941206439624966152)
 
@@ -330,7 +330,7 @@ CSS中的盒子模型包括IE盒子模型和标准的W3C盒子模型。
 
 
 
-### 12、关于定位（position属性）:star:
+### :star:12、关于定位（position属性）
 
 #### 1、absolute
 
@@ -558,7 +558,7 @@ hyphens: auto;
 
 
 
-### 17、CSS3新增属性:star:
+### :star:17、CSS3新增属性
 
 1、box-shadow(阴影效果)
 
@@ -639,7 +639,7 @@ css3  filter滤镜
 
 
 
-### 20、CSS3 动画:star:
+### :star:20、CSS3 动画
 
 @keyframes 规则用于创建动画。在 @keyframes 中规定某项 CSS 样式，就能创建由当前样式逐渐改为新样式的动画效果。
 
@@ -680,7 +680,7 @@ div
 
 
 
-### 21、animation（动画）、transition（过渡）、transform（变形）、translate（移动）:star:
+### :star:21、animation（动画）、transition（过渡）、transform（变形）、translate（移动）
 
 来源：http://www.imooc.com/article/79030 
 

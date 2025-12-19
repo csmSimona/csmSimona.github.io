@@ -1,4 +1,4 @@
-## HTML小记
+# HTML小记
 
 ### 1、HTML5中的新特性
 
@@ -185,7 +185,7 @@ span不是块级元素，是不支持行高的，但是style中有了个`float: 
 
 - html+css+javascript(或其他脚本）的优点：html确定页面框架，css和脚本决定页面样式、动态内容和动态定位。
 
-### 10、块级元素、行内元素与行块级元素:small_red_triangle:
+### :small_red_triangle:10、块级元素、行内元素与行块级元素
 
 1.常见的块级元素（自动换行，可设置高宽)有：
 div，h1-h6，p，pre，ul，ol，li，form，table等。
@@ -219,35 +219,38 @@ button，input，textarea，select等。
 参考：[前端常见的浏览器兼容性问题及解决方案](https://blog.csdn.net/wanmeiyinyue315/article/details/79654984)
 
 1、不同浏览器的标签默认的外补丁( margin )和内补丁(padding)不同
-解决方案： css 里增加通配符 * { margin: 0; padding: 0; }
+解决方案： css 里增加通配符 `* { margin: 0; padding: 0; }`
 
 2、IE6双边距问题；在 IE6中设置了float , 同时又设置margin , 就会出现边距问题
-解决方案：设置display:inline;
+解决方案：设置`display:inline`;
 
 3、当标签的高度设置小于10px，在IE6、IE7中会超出自己设置的高度
-解决方案：超出高度的标签设置overflow:hidden,或者设置line-height的值小于你的设置高度
+解决方案：超出高度的标签设置`overflow:hidden`,或者设置`line-height`的值小于你的设置高度
 
 4、图片默认有间距
 解决方案：使用float 为img 布局
 
 5、IE9以下浏览器不能使用opacity
 解决方案：
+
+```css
 opacity: 0.5;
 
 filter: alpha(opacity = 50);
 
 filter: progid:DXImageTransform.Microsoft.Alpha(style = 0, opacity = 50);（ie提供的css渲染）
+```
 
 6、边距重叠问题；当相邻两个元素都设置了margin 边距时，margin 将取最大值，舍弃最小值；
 解决方案：为了不让边重叠，可以给子元素增加一个父级元素，并设置父级元素为overflow:hidden；
 
-7、cursor:hand 显示手型在safari 上不支持
-解决方案：统一使用 cursor:pointer
+7、`cursor:hand` 显示手型在safari 上不支持
+解决方案：统一使用 `cursor:pointer`
 
-8、两个块级元素，父元素设置了overflow:auto；子元素设置了position:relative ;且高度大于父元素，在IE6、IE7会被隐藏而不是溢出；
-解决方案：父级元素设置position:relative
+8、两个块级元素，父元素设置了`overflow:auto`子元素设置了`position:relative` 且高度大于父元素，在IE6、IE7会被隐藏而不是溢出；
+解决方案：父级元素设置`position:relative`
 
-### 14、浏览器渲染页面的过程:star:
+### :star:14、浏览器渲染页面的过程
 
 - 根据 HTML 结构生成 DOM 树
 
@@ -313,7 +316,7 @@ filter: progid:DXImageTransform.Microsoft.Alpha(style = 0, opacity = 50);（ie�
 
 渐进增强：从被所有浏览器支持的基本功能开始，逐步地添加那些只有新式浏览器才支持的功能,向页面增加无害于基础浏览器的额外样式和功能的。当浏览器支持时，它们会自动地呈现出来并发挥作用。
 
-### 18、clientHeight，scrollHeight，offsetHeight 以及scrollTop，offsetTop，clientTop:star:
+### :star:18、clientHeight，scrollHeight，offsetHeight 以及scrollTop，offsetTop，clientTop
 
 clientHeight：表示的是可视区域的高度，不包含border和滚动条
 
@@ -327,7 +330,7 @@ scrollTop：滚动后被隐藏的高度，获取对象相对于由offsetParent�
 
 offsetTop：子元素的外边框到父元素的内边框的垂直距离 （没边框时自然就是content到content的距离）
 
-### 19、重绘（repaint）和重排（reflow）:star:
+### :star:19、重绘（repaint）和重排（reflow）
 
 **重排**
 
@@ -384,7 +387,7 @@ offsetTop：子元素的外边框到父元素的内边框的垂直距离 （没�
 
 
 
-### 20、图片懒加载和预加载:star:
+### :star:20、图片懒加载和预加载
 
 参考：https://www.cnblogs.com/psxiao/p/11542930.html
 

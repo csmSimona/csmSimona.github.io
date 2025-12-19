@@ -1,4 +1,4 @@
-## Canvas入门
+# Canvas入门
 
 参考文章：[案例+图解带你一文读懂Canvas](https://juejin.cn/post/7119495608938790942)
 

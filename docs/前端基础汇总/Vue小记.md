@@ -1084,7 +1084,7 @@ vm.object={
 
 ### 3、Vue高级特性
 
-#### 自定义组件如何实现v-model:star:
+#### :star:自定义组件如何实现v-model
 
 ##### Vue2
 
@@ -1210,7 +1210,7 @@ const age = defineModel('age')
 
 
 
-#### nextTick:star:
+#### :star:nextTick
 
 **核心作用：在下次 DOM 更新循环结束后执行回调，确保我们能操作到最新的 DOM 状态。**
 
@@ -1268,7 +1268,7 @@ this.$nextTick(() => {
 
 
 
-#### 插槽:star:
+#### :star:插槽
 
 没有插槽的情况下在组件标签内写一些内容是不起任何作用的，当在组件中声明了slot元素后，在组件元素内写的内容就会替换slot。
 
@@ -1410,7 +1410,7 @@ this.$nextTick(() => {
 
 
 
-#### 动态组件与v-once指令:star:
+#### :star:动态组件与v-once指令
 
 - 动态组件用法 `<component :is="component-name" />`  
 
@@ -1480,7 +1480,7 @@ components:{
 
 
 
-#### keep-alive:star:
+#### :star:keep-alive
 
 ```vue
 <keep-alive>
@@ -1855,7 +1855,7 @@ export default {
 
 
 
-##### 导航守卫的实际应用:star:
+##### :star:导航守卫的实际应用
 
 - 认证和授权
 
@@ -1937,9 +1937,9 @@ router.beforeEach((to, from, next) => {
 
 
 
-## 二、Vue原理:star:
+## :star:二、Vue原理
 
-### 1、MVVM:star:
+### :star:1、MVVM
 
 是指数据层（Model）- 视图层（View）- 数据视图（ViewModel）的响应式框架
 
@@ -1987,7 +1987,7 @@ MVVM实质上是把 MVC 中的C的功能给拆分了。
 
 
 
-### 2、双向数据绑定原理:star:
+### :star:2、双向数据绑定原理
 
 双向数据绑定是指数据模型与视图之间的双向同步。Vue.js 通过 `v-model` 指令实现了这一功能。
 
@@ -2007,7 +2007,7 @@ MVVM实质上是把 MVC 中的C的功能给拆分了。
 
 
 
-### 3、响应式原理（Vue2）:star:
+### :star:3、响应式原理（Vue2）
 
 响应式原理是**实现数据模型到视图同步（数据驱动视图）**的关键技术，它确保了当数据模型中的数据发生变化时，视图能够自动更新。
 
@@ -2159,7 +2159,7 @@ function observe(target) {
 
 
 
-### 4、Vue3如何实现响应式:star:
+### :star:4、Vue3如何实现响应式
 
 #### 学习Proxy语法
 
@@ -2307,7 +2307,7 @@ const proxyData = reactive(data)
 
 
 
-### 5、vdom（虚拟dom）:star:
+### :star:5、vdom（虚拟dom）
 
 用JS模拟DOM结构，DOM变化的对比，放在JS层进行，减少操作DOM的次数，减少回流和重绘，优化 UI 渲染性能
 
@@ -2365,7 +2365,7 @@ const proxyData = reactive(data)
 
 
 
-### 6、diff算法:star:
+### :star:6、diff算法
 
 diff算法指的就是**两个虚拟DOM作比对**
 
@@ -2522,7 +2522,7 @@ Vue 和 React 的 diff 算法核心目标相同：**高效地找出虚拟 DOM (V
 
 
 
-### 7、模板编译:star:
+### :star:7、模板编译
 
 Vue 的模板编译过程是将开发者编写的 `.vue` 单文件组件中的 `<template>` 部分（或独立的 HTML 模板字符串）**转换**成浏览器能够执行的 **JavaScript 渲染函数 (`render` 函数)** 的过程。
 
@@ -2619,7 +2619,7 @@ function render() {
 
 
 
-### 8、Vue整体实现流程:star:
+### :star:8、Vue整体实现流程
 
 **1、组件实例创建**
 
@@ -2656,14 +2656,14 @@ function render() {
 - 随着功能的增长，复杂组件的代码变得难以维护。
 - vue2.x是采用Facebook的Flow做类型检查，但在某些情况下推断有问题，且对typescript支持不太友好（需要使用一堆装饰器语法）。
 
-### 2、Vue2和Vue3的区别（Vue3比Vue2有什么优势）:star:
+### :star:2、Vue2和Vue3的区别（Vue3比Vue2有什么优势）
 
 #### 源码优化
 
 - 更好的代码管理方式：monorepo 根据功能将不同的模块拆分到packages目录下不同的子目录中。这样使得模块拆分更细化，职责划分更明确，模块之间的依赖关系也更加明确，开发人员也更容易阅读、理解和更改所有模块源码，提高代码的可维护性。
 - 采用typescript开发，也省去了单独维护d.ts文件的麻烦。
 
-#### 性能优化:star:
+#### :star:性能优化
 
 - **源码体积优化**：移除了一些冷门的feature（比如filter、inline-template等），引入tree-shaking技术减少打包体积。
 - **数据劫持优化**：使用Proxy代替vue2.x中的defineProperty，能够深层监听数组对象的变化。
@@ -3022,7 +3022,7 @@ watchEffect(() => {
 
 
 
-##### watch和watchEffect的区别是什么:star:
+##### :star:watch和watchEffect的区别是什么
 
 - **依赖追踪方式**
 
@@ -3069,7 +3069,7 @@ watchEffect(() => {
 
 #### 响应式
 
-##### ref:star:
+##### :star:ref
 
 **ref的实现：** 为了实现基本数据类型的响应式，Vue 设计了 `ref` 。 `ref` 会将基本数据类型封装为一个包含 `value` 属性的对象，通过 `getter` 和 `setter` 实现响应式依赖追踪和更新。当访问或修改 `ref.value` 时，Vue 内部会触发依赖更新。此外，对于复杂数据类型（如对象或数组）， `ref` 的内部实现会直接调用 `reactive` ，将复杂数据类型变为响应式。
 
@@ -3150,7 +3150,7 @@ Vue 3 中， `ref` 之所以需要 `.value` 属性，主要是因为 Vue 3 使�
 
 
 
-##### reactive:star:
+##### :star:reactive
 
 **reactive的实现：**`reactive` 通过 `Proxy` 对对象或数组的每个属性进行深度代理，实现响应式。这种设计使得 `reactive` 能自动追踪所有嵌套属性的变化，但由于 `Proxy` 无法直接处理基本数据类型（如 `number` 、 `string` 、 `boolean` ），因此， `reactive` 不适用于基本数据类型。
 
@@ -3626,7 +3626,7 @@ const { loading, data, error } = useRequest(url)
 
 
 
-#### 组合式函数和React Hooks的对比:star:
+#### :star:组合式函数和React Hooks的对比
 
 - 前者setup只会被调用一次，而后者函数会被多次调用
 - 前者无需useMemo useCallback，因为setup只调用一次
@@ -3739,7 +3739,7 @@ createApp({
 
 #### 移除filter
 
-#### Teleport:star:
+#### :star:Teleport
 
 `<Teleport>` 是一个内置组件，它可以将一个组件内部的一部分模板“传送”到该组件的 DOM 结构外层的位置去。
 
@@ -3762,7 +3762,7 @@ createApp({
 </teleport>
 ```
 
-#### Suspense:star:
+#### :star:Suspense
 
 用于处理异步组件和延迟加载
 
@@ -3884,7 +3884,7 @@ onErrorCaptured((err) => {
 
 
 
-### 7、Vue3为何比Vue2快（Vue3性能提升原因）:star:
+### :star:7、Vue3为何比Vue2快（Vue3性能提升原因）
 
 #### 1. **响应式系统重构（Proxy 替代 defineProperty）**
 
@@ -3981,7 +3981,7 @@ onErrorCaptured((err) => {
 
 ### 8、Pinia
 
-#### Vuex和Pinia的区别:star:
+#### :star:Vuex和Pinia的区别
 
 Vue 官方已将 Pinia 作为 **[默认状态管理库](https://vuejs.org/guide/scaling-up/state-management.html#pinia)**，新项目应优先使用 Pinia。
 

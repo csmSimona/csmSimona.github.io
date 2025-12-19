@@ -1,4 +1,4 @@
-## TypeScript小记
+# TypeScript小记（待整理）
 
 学习中，笔记较乱，待整理
 
@@ -27,6 +27,8 @@
 ts小实践：[使用 TypeScript 编写爬虫工具](https://github.com/csmSimona/crawler)
 
 ### 安装编译
+
+
 
 ##### 全局安装ts
 

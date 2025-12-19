@@ -1,4 +1,4 @@
-# antv G6的基础入门及树图的实际应用
+# AntV G6的基础入门及树图的实际应用
 
 官网：https://g6.antv.antgroup.com/
 

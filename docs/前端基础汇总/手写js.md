@@ -1,4 +1,4 @@
-## 手写js代码
+# 手写js代码
 
 ### 1、数据类型判断
 
@@ -100,7 +100,7 @@ Function.prototype.myBind = function(thisArg, ...args) {
 
 
 
-### 7、函数科里化:star:
+### :star:7、函数科里化
 
 将使用多个参数的函数转换成一系列使用一个参数的函数
 
@@ -127,7 +127,7 @@ curry(1, 2)(3)(4)
 
 
 
-### 8、偏函数:star:
+### :star:8、偏函数
 
 将一个 n 参的函数转换成固定 x 参的函数，剩余参数（n - x）将在下次调用全部传入
 
@@ -147,7 +147,7 @@ partialAdd(2, 3)
 
 
 
-### 9、数组去重:star:
+### :star:9、数组去重
 
 ```js
 var unique = arr => [...new Set(arr)]
@@ -190,7 +190,7 @@ function unique(arr){
 
 
 
-### 10、数组扁平化:star:
+### :star:10、数组扁平化
 
 ```js
 // 数组方法flat()，默认打平一层，Infinity打平任意层
@@ -238,7 +238,7 @@ function flatArr(arr) {
 
 
 
-### 11、数组排序:star:
+### :star:11、数组排序
 
 #### 冒泡排序
 
@@ -333,7 +333,7 @@ function quickSort(arr) {
 
 
 
-### 12、深浅拷贝:star:
+### :star:12、深浅拷贝
 
 #### 普通数组深拷贝
 
@@ -479,7 +479,7 @@ randomArr(arr)
 
 
 
-### 14、防抖:star:
+### :star:14、防抖
 
 防抖是指在事件被触发后延迟一段时间后再执行回调，如果在这段延迟时间内事件又被触发，则重新计算延迟时间。
 
@@ -497,7 +497,7 @@ function debounce(fn, wait = 100) {
 
 
 
-### 15、节流:star:
+### :star:15、节流
 
 节流是指在一段时间内，不管事件触发了多少次，只执行一次回调。 
 
@@ -931,7 +931,7 @@ render(template, person); // 我是ccc，年龄12，性别undefined
 
 
 
-### 22、Promise:star:
+### :star:22、Promise
 
 #### promise的使用
 
@@ -1265,7 +1265,7 @@ xhr.send()    // 如果是post  send(data)
 
 
 
-### 25、封装一个jsonp:star:
+### :star:25、封装一个jsonp
 
 ```js
 function jsonp({url, params, callbackName}) {
@@ -1639,7 +1639,7 @@ function getDifference(arr1, arr2) {
 
 
 
-### 32、数组转树:star:
+### :star:32、数组转树
 
 通常我们有一个包含父子关系的数组，目标是将其转化为树形结构。
 
@@ -1720,7 +1720,7 @@ console.log(JSON.stringify(arrayToTree(arr), null, 2))
 
 
 
-### 33、树转数组:star:
+### :star:33、树转数组
 
 将树形结构扁平化为数组，保留原有的层级关系。
 

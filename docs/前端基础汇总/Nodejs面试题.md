@@ -1,4 +1,8 @@
-# Nodejs 面试题
+# Nodejs 面试题（待整理）
+
+[Nodejs面试题](https://www.mianshipai.com/docs/second-exam/nodejs.html)
+
+[NodeJs小记（待整理）](/其他/NodeJs小记)
 
 ### 对 Node.js 的理解
 

@@ -1,6 +1,6 @@
-## PixiJS实现一镜到底
+# PixiJS实现一镜到底
 
-PixiJS的基本使用：
+[PixiJS的基本使用](./PixiJS的基本使用.md)
 
 
 

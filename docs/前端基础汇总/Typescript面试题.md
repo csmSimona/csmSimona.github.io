@@ -1,6 +1,8 @@
-# Typescript小记
+# Typescript面试题（待整理）
 
-[TypeScript面试题](https://www.mianshipai.com/docs/first-exam/TS.html "TypeScript面试题")
+[TypeScript面试题](https://www.mianshipai.com/docs/first-exam/TS.html)
+
+[Typescript小记（待整理）](/其他/Typescript小记)
 
 ## 1、TS 基础类型有哪些
 

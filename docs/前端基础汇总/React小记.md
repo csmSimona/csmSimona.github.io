@@ -478,7 +478,7 @@ export default Parent
 
 
 
-#### 受控组件 (Controlled Components):star:
+#### :star:受控组件 (Controlled Components)
 
 - **定义**: **在受控组件中，组件的状态由React组件自身的state或父组件传递下来的props控制**。这意味着组件的UI状态（如表单字段的值）总是由React的state保持同步。
 - **特点**: 每当用户交互（如键盘输入）发生时，React会更新组件的状态，并重新渲染组件以反映新的状态。
@@ -492,7 +492,7 @@ export default Parent
 
 
 
-#### Portals（传送门）:star:
+#### :star:Portals（传送门）
 
 Portal是一种特殊的渲染方式，它允许你将子节点渲染到位于父组件以外的DOM节点中。
 
@@ -562,7 +562,7 @@ Portal 的实现涉及到**将一部分虚拟 DOM 树渲染到页面上的不同
 
 
 
-#### context:star:
+#### :star:context
 
 **React Context** 是一种在组件树中共享数据的机制，避免了通过逐层传递 *props* 的繁琐操作。它适用于需要在多个组件间共享全局数据的场景，例如主题、用户信息或语言设置。
 
@@ -625,7 +625,7 @@ export default App;
 
 
 
-#### 异步组件:star:
+#### :star:异步组件
 
 - import()
 - **React.lazy**
@@ -735,7 +735,7 @@ class MyComponent extends PureComponent {
 
 
 
-#### React.memo:star:
+#### :star:React.memo
 
 - `React.memo` 是一个高阶组件（Higher-Order Component, HOC），用于优化函数组件的性能。
 
@@ -819,7 +819,7 @@ console.log(personWithNewHobby); // 输出: Map { "name": "Alice", "age": 31, "h
 
 
 
-#### 高阶组件HOC:star:
+#### :star:高阶组件HOC
 
 这篇文章推荐阅读：[高阶组件（HOC）在 React 中的应用](https://juejin.cn/post/7220677873584734268)
 
@@ -1044,7 +1044,7 @@ export default App
 
 
 
-### 3、Redux:star:
+### :star:3、Redux
 
 Redux 是最流行的 React 状态管理库之一。它提供了一个全局的状态容器，允许你在应用的任何地方访问和更新状态。
 
@@ -1477,7 +1477,7 @@ function App() {
 
 
 
-## 二、React原理:star:
+## :star:二、React原理
 
 ### 1、函数式编程
 
@@ -1511,7 +1511,7 @@ function App() {
 
 
 
-### 2、虚拟DOM:star:
+### :star:2、虚拟DOM
 
 #### 什么是虚拟DOM？
 
@@ -1602,7 +1602,7 @@ React.createElement("div", {
 
 
 
-### 3、React Fiber架构:star:
+### :star:3、React Fiber架构
 
 React Fiber 是React16版本中引入的一种新的协调算法，它彻底改变了React的渲染机制，使其更加高效和灵活。解决了以前的更新机制的问题，即在长时间的更新过程中，主线程会被阻塞，导致应用无法及时响应用户输入的问题。
 
@@ -1738,7 +1738,7 @@ Fiber 引入了一种新的协调流程，允许将任务分片并在多个帧�
 
 
 
-### 4、Fiber 结构和普通 VNode 区别:star:
+### :star:4、Fiber 结构和普通 VNode 区别
 
 #### 本质差异
 
@@ -1820,7 +1820,7 @@ const fiberNode = {
 
 
 
-### 5、React reconciliation 协调的过程:star:
+### :star:5、React reconciliation 协调的过程
 
 React 的 **协调（Reconciliation）** 是用于高效更新 UI 的核心算法。当组件状态或属性变化时，React 会通过对比新旧虚拟 DOM（Virtual DOM）树，找出最小化的差异并应用更新。以下是协调过程的详细步骤：
 
@@ -1867,7 +1867,7 @@ React 使用 **Diffing 算法** 比较新旧两棵虚拟 DOM 树，找出需要�
 
 
 
-### 6、diff 算法:star:
+### :star:6、diff 算法
 
 #### React 早期版本中的 Diff 算法
 
@@ -2000,7 +2000,7 @@ Vue 和 React 的 diff 算法核心目标相同：**高效地找出虚拟 DOM (V
 
 
 
-### 7、React concurrency 并发机制:star:
+### :star:7、React concurrency 并发机制
 
 React 的并发机制（Concurrency）是 React 18 引入的一项重要特性，旨在提升应用的响应性和性能。
 
@@ -2037,7 +2037,7 @@ root.render(<App />)
 
 
 
-### 8、合成事件**SyntheticEvent**:star:
+### :star:8、合成事件SyntheticEvent
 
 React 的合成事件（Synthetic Events）是一种跨浏览器的封装事件，它为开发者提供了一套统一的事件处理接口，使得在不同浏览器中处理事件变得更为一致和可靠。**React 使用合成事件来解决浏览器之间的事件处理差异，并提供了一些额外的功能，如事件池化，以提高性能。**
 
@@ -2072,7 +2072,7 @@ function handleClick(event) {
 
 
 
-### 9、batchUpdate（批处理）:star:
+### :star:9、batchUpdate（批处理）
 
 React 的 **batchUpdate（批处理更新）机制** 是一种优化策略，旨在**将多个状态更新合并为一次渲染**，减少不必要的组件重新渲染次数，从而提高性能。
 
@@ -2189,7 +2189,7 @@ React 的 **batchUpdate（批处理更新）机制** 是一种优化策略，旨
 
 
 
-### 11、React 组件渲染和更新的全过程:star:
+### :star:11、React 组件渲染和更新的全过程
 
 **1. 整体流程概述** 
 
@@ -3060,7 +3060,7 @@ function useEffect(callback, dependencies) {
 
 ## 四、其他
 
-### 1、React16,17,18,19新特性更新对比:star:
+### :star:1、React16、17、18、19新特性更新对比
 
 #### **React 16（2017） - Fiber 架构革命**
 
@@ -3171,7 +3171,7 @@ function useEffect(callback, dependencies) {
 
 
 
-### 3、React和Vue对比:star:
+### :star:3、React和Vue对比
 
 **共同点**
 

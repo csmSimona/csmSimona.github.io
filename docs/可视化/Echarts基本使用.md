@@ -1,4 +1,8 @@
-## Echarts基本使用
+# Echarts基本使用
+
+PS：很早之前，刚入门的时候记录写的
+
+
 
 来源：[ECharts数据可视化项目](https://www.bilibili.com/video/BV1v7411R7mp)（PS：这个老师讲的不错，风趣生动）
 

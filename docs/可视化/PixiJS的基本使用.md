@@ -1,4 +1,4 @@
-## PixiJS的基本使用
+# PixiJS的基本使用
 
 官网：https://www.pixijs.com
 
