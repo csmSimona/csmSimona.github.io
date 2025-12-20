@@ -57,4 +57,5 @@ jobs:
           key: ${{ secrets.SERVER_PRIVATE_KEY }}
           port: ${{ secrets.SERVER_PORT }}
           source: "docs/.vitepress/dist/"
-          target: "/test-folder"
+          target: "/my-docs"
+          strip_components: 3
