@@ -49,28 +49,12 @@ jobs:
           branch: gh-pages
           folder: docs/.vitepress/dist
 
-      # - name: 部署到服务器
-      #   uses: appleboy/scp-action@master
-      #   with:
-      #     host: ${{ secrets.SERVER_HOST }}
-      #     username: ${{ secrets.SERVER_USERNAME }}
-      #     key: ${{ secrets.SSH_PRIVATE_KEY }}
-      #     port: ${{ secrets.SERVER_PORT }}
-      #     source: "docs/.vitepress/dist/"
-      #     target: "/my-docs"
-      #     strip_components: 3
-          
       - name: 部署到服务器
-        run: |
-          mkdir -p ~/.ssh
-          # 正确处理SSH私钥，确保换行符正确
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/deploy_key
-          # 设置严格的权限
-          chmod 700 ~/.ssh
-          chmod 600 ~/.ssh/deploy_key
-          # 添加主机到known_hosts
-          ssh-keyscan -p ${{ secrets.SERVER_PORT }} ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts 2>&1 || true
-          # 验证私钥格式（使用适合私钥的方法）
-          ssh-keygen -y -f ~/.ssh/deploy_key > /dev/null 2>&1 || echo "私钥格式检查失败，但继续执行"
-          # 直接使用scp指定私钥文件，不通过ssh-agent
-          scp -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -i ~/.ssh/deploy_key -P ${{ secrets.SERVER_PORT }} -r docs/.vitepress/dist/* ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/my-docs/
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          key: ${{ secrets.SERVER_PRIVATE_KEY }}
+          port: ${{ secrets.SERVER_PORT }}
+          source: "docs/.vitepress/dist/"
+          target: "/my-docs"
