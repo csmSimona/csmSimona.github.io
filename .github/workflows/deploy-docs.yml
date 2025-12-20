@@ -49,13 +49,26 @@ jobs:
           branch: gh-pages
           folder: docs/.vitepress/dist
 
+      # - name: 部署到服务器
+      #   uses: appleboy/scp-action@master
+      #   with:
+      #     host: ${{ secrets.SERVER_HOST }}
+      #     username: ${{ secrets.SERVER_USERNAME }}
+      #     key: ${{ secrets.SSH_PRIVATE_KEY }}
+      #     port: ${{ secrets.SERVER_PORT }}
+      #     source: "docs/.vitepress/dist/"
+      #     target: "/my-docs"
+      #     strip_components: 3
+      
       - name: 部署到服务器
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.SERVER_PORT }}
-          source: "docs/.vitepress/dist/"
-          target: "/my-docs"
-          strip_components: 3
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SERVER_HOST: ${{ secrets.SERVER_HOST }}
+          SERVER_USERNAME: ${{ secrets.SERVER_USERNAME }}
+          SERVER_PORT: ${{ secrets.SERVER_PORT }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p $SERVER_PORT $SERVER_HOST >> ~/.ssh/known_hosts 2>/dev/null || true
+          scp -o StrictHostKeyChecking=no -i ~/.ssh/deploy_key -P $SERVER_PORT -r docs/.vitepress/dist/* $SERVER_USERNAME@$SERVER_HOST:/my-docs/
