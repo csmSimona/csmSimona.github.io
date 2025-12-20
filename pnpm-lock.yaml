@@ -8,9 +8,6 @@ importers:
 
   .:
     devDependencies:
-      busuanzi.pure.js:
-        specifier: ^1.0.3
-        version: 1.0.3
       medium-zoom:
         specifier: ^1.1.0
         version: 1.1.0
@@ -598,9 +595,6 @@ packages:
 
   buffer-builder@0.2.0:
     resolution: {integrity: sha512-7VPMEPuYznPSoR21NE1zvd2Xna6c/CloiZCfcMXR1Jny6PjX0N4Nsa38zcBFo/FMK+BlA+FLKbJCQ0i2yxp+Xg==}
-
-  busuanzi.pure.js@1.0.3:
-    resolution: {integrity: sha512-tPULdyx+8NNb9geZYDpktKmHAYx9f2LEOBaHyWCaM7iPEMIa/43KgYAUluuU7YG9UFSOFpj4dO7Nj2Vlu3V9Rg==}
 
   ccount@2.0.1:
     resolution: {integrity: sha512-eyrF0jiFpY+3drT6383f1qhkbGsLSifNAjA61IUjZjmLCWjItY6LB9ft9YhoDgwfmclB2zhu51Lc7+95b8NRAg==}
@@ -1539,8 +1533,6 @@ snapshots:
     optional: true
 
   buffer-builder@0.2.0: {}
-
-  busuanzi.pure.js@1.0.3: {}
 
   ccount@2.0.1: {}
 
