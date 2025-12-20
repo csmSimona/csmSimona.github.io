@@ -14,6 +14,7 @@
     "nprogress-v2": "^1.1.10",
     "sass-embedded": "^1.79.1",
     "vitepress": "2.0.0-alpha.15",
+    "vitepress-plugin-comment-with-giscus": "^1.1.15",
     "vitepress-plugin-google-analytics": "^1.0.2",
     "vue": "^3.4.0",
     "xgplayer": "^3.0.23"

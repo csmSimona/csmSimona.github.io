@@ -8,10 +8,11 @@ import { inBrowser } from 'vitepress'
 import MyLayout from "./components/MyLayout.vue";
 import googleAnalytics from 'vitepress-plugin-google-analytics'
 import mediumZoom from 'medium-zoom';
-import { useRoute } from 'vitepress';
 import { NProgress } from 'nprogress-v2/dist/index.js' // 进度条组件
 import 'nprogress-v2/dist/index.css' // 进度条样式
 import useVisitData from './utils/useVisitData'
+import giscusTalk from 'vitepress-plugin-comment-with-giscus';
+import { useData, useRoute } from 'vitepress';
 
 // 彩虹背景动画样式
 let homePageStyle: HTMLStyleElement | undefined
@@ -20,6 +21,27 @@ export default {
   extends: DefaultTheme,
   setup() {
     const route = useRoute();
+    const { frontmatter } = useData();
+        
+    // giscus配置
+    giscusTalk({
+      repo: 'csmSimona/csmSimona.github.io', // 仓库
+      repoId: 'R_kgDOMo0gJg', // 仓库ID
+      category: 'General', // 讨论分类
+      categoryId: 'DIC_kwDOMo0gJs4C0C_F', // 讨论分类ID
+      mapping: 'pathname',
+      inputPosition: 'bottom',
+      lang: 'zh-CN',
+      }, 
+      {
+        frontmatter, route
+      },
+      //默认值为true，表示已启用，此参数可以忽略；
+      //如果为false，则表示未启用
+      //您可以使用“comment:true”序言在页面上单独启用它
+      true
+    );
+
     const initZoom = () => {
       // mediumZoom('[data-zoomable]', { background: 'var(--vp-c-bg)' }); // 默认
       mediumZoom('.main img', { background: 'var(--vp-c-bg)' }); // 不显式添加{data-zoomable}的情况下为所有图像启用此功能
