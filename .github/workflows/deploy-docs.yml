@@ -63,17 +63,14 @@ jobs:
       - name: 部署到服务器
         run: |
           mkdir -p ~/.ssh
-          # 正确处理SSH密钥，确保格式正确
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          # 正确处理SSH私钥，确保换行符正确
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/deploy_key
           # 设置严格的权限
           chmod 700 ~/.ssh
           chmod 600 ~/.ssh/deploy_key
           # 添加主机到known_hosts
           ssh-keyscan -p ${{ secrets.SERVER_PORT }} ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts 2>&1 || true
-          # 验证密钥格式
-          ssh-keygen -l -f ~/.ssh/deploy_key || echo "密钥格式检查失败，但继续执行"
-          # 使用ssh-agent管理密钥
-          eval $(ssh-agent -s)
-          ssh-add ~/.ssh/deploy_key
-          # 部署文件
-          scp -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -P ${{ secrets.SERVER_PORT }} -r docs/.vitepress/dist/* ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/my-docs/
+          # 验证私钥格式（使用适合私钥的方法）
+          ssh-keygen -y -f ~/.ssh/deploy_key > /dev/null 2>&1 || echo "私钥格式检查失败，但继续执行"
+          # 直接使用scp指定私钥文件，不通过ssh-agent
+          scp -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -i ~/.ssh/deploy_key -P ${{ secrets.SERVER_PORT }} -r docs/.vitepress/dist/* ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/my-docs/
