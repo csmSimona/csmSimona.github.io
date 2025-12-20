@@ -70,5 +70,8 @@ jobs:
           mkdir -p ~/.ssh
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
-          ssh-keyscan -p $SERVER_PORT $SERVER_HOST >> ~/.ssh/known_hosts 2>/dev/null || true
-          scp -o StrictHostKeyChecking=no -i ~/.ssh/deploy_key -P $SERVER_PORT -r docs/.vitepress/dist/* $SERVER_USERNAME@$SERVER_HOST:/my-docs/
+          echo "Host: $SERVER_HOST"
+          echo "Port: $SERVER_PORT"
+          echo "User: $SERVER_USERNAME"
+          ssh-keyscan -p "$SERVER_PORT" "$SERVER_HOST" >> ~/.ssh/known_hosts 2>&1 || true
+          scp -o StrictHostKeyChecking=no -o ConnectTimeout=10 -i ~/.ssh/deploy_key -P "$SERVER_PORT" -r docs/.vitepress/dist/* "$SERVER_USERNAME"@"$SERVER_HOST":/my-docs/
