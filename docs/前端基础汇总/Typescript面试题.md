@@ -2,7 +2,7 @@
 
 [TypeScript面试题](https://www.mianshipai.com/docs/first-exam/TS.html)
 
-[Typescript小记（待整理）](/其他/Typescript小记)
+[Typescript小记（待整理）](/其他/TypeScript小记)
 
 ## 1、TS 基础类型有哪些
 

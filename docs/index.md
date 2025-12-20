@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "MyDocs"
   text: "我的个人文档"
-  tagline: 把这世上唯一版本的自己做好
+  # tagline: 把这世上唯一版本的自己做好
   image:
     src: /girl.png
     alt: VitePress
@@ -38,7 +38,7 @@ features:
     linkText: 开发记录
   - icon: 🍊
     title: 关于我
-    details: TODO
+    details: 把这世上唯一版本的自己做好
     link: 
     linkText: 关于我
 ---

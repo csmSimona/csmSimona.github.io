@@ -109,7 +109,7 @@ scene.add(mesh); //网格模型添加到场景中
 | aspect | 相机视锥体水平方向和竖直方向长度比，一般设置为Canvas画布宽高比width / height | 1    |
 | near   | 相机视锥体近裁截面相对相机距离                                  | 0.1  |
 | far    | 相机视锥体远裁截面相对相机距离，far-near构成了视锥体高度方向               | 2000 |
-|        | ![](./image/image__4ccPDRuht.png)              |      |
+|        | ![](../image/image__4ccPDRuht.png)              |      |
 
 ```javascript 
 // width和height用来设置渲染后，输出的画布宽高度。
@@ -183,7 +183,7 @@ three.js坐标轴颜色红**R**、绿**G**、蓝**B**分别对应坐标系的**x
 
 ### [光源](http://www.webgl3d.cn/pages/b9504a/ "光源")
 
-![](./image/image_9-jNPMBVVE.png)
+![](../image/image_9-jNPMBVVE.png)
 
 **基础网格材质**[MeshBasicMaterial](https://threejs.org/docs/index.html?q=MeshBasicMaterial#api/zh/materials/MeshBasicMaterial "MeshBasicMaterial")不会受到光照影响。
 
@@ -431,7 +431,7 @@ scene.add(mesh);
 
 ### 高光网格材质Phong
 
-![](./image/image_9YCJiuW0Wc.png)
+![](../image/image_9YCJiuW0Wc.png)
 
 `MeshPhongMaterial`可以提供一个镜面反射效果，该材质可以模拟具有镜面高光的光泽表面（例如涂漆木材）。
 
@@ -956,7 +956,7 @@ scene.add(group);
 
 ### 遍历模型树结构
 
-![](./image/image_itdo74-msC.png)
+![](../image/image_itdo74-msC.png)
 
 通过`.traverse()`递归遍历一个模型对象包含的所有后代
 
@@ -1376,7 +1376,7 @@ Three.js提供了两个PBR材质相关的API`标准网格材质(MeshStandardMate
 
 `MeshPhysicalMaterial`是`MeshStandardMaterial`扩展的子类，提供了更多功能属性。
 
-![](./image/image_KNmnCG_03p.png)
+![](../image/image_KNmnCG_03p.png)
 
 ### PBR材质金属度`metalness` 和粗糙度`roughness`
 
@@ -1845,7 +1845,7 @@ const line = new THREE.LineLoop(geometry, material);//线条模型对象
 
 threejs提供了很多常用的曲线或直线API，这些API曲线都有一个共同的父类`Curve`。
 
-![](./image/image_gaYRWvs-30.png)
+![](../image/image_gaYRWvs-30.png)
 
 **曲线**\*\*`Curve`****方法****`.getPoints()`\*\*
 
@@ -1928,7 +1928,7 @@ const line = new THREE.Line(geometry, material);
 
 用于绘制不规则曲线
 
-![](./image/image_ryrs0iOcxe.png)
+![](../image/image_ryrs0iOcxe.png)
 
 **生成三维样条曲线**\*\*`CatmullRomCurve3`\*\*
 
@@ -1984,7 +1984,7 @@ const curve = new THREE.SplineCurve(arr);
 
 和样条曲线一样，也用于绘制不规则曲线
 
-![](./image/image_ITgmmyNN0Z.png.mark.png)
+![](../image/image_ITgmmyNN0Z.png.mark.png)
 
 **二维二次贝塞尔曲线**\*\*`QuadraticBezierCurve`\*\*
 
@@ -2083,7 +2083,7 @@ const curve = new THREE.QuadraticBezierCurve3(p1, p2, p3);
 
 通过threejs组合曲线`CurvePath`对象，你可以把直线、圆弧、贝塞尔等线条拼接为一条曲线。
 
-![](./image/image_HmSdQXrFVJ.png)
+![](../image/image_HmSdQXrFVJ.png)
 
 ```javascript 
 const R = 50;//圆弧半径
@@ -2195,7 +2195,7 @@ const mesh = new THREE.Mesh(geometry, material);
 
 `Shape`的父类是`Path`,`Path`提供了直线、圆弧、贝塞尔、样条等绘制方法，`Shape`也会从父类是`Path`继承这些图形绘制方法。
 
-![](./image/image_tRSpiE6-P1.png)
+![](../image/image_tRSpiE6-P1.png)
 
 - `.currentPoint`属性字面意思是当前点，默认值`Vector2(0,0)`。
 - 执行和`.moveTo()`、`.lineTo()`方法后，`currentPoint`会发生变化
@@ -2619,7 +2619,7 @@ OrthographicCamera( left, right, top, bottom, near, far )
 | bottom | 渲染空间的下边界                                            |
 | near   | near属性表示的是从距离相机多远的位置开始渲染，一般情况会设置一个很小的值。 默认值0.1      |
 | far    | far属性表示的是距离相机多远的位置截止渲染，如果设置的值偏小小，会有部分场景看不到。 默认值2000 |
-|        | ![](./image/image_BNa27S99NX.png)                  |
+|        | ![](../image/image_BNa27S99NX.png)                  |
 
 **创建正投影相机**
 

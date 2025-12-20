@@ -57,7 +57,7 @@ export default {
         NProgress.start() // 开始进度条
       }
       router.onAfterRouteChange = () => {
-        busuanzi.fetch()
+        // busuanzi.fetch()
         NProgress.done() // 停止进度条
       }
     }
