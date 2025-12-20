@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "MyDocs"
-  text: "我的个人文档"
+  text: "我的学习笔记"
   # tagline: 把这世上唯一版本的自己做好
   image:
     src: /girl.png
@@ -14,7 +14,10 @@ hero:
       text: 开始
       link: /前端基础汇总/JavaScript小记
     - theme: sponsor
-      text: 实用导航
+      text: 导航
+      link: 
+    - theme: brand
+      text: 主页
       link: 
     - theme: alt
       text: GitHub

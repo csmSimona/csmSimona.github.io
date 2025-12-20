@@ -81,7 +81,9 @@ export default defineConfig({
     sidebar,
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/csmSimona' }
+      { icon: 'github', link: 'https://github.com/csmSimona' },
+      // TODO 我的主页
+      // { icon: 'github', link: 'https://github.com/csmSimona' }
     ],
 
     // 手机端深浅模式文字修改

@@ -3,7 +3,7 @@ import type { DefaultTheme } from 'vitepress'
 
 export const nav: DefaultTheme.Config['nav'] = [
   { text: "首页", link: "/" },
-  // { text: "实用导航", link: "" },
+  { text: "导航", link: "" },
   {
     text: "前端汇总",
     items: [
@@ -129,5 +129,6 @@ export const nav: DefaultTheme.Config['nav'] = [
         link: "/开发记录/浙政钉、浙里办、浙江政务服务网应用上架指南/浙政钉、浙里办、浙江政务服务网应用上架指南",
       },
     ],
-  }
+  },
+  { text: "关于我", link: "" },
 ]

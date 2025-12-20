@@ -1,7 +1,15 @@
 <template>
   <div class="busuanzi">
-    本站访客数 <span id="busuanzi_value_site_uv" /> 人次 本站总访问量
-    <span id="busuanzi_value_site_pv" /> 次
+    <!-- 不蒜子502 改成了vercount -->
+    <span id="vercount_container_site_pv" style="display: none">
+      本站总访问量
+      <span id="vercount_value_site_pv">--</span>次
+    </span>
+
+    <span id="vercount_container_site_uv" style="display: none">
+      本站总访客数
+      <span id="vercount_value_site_uv">--</span>人
+    </span>
   </div>
 </template>
 

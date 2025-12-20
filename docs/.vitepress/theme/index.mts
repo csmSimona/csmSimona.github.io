@@ -4,16 +4,14 @@ import './style/index.scss'
 import HomeUnderline from "./components/HomeUnderline.vue"
 import xgplayer from "./components/xgplayer.vue"
 import ArticleMetadata from "./components/ArticleMetadata.vue"
-import bsz from "./components/bsz.vue";
 import { inBrowser } from 'vitepress'
-import busuanzi from 'busuanzi.pure.js'
-import backtotop from "./components/backtotop.vue";
 import MyLayout from "./components/MyLayout.vue";
 import googleAnalytics from 'vitepress-plugin-google-analytics'
 import mediumZoom from 'medium-zoom';
 import { useRoute } from 'vitepress';
 import { NProgress } from 'nprogress-v2/dist/index.js' // 进度条组件
 import 'nprogress-v2/dist/index.css' // 进度条样式
+import useVisitData from './utils/useVisitData'
 
 // 彩虹背景动画样式
 let homePageStyle: HTMLStyleElement | undefined
@@ -49,7 +47,6 @@ export default {
       )
     }
 
-    // 不蒜子
     // 切换路由进度条
     if (inBrowser) {
       NProgress.configure({ showSpinner: false })
@@ -57,7 +54,7 @@ export default {
         NProgress.start() // 开始进度条
       }
       router.onAfterRouteChange = () => {
-        // busuanzi.fetch()
+        useVisitData()
         NProgress.done() // 停止进度条
       }
     }
@@ -74,6 +71,7 @@ export default {
     //   // 指定组件使用doc-footer-before插槽
     //   'doc-footer-before': () => h(backtotop),
     // })
+    // 改用自定义layout
     return h(MyLayout, null, {
     })
   }
