@@ -1,18 +1,18 @@
 import { h, watch, onMounted, nextTick } from 'vue'
 import DefaultTheme from 'vitepress/theme'
-import './style/index.scss'
-import HomeUnderline from "./components/HomeUnderline.vue"
-import xgplayer from "./components/xgplayer.vue"
-import ArticleMetadata from "./components/ArticleMetadata.vue"
-import { inBrowser } from 'vitepress'
-import MyLayout from "./components/MyLayout.vue";
 import googleAnalytics from 'vitepress-plugin-google-analytics'
-import mediumZoom from 'medium-zoom';
+import mediumZoom from 'medium-zoom'
 import { NProgress } from 'nprogress-v2/dist/index.js' // 进度条组件
 import 'nprogress-v2/dist/index.css' // 进度条样式
 import useVisitData from './utils/useVisitData'
-import giscusTalk from 'vitepress-plugin-comment-with-giscus';
-import { useData, useRoute } from 'vitepress';
+import giscusTalk from 'vitepress-plugin-comment-with-giscus'
+import { inBrowser, useData, useRoute } from 'vitepress'
+import ArticleMetadata from "./components/ArticleMetadata.vue"
+import HomeUnderline from "./components/HomeUnderline.vue"
+import xgplayer from "./components/xgplayer.vue"
+import MyNavLinks from './components/MyNavLinks.vue'
+import MyLayout from "./components/MyLayout.vue"
+import './style/index.scss'
 
 // 彩虹背景动画样式
 let homePageStyle: HTMLStyleElement | undefined
@@ -59,6 +59,7 @@ export default {
     app.component('HomeUnderline' , HomeUnderline)
     app.component('xgplayer' , xgplayer)
     app.component('ArticleMetadata' , ArticleMetadata)
+    app.component('MyNavLinks' , MyNavLinks)
 
     // 彩虹背景动画样式
     if (typeof window !== 'undefined') {
@@ -87,15 +88,23 @@ export default {
     })
   },
   Layout() {
+    const props: Record<string, any> = {}
+    // 获取 frontmatter
+    const { frontmatter } = useData()
+
+    /* 添加自定义 class */
+    if (frontmatter.value?.layoutClass) {
+      props.class = frontmatter.value.layoutClass
+    }
+    // 改用自定义layout
+    return h(MyLayout, props)
+
     // return h(DefaultTheme.Layout, null, {
     //   // 指定组件使用layout-bottom插槽
     //   'layout-bottom': () => h(bsz),
     //   // 指定组件使用doc-footer-before插槽
     //   'doc-footer-before': () => h(backtotop),
     // })
-    // 改用自定义layout
-    return h(MyLayout, null, {
-    })
   }
 }
 

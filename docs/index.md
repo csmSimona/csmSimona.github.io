@@ -13,9 +13,9 @@ hero:
     - theme: brand
       text: 开始
       link: /前端基础汇总/JavaScript小记
-    - theme: sponsor
+    - theme: alt
       text: 导航
-      link: 
+      link: /nav
     - theme: brand
       text: 主页
       link: 
