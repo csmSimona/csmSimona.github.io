@@ -16,8 +16,8 @@ import { NAV_DATA } from './navData.ts'
 
 # 实用导航
 
-::: info 教程
-此导航内容来自 [茂茂物语 | 前端导航](https://fe-nav.netlify.app/nav/)
+::: info 说明
+此导航部分内容来自 [茂茂物语 | 前端导航](https://fe-nav.netlify.app/nav/)
 :::
 
 <MyNavLinks v-for="{title, items} in NAV_DATA" :title="title" :items="items"/>
