@@ -2,6 +2,70 @@ import type { NavData } from '../.vitepress/theme/utils/types'
 
 export const NAV_DATA: NavData[] = [
   {
+    title: '开发者文档',
+    items: [
+      {
+        icon: 'https://img.alicdn.com/imgextra/i4/O1CN01RtfAks1Xa6qJFAekm_!!6000000002939-2-tps-128-128.png',
+        title: '钉钉免登流程',
+        desc: 'h5微应用免登开发指南',
+        link: 'https://open.dingtalk.com/document/development/logon-free-process'
+      },
+    ]
+  },
+  {
+    title: '地图',
+    items: [
+      {
+        icon: 'https://mapapi.qq.com/web/lbs/logo/favicon.ico',
+        title: '腾讯地图开放平台',
+        desc: 'WebService API 开发指南',
+        link: 'https://lbs.qq.com/service/webService/webServiceGuide/webServiceOverview'
+      },
+      {
+        icon: 'https://a.amap.com/lbs/static/img/console/favicon.ico',
+        title: '高德开放平台',
+        desc: '控制台',
+        link: 'https://console.amap.com/dev/key/app'
+      },
+      {
+        icon: 'http://lbs.tianditu.gov.cn/images/favicon.ico',
+        title: '天地图',
+        desc: 'WEB服务API',
+        link: 'http://lbs.tianditu.gov.cn/server/guide.html'
+      },
+      {
+        icon: 'https://img.alicdn.com/imgextra/i4/O1CN01rl7TUG21EzHHeafjC_!!6000000006954-2-tps-64-64.png',
+        title: 'DataV.GeoAtlas',
+        desc: '获取中国各省市区县边界geo数据等地理信息',
+        link: 'https://datav.aliyun.com/portal/school/atlas/area_selector'
+      },
+      {
+        icon: 'https://www.geofabrik.de/favicon.ico',
+        title: 'Geofabrik',
+        desc: '全世界geo数据免费下载',
+        link: 'https://download.geofabrik.de/'
+      },
+    ]
+  },
+  {
+    title: '工具',
+    items: [
+      {
+        icon: '/icons/tool.svg',
+        title: '退休年龄计算器',
+        desc: '根据《国务院关于渐进式延迟法定退休年龄的办法》计算您的退休信息',
+        link: 'https://fly63.com/tool/retireAge/'
+      },
+      {
+        icon: 'https://devtool.tech/logo.svg',
+        title: '颜色转换',
+        desc: 'RGB、HSL、CMYK 相互转化',
+        link: 'https://devtool.tech/color'
+      },
+    ]
+  },
+  /******************下面是复制过来的导航*******************8*/
+  {
     title: '常用工具',
     items: [
       {
@@ -17,16 +81,10 @@ export const NAV_DATA: NavData[] = [
         link: 'https://tinypng.com'
       },
       {
-        icon: './icons/carbon.png',
+        icon: '/icons/carbon.png',
         title: 'Carbon',
         desc: '代码图片生成',
         link: 'https://carbon.now.sh'
-      },
-      {
-        icon: 'https://devtool.tech/logo.svg',
-        title: '颜色转换',
-        desc: 'RGB、HSL、CMYK 相互转化',
-        link: 'https://devtool.tech/color'
       },
       {
         icon: 'https://devtool.tech/logo.svg',
@@ -71,14 +129,14 @@ export const NAV_DATA: NavData[] = [
     items: [
       {
         badge: '周一更新',
-        icon: './icons/frontender-ua.png',
+        icon: '/icons/frontender-ua.png',
         title: 'Frontend Weekly',
         desc: '前端周刊',
         link: 'https://frontender-ua.medium.com'
       },
       {
         badge: '周五更新',
-        icon: './icons/ruanyifeng.jpeg',
+        icon: '/icons/ruanyifeng.jpeg',
         title: '科技爱好者周刊',
         desc: '阮一峰的科技爱好者周刊',
         link: 'https://www.ruanyifeng.com/blog/archives.html'
@@ -99,7 +157,7 @@ export const NAV_DATA: NavData[] = [
       },
       {
         badge: '每周更新',
-        icon: './icons/geekhyt-weekly.png',
+        icon: '/icons/geekhyt-weekly.png',
         title: '前端食堂技术周刊',
         desc: '周周尝鲜，人工筛选前端圈每周最新资讯',
         link: 'https://hungryturbo.zhubai.love'
@@ -117,13 +175,13 @@ export const NAV_DATA: NavData[] = [
         link: 'https://antfu.me/posts'
       },
       {
-        icon: './icons/ascoders.png',
+        icon: '/icons/ascoders.png',
         title: '前端精读周刊',
         desc: '帮你理解最前沿、实用的技术',
         link: 'https://github.com/ascoders/weekly'
       },
       {
-        icon: './icons/mqyqingfeng.jpeg',
+        icon: '/icons/mqyqingfeng.jpeg',
         title: '冴羽博客',
         desc: '四个系列：JavaScript深入系列、JavaScript专题系列、ES6系列、React系列',
         link: 'https://github.com/mqyqingfeng/Blog'
@@ -135,12 +193,12 @@ export const NAV_DATA: NavData[] = [
     items: [
       {
         badge: '对话',
-        icon: './icons/chatgpt.png',
+        icon: '/icons/chatgpt.png',
         title: 'ChatGPT（最强）',
         link: 'https://chat.openai.com/chat'
       },
       {
-        icon: './icons/chatgpt.png',
+        icon: '/icons/chatgpt.png',
         title: 'ChatGPT 镜像站点列表',
         link: 'https://github.com/xx025/carrot'
       },
@@ -215,13 +273,13 @@ export const NAV_DATA: NavData[] = [
         link: 'https://mobile.ant.design'
       },
       {
-        icon: './icons/mui.svg',
+        icon: '/icons/mui.svg',
         title: 'Material UI',
         desc: '基于 Google Material Design 设计语言的 React 组件库',
         link: 'https://mui.com'
       },
       {
-        icon: './icons/mantine.svg',
+        icon: '/icons/mantine.svg',
         title: 'Mantine UI',
         desc: '一套功能齐全的 React 组件库',
         link: 'https://mantine.dev'
@@ -336,24 +394,6 @@ export const NAV_DATA: NavData[] = [
     ]
   },
   {
-    title: 'JavaScript 框架类库',
-    items: [
-      {
-        icon: 'https://svelte.dev/svelte-logo-horizontal.svg',
-        title: 'Svelte',
-        desc: '将声明性组件转换为精准高效更新 DOM 的 JavaScript 代码',
-        link: 'https://svelte.dev'
-      },
-      {
-        // icon: 'https://simpleicons.org./icons/jquery.svg',
-        icon: './icons/jquery.svg',
-        title: 'jQuery API 中文文档',
-        desc: '一个兼容多浏览器的 JavaScript 框架',
-        link: 'https://jquery.cuishifeng.cn'
-      }
-    ]
-  },
-  {
     title: 'CSS 相关',
     items: [
       {
@@ -363,13 +403,13 @@ export const NAV_DATA: NavData[] = [
         link: 'https://postcss.org'
       },
       {
-        icon: './icons/sass.svg',
+        icon: '/icons/sass.svg',
         title: 'Sass',
         desc: '一个成熟，稳定，功能强大的专业级 CSS 扩展语言',
         link: 'https://sass-lang.com'
       },
       {
-        icon: './icons/tailwindcss.png',
+        icon: '/icons/tailwindcss.png',
         title: 'TailwindCSS 中文网',
         desc: '一个功能类优先的 CSS 框架',
         link: 'https://www.tailwindcss.cn'
@@ -381,13 +421,13 @@ export const NAV_DATA: NavData[] = [
         link: 'https://unocss.dev'
       },
       {
-        icon: './icons/you-need-to-know-css.ico',
+        icon: '/icons/you-need-to-know-css.ico',
         title: 'You-need-to-know-css',
         desc: 'Web开发者应该掌握的CSS tricks',
         link: 'https://lhammer.cn/You-need-to-know-css/#/zh-cn/'
       },
       {
-        icon: './icons/qishaoxuan-css-tricks.png',
+        icon: '/icons/qishaoxuan-css-tricks.png',
         title: 'CSS 常用样式',
         desc: 'CSS 常用样式和奇技淫巧总结',
         link: 'https://qishaoxuan.github.io/css_tricks/'
@@ -409,7 +449,7 @@ export const NAV_DATA: NavData[] = [
         link: 'https://developers.weixin.qq.com/miniprogram/dev/framework/'
       },
       {
-        icon: './icons/alipay.svg',
+        icon: '/icons/alipay.svg',
         title: '支付宝小程序文档',
         desc: '支付宝小程序官方开发者文档',
         link: 'https://opendoc.alipay.com/mini/'
@@ -420,19 +460,19 @@ export const NAV_DATA: NavData[] = [
     title: '跨平台',
     items: [
       {
-        icon: './icons/electron.svg',
+        icon: '/icons/electron.svg',
         title: 'Electron',
         desc: '使用 Web 技术构建跨平台桌面应用程序',
         link: 'https://www.electronjs.org/zh/'
       },
       {
-        icon: './icons/tauri.png',
+        icon: '/icons/tauri.png',
         title: 'Tauri',
         desc: '使用 Web 技术构建更小、更快、更安全的桌面应用程序',
         link: 'https://tauri.app/zh-cn/'
       },
       {
-        icon: './icons/taro.svg',
+        icon: '/icons/taro.svg',
         title: 'Taro',
         desc: '多端统一开发解决方案',
         link: 'https://taro.jd.com'
@@ -455,7 +495,7 @@ export const NAV_DATA: NavData[] = [
     title: 'Node 相关',
     items: [
       {
-        icon: './icons/nodejs.svg',
+        icon: '/icons/nodejs.svg',
         title: 'Node.js',
         desc: 'Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境',
         link: 'https://nodejs.org/zh-cn'
@@ -467,7 +507,7 @@ export const NAV_DATA: NavData[] = [
         link: 'https://expressjs.com'
       },
       {
-        icon: './icons/koa.svg',
+        icon: '/icons/koa.svg',
         title: 'Koa',
         desc: '基于 Node.js 平台的下一代 web 开发框架',
         link: 'https://koajs.com'
@@ -490,13 +530,13 @@ export const NAV_DATA: NavData[] = [
     title: '可视化',
     items: [
       {
-        icon: './icons/echarts.png',
+        icon: '/icons/echarts.png',
         title: 'ECharts',
         desc: '一个基于 JavaScript 的开源可视化图表库',
         link: 'https://echarts.apache.org/zh/index.html'
       },
       {
-        icon: './icons/antv.png',
+        icon: '/icons/antv.png',
         title: 'AntV',
         desc: '蚂蚁集团全新一代数据可视化解决方案，致力于提供一套简单方便、专业可靠、无限可能的数据可视化最佳实践。',
         link: 'https://antv.vision/zh/'
@@ -585,7 +625,7 @@ export const NAV_DATA: NavData[] = [
         link: 'https://iconpark.oceanengine.com/official'
       },
       {
-        icon: './icons/iconify.png',
+        icon: '/icons/iconify.png',
         title: 'Iconify',
         desc: '一个开源的图标集合和图标工具',
         link: 'https://iconify.design'
@@ -597,7 +637,7 @@ export const NAV_DATA: NavData[] = [
         link: 'https://icones.js.org'
       },
       {
-        icon: './icons/simpleicons.svg',
+        icon: '/icons/simpleicons.svg',
         title: 'Simple Icons',
         desc: '包含 2457 种流行品牌的免费 SVG 图标库',
         link: 'https://simpleicons.org'
@@ -638,14 +678,14 @@ export const NAV_DATA: NavData[] = [
         link: 'https://www.runoob.com'
       },
       {
-        icon: './icons/es6.svg',
+        icon: '/icons/es6.svg',
         title: 'ES6 入门教程',
         desc: '阮一峰的网络日志',
         link: 'http://es6.ruanyifeng.com'
       },
       {
         badge: '官网',
-        icon: 'https://www.typescriptlang.org./icons/icon-72x72.png?v=8944a05a8b601855de116c8a56d3b3ae',
+        icon: 'https://www.typescriptlang.org/icons/icon-72x72.png?v=8944a05a8b601855de116c8a56d3b3ae',
         title: 'TypeScript',
         desc: 'TypeScript 是具有类型语法的 JavaScript',
         link: 'https://www.typescriptlang.org/zh/'
@@ -690,7 +730,7 @@ export const NAV_DATA: NavData[] = [
       {
         title: '博客园',
         // icon: 'https://common.cnblogs.com/favicon.ico',
-        icon: './icons/cnblogs.svg',
+        icon: '/icons/cnblogs.svg',
         desc: '博客园是一个面向开发者的知识分享社区',
         link: 'https://www.cnblogs.com'
       }
@@ -706,7 +746,7 @@ export const NAV_DATA: NavData[] = [
         link: 'https://momoyu.cc'
       },
       {
-        icon: './icons/pixiv.png',
+        icon: '/icons/pixiv.png',
         title: 'Pixiv',
         // desc: '',
         link: 'https://www.pixiv.net'
@@ -865,17 +905,6 @@ export const NAV_DATA: NavData[] = [
         title: 'react-spring',
         desc: '一个基于弹性力学的现代动画库',
         link: 'https://github.com/react-spring/react-spring'
-      }
-    ]
-  },
-  {
-    title: '特效',
-    tag: 'h3',
-    items: [
-      {
-        title: 'canvas-confetti',
-        desc: '五彩纸屑特效',
-        link: 'https://github.com/catdad/canvas-confetti'
       }
     ]
   },
@@ -1544,74 +1573,4 @@ export const NAV_DATA: NavData[] = [
       }
     ]
   },
-  {
-    title: '开发记录',
-    items: [
-      {
-        icon: '',
-        title: '钉钉免登流程',
-        desc: '',
-        link: 'https://open.dingtalk.com/document/development/logon-free-process'
-      },
-      {
-        icon: '',
-        title: '腾讯地图开放平台 - WebService API 开发指南',
-        desc: '',
-        link: 'https://lbs.qq.com/service/webService/webServiceGuide/webServiceOverview'
-      },
-      {
-        icon: '',
-        title: '在线退休年龄计算器',
-        desc: '',
-        link: 'https://fly63.com/tool/retireAge/'
-      },
-      {
-        icon: '',
-        title: '天地图 - WEB服务API',
-        desc: '',
-        link: 'http://lbs.tianditu.gov.cn/server/guide.html'
-      },
-      {
-        icon: '',
-        title: 'vue-tianditu',
-        desc: '',
-        link: 'https://soullyoko.github.io/vue-tianditu/'
-      },
-      {
-        icon: '',
-        title: '手把手教学！Vue项目集成天地图，实现点聚合、位置搜索、逆地址解析',
-        desc: '',
-        link: 'https://juejin.cn/post/7477913988275568650'
-      },
-      {
-        icon: '',
-        title: '高德开放平台',
-        desc: '',
-        link: 'https://console.amap.com/dev/key/app'
-      },
-      {
-        icon: '',
-        title: '高德开放平台 - 获取鼠标点击经纬度',
-        desc: '',
-        link: 'https://lbs.amap.com/demo/javascript-api/example/map/click-to-get-lnglat'
-      },
-      {
-        icon: '',
-        title: '',
-        desc: '',
-        link: ''
-      },
-    ]
-  },
-  {
-    title: '地图',
-    items: [
-      {
-        icon: 'https://www.geofabrik.de/favicon.ico',
-        title: 'Geofabrik',
-        desc: '全世界geo数据免费下载',
-        link: 'https://download.geofabrik.de/'
-      },
-    ]
-  }
 ]
