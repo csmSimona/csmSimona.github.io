@@ -28,7 +28,7 @@ export const NAV_DATA: NavData[] = [
         link: 'https://console.amap.com/dev/key/app'
       },
       {
-        icon: 'http://lbs.tianditu.gov.cn/images/favicon.ico',
+        icon: '/icons/tianditu.ico',
         title: '天地图',
         desc: 'WEB服务API',
         link: 'http://lbs.tianditu.gov.cn/server/guide.html'

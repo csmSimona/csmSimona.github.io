@@ -18,7 +18,7 @@ hero:
       link: /nav
     - theme: brand
       text: 主页
-      link: 
+      link: http://chenshimeng.top/
     - theme: alt
       text: GitHub
       link: https://github.com/csmSimona
