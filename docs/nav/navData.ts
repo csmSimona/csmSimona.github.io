@@ -2,70 +2,6 @@ import type { NavData } from '../.vitepress/theme/utils/types'
 
 export const NAV_DATA: NavData[] = [
   {
-    title: '开发者文档',
-    items: [
-      {
-        icon: 'https://img.alicdn.com/imgextra/i4/O1CN01RtfAks1Xa6qJFAekm_!!6000000002939-2-tps-128-128.png',
-        title: '钉钉免登流程',
-        desc: 'h5微应用免登开发指南',
-        link: 'https://open.dingtalk.com/document/development/logon-free-process'
-      },
-    ]
-  },
-  {
-    title: '地图',
-    items: [
-      {
-        icon: 'https://mapapi.qq.com/web/lbs/logo/favicon.ico',
-        title: '腾讯地图开放平台',
-        desc: 'WebService API 开发指南',
-        link: 'https://lbs.qq.com/service/webService/webServiceGuide/webServiceOverview'
-      },
-      {
-        icon: 'https://a.amap.com/lbs/static/img/console/favicon.ico',
-        title: '高德开放平台',
-        desc: '控制台',
-        link: 'https://console.amap.com/dev/key/app'
-      },
-      {
-        icon: '/icons/tianditu.ico',
-        title: '天地图',
-        desc: 'WEB服务API',
-        link: 'http://lbs.tianditu.gov.cn/server/guide.html'
-      },
-      {
-        icon: 'https://img.alicdn.com/imgextra/i4/O1CN01rl7TUG21EzHHeafjC_!!6000000006954-2-tps-64-64.png',
-        title: 'DataV.GeoAtlas',
-        desc: '获取中国各省市区县边界geo数据等地理信息',
-        link: 'https://datav.aliyun.com/portal/school/atlas/area_selector'
-      },
-      {
-        icon: 'https://www.geofabrik.de/favicon.ico',
-        title: 'Geofabrik',
-        desc: '全世界geo数据免费下载',
-        link: 'https://download.geofabrik.de/'
-      },
-    ]
-  },
-  {
-    title: '工具',
-    items: [
-      {
-        icon: '/icons/tool.svg',
-        title: '退休年龄计算器',
-        desc: '根据《国务院关于渐进式延迟法定退休年龄的办法》计算您的退休信息',
-        link: 'https://fly63.com/tool/retireAge/'
-      },
-      {
-        icon: 'https://devtool.tech/logo.svg',
-        title: '颜色转换',
-        desc: 'RGB、HSL、CMYK 相互转化',
-        link: 'https://devtool.tech/color'
-      },
-    ]
-  },
-  /******************下面是复制过来的导航*******************8*/
-  {
     title: '常用工具',
     items: [
       {
@@ -121,6 +57,18 @@ export const NAV_DATA: NavData[] = [
         title: 'npm 库在线执行',
         desc: '在浏览器控制台中在线运行调试与测试 npm 中的库',
         link: 'https://npm.devtool.tech'
+      },
+      {
+        icon: '/icons/tool.svg',
+        title: '退休年龄计算器',
+        desc: '根据《国务院关于渐进式延迟法定退休年龄的办法》计算您的退休信息',
+        link: 'https://fly63.com/tool/retireAge/'
+      },
+      {
+        icon: 'https://devtool.tech/logo.svg',
+        title: '颜色转换',
+        desc: 'RGB、HSL、CMYK 相互转化',
+        link: 'https://devtool.tech/color'
       },
     ]
   },
@@ -219,11 +167,18 @@ export const NAV_DATA: NavData[] = [
         icon: 'https://stablediffusionweb.com/favicon.ico',
         title: 'Stable Diffusion',
         link: 'https://stablediffusionweb.com'
+      },
+      {
+        badge: '',
+        icon: '/icons/readdy.ico',
+        title: 'Readdy',
+        desc: 'AI产品设计工具，一键生成界面与代码',
+        link: 'https://readdy.ai/'
       }
     ]
   },
   {
-    title: '茂茂的站点导航',
+    title: '摸鱼',
     items: [
       {
         icon: 'https://qwerty.fe-mm.com/apple-touch-icon.png',
@@ -436,7 +391,13 @@ export const NAV_DATA: NavData[] = [
         title: 'CSS 常见布局',
         desc: 'CSS 各种常见的布局实现',
         link: 'https://sweet-kk.github.io/css-layout/'
-      }
+      },
+      {
+        icon: 'https://favicon.im/animation.weizwz.com',
+        title: 'funAnimation',
+        desc: '有趣的样式和动画',
+        link: 'https://animation.weizwz.com/'
+      },
     ]
   },
   {
@@ -560,6 +521,52 @@ export const NAV_DATA: NavData[] = [
         desc: 'JavaScript 3d 库',
         link: 'https://threejs.org'
       }
+    ]
+  },
+  {
+    title: '地图',
+    items: [
+      {
+        icon: 'https://mapapi.qq.com/web/lbs/logo/favicon.ico',
+        title: '腾讯地图开放平台',
+        desc: 'WebService API 开发指南',
+        link: 'https://lbs.qq.com/service/webService/webServiceGuide/webServiceOverview'
+      },
+      {
+        icon: 'https://a.amap.com/lbs/static/img/console/favicon.ico',
+        title: '高德开放平台',
+        desc: '控制台',
+        link: 'https://console.amap.com/dev/key/app'
+      },
+      {
+        icon: '/icons/tianditu.ico',
+        title: '天地图',
+        desc: 'WEB服务API',
+        link: 'http://lbs.tianditu.gov.cn/server/guide.html'
+      },
+      {
+        icon: 'https://img.alicdn.com/imgextra/i4/O1CN01rl7TUG21EzHHeafjC_!!6000000006954-2-tps-64-64.png',
+        title: 'DataV.GeoAtlas',
+        desc: '获取中国各省市区县边界geo数据等地理信息',
+        link: 'https://datav.aliyun.com/portal/school/atlas/area_selector'
+      },
+      {
+        icon: 'https://www.geofabrik.de/favicon.ico',
+        title: 'Geofabrik',
+        desc: '全世界geo数据免费下载',
+        link: 'https://download.geofabrik.de/'
+      },
+    ]
+  },
+  {
+    title: '开发者文档',
+    items: [
+      {
+        icon: 'https://img.alicdn.com/imgextra/i4/O1CN01RtfAks1Xa6qJFAekm_!!6000000002939-2-tps-128-128.png',
+        title: '钉钉免登流程',
+        desc: 'h5微应用免登开发指南',
+        link: 'https://open.dingtalk.com/document/development/logon-free-process'
+      },
     ]
   },
   {
@@ -1495,81 +1502,6 @@ export const NAV_DATA: NavData[] = [
         title: 'regexper',
         desc: '将正则表达式转为可视化图',
         link: 'https://regexper.com'
-      }
-    ]
-  },
-  {
-    title: '代码编译 & REPL',
-    items: [
-      {
-        icon: 'https://astexplorer.net/favicon.ico',
-        title: 'AST Explorer',
-        desc: '查看和调试不同语言的 AST',
-        link: 'https://astexplorer.net'
-      },
-      {
-        icon: 'https://rollupjs.org/favicon-32x32.png',
-        title: 'Rollup REPL',
-        desc: '在线测试 Rollup 打包与插件',
-        link: 'https://rollupjs.org/repl'
-      },
-      {
-        icon: 'https://babeljs.io/favicon.ico',
-        title: 'Babel Repl',
-        desc: '在线编译并查看 Babel 输出',
-        link: 'https://babeljs.io/repl'
-      },
-      {
-        icon: 'https://www.typescriptlang.org/favicon-32x32.png',
-        title: 'TypeScript Playground',
-        desc: '在线编写与运行 TypeScript 示例',
-        link: 'https://www.typescriptlang.org/play'
-      }
-    ]
-  },
-  {
-    title: '代码生成 & 设计',
-    items: [
-      {
-        icon: 'https://webcode.tools/favicon.ico',
-        title: 'webcode.tools',
-        desc: '生成常用 Web 代码片段 (HTML/CSS/JSON...)',
-        link: 'https://webcode.tools'
-      },
-      {
-        icon: 'https://app.haikei.app/favicon.ico',
-        title: 'Haikei',
-        desc: '快速生成背景图与图形',
-        link: 'https://app.haikei.app'
-      },
-      {
-        icon: 'https://app.diagrams.net/favicon.ico',
-        title: 'Draw.io',
-        desc: '在线流程图与思维导图工具',
-        link: 'https://app.diagrams.net/'
-      },
-      {
-        icon: 'https://processon.com/favicon.ico',
-        title: 'ProcessOn',
-        desc: '流程图、思维导图与原型设计',
-        link: 'https://www.processon.com/'
-      }
-    ]
-  },
-  {
-    title: 'CDN & 包管理',
-    items: [
-      {
-        icon: 'https://www.jsdelivr.com/apple-touch-icon.png',
-        title: 'jsDelivr',
-        desc: '公共 CDN 服务',
-        link: 'https://www.jsdelivr.com'
-      },
-      {
-        icon: 'https://esm.sh/favicon.ico',
-        title: 'esm.sh',
-        desc: '将 npm 包转换为浏览器 ESM 的 CDN',
-        link: 'https://esm.sh'
       }
     ]
   },

@@ -130,5 +130,6 @@ export const nav: DefaultTheme.Config['nav'] = [
       },
     ],
   },
-  { text: "关于我", link: "" },
+  { text: "关于", link: "/about" },
+  { text: "主页", link: "http://chenshimeng.top/" },
 ]
