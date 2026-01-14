@@ -5,40 +5,22 @@ export const NAV_DATA: NavData[] = [
     title: '常用工具',
     items: [
       {
+        icon: "https://favicon.im/cli.im",
+        title: "草料二维码生成器",
+        desc: "",
+        link: "https://cli.im/"
+      },
+      {
         icon: 'https://caniuse.com/img/favicon-128.png',
         title: 'Can I use',
         desc: '前端 API 兼容性查询',
         link: 'https://caniuse.com'
       },
       {
-        icon: 'https://tinypng.com/images/apple-touch-icon.png',
-        title: 'TinyPNG',
-        desc: '在线图片压缩工具',
-        link: 'https://tinypng.com'
-      },
-      {
         icon: '/icons/carbon.png',
         title: 'Carbon',
         desc: '代码图片生成',
         link: 'https://carbon.now.sh'
-      },
-      {
-        icon: 'https://devtool.tech/logo.svg',
-        title: '色彩调色板',
-        desc: 'Tint/Shade 色系生成器',
-        link: 'https://devtool.tech/palette'
-      },
-      {
-        icon: 'https://devtool.tech/logo.svg',
-        title: 'CSS Color Names',
-        desc: 'CSS颜色名称对照表',
-        link: 'https://devtool.tech/css-color-name'
-      },
-      {
-        icon: 'https://devtool.tech/logo.svg',
-        title: '二进制转换器',
-        desc: '二进制、八进制、十六进制转换',
-        link: 'https://devtool.tech/bin-convert'
       },
       {
         icon: 'https://transform.tools/static/favicon.png',
@@ -53,27 +35,299 @@ export const NAV_DATA: NavData[] = [
         link: 'https://excalidraw.com'
       },
       {
+        icon: 'https://devtool.tech/logo.svg',
+        title: "颜色转换",
+        desc: "RGB、HSL、CMYK 转换工具",
+        link: "https://devtool.tech/color"
+      },
+      {
+        icon: 'https://devtool.tech/logo.svg',
+        title: 'CSS Color Names',
+        desc: 'CSS颜色名称对照表',
+        link: 'https://devtool.tech/css-color-name'
+      },
+      {
+        icon: 'https://devtool.tech/logo.svg',
+        title: '二进制转换器',
+        desc: '二进制、八进制、十六进制转换',
+        link: 'https://devtool.tech/bin-convert'
+      },
+      {
+        icon: "https://favicon.im/www.jiniannet.com?larger=true",
+        title: "在线图片颜色取色器",
+        desc: "",
+        link: "http://www.jiniannet.com/page/allcolor"
+      },
+      {
+        icon: "https://favicon.im/tool.chinaz.com?larger=true",
+        title: "站长工具",
+        desc: "UrlEncode编码/UrlDecode解码",
+        link: "https://tool.chinaz.com/tools/urlencode.aspx"
+      },
+      {
+        icon: "https://favicon.im/tool.lu?larger=true",
+        title: "数字转中文大写",
+        desc: "",
+        link: "https://tool.lu/daxie/"
+      },
+      {
         icon: 'https://npm.devtool.tech/logo.svg',
         title: 'npm 库在线执行',
         desc: '在浏览器控制台中在线运行调试与测试 npm 中的库',
         link: 'https://npm.devtool.tech'
       },
       {
-        icon: '/icons/tool.svg',
+        icon: 'https://favicon.im/fly63.com',
         title: '退休年龄计算器',
         desc: '根据《国务院关于渐进式延迟法定退休年龄的办法》计算您的退休信息',
         link: 'https://fly63.com/tool/retireAge/'
       },
       {
-        icon: 'https://devtool.tech/logo.svg',
-        title: '颜色转换',
-        desc: 'RGB、HSL、CMYK 相互转化',
-        link: 'https://devtool.tech/color'
+        icon: "https://favicon.im/www.dopubox.com?larger=true",
+        title: "抖音 视频 图片下载器",
+        desc: "无水印 – 免费在线工具箱",
+        link: "https://www.dopubox.com/zh/douyin"
+      },
+      {
+        icon: "https://favicon.im/favicon.im?larger=true",
+        title: "Favicon.im",
+        desc: "即时网站图标获取器",
+        link: "https://favicon.im/zh/"
+      },
+      {
+        icon: "https://www.100font.com/view/img/favicon.ico",
+        title: '100font',
+        desc: '免费商用字体下载网站',
+        link: 'https://www.100font.com/'
       },
     ]
   },
   {
-    title: '高质量周刊与博客',
+    title: '图片处理',
+    items: [
+      {
+        icon: 'https://tinypng.com/images/apple-touch-icon.png',
+        title: 'TinyPNG',
+        desc: '在线图片压缩工具',
+        link: 'https://tinypng.com'
+      },
+      {
+        icon: 'https://squoosh.app/c/icon-large-cb438cac.png',
+        title: 'Squoosh',
+        desc: 'Google开发的图片在线压缩与格式转换工具',
+        link: 'https://squoosh.app'
+      },
+      {
+        icon: 'https://docsmall.com/favicon.png',
+        title: 'DocSmall',
+        desc: '在线文档/图片压缩（备用）',
+        link: 'https://docsmall.com'
+      },
+      {
+        icon: "https://imagecompressor.com/images/favicon.svg",
+        title: "在线图片压缩",
+        desc: "",
+        link: "https://imagecompressor.com/zh/"
+      },
+      {
+        icon: "https://www.bejson.com/static/bejson/img/qq/bejson-q.png",
+        title: "在线压缩图片",
+        desc: "在线无损压缩图片",
+        link: "https://www.bejson.com/ui/compress_img/"
+      },
+      {
+        icon: "https://www.imagesmaller.com/favicon.ico",
+        title: "在线压缩 SVG 图像",
+        desc: "",
+        link: "https://www.imagesmaller.com/zh/compress-svg/"
+      },
+      {
+        icon: "https://www.remove.bg/favicon.ico?v=fc0bfce6e1310f1539afec9729716721",
+        title: "在线抠图软件",
+        desc: "图片去除背景",
+        link: "https://www.remove.bg/zh"
+      },
+      {
+        icon: "https://favicon.im/mockuphone.com",
+        title: "MockUPhone",
+        desc: "带壳截图工具",
+        link: "https://mockuphone.com/type/all/"
+      },
+      {
+        icon: "https://shots.so/image/favicon.png",
+        title: "Shots",
+        desc: "Create Amazing Mockups 带壳截图",
+        link: "https://shots.so/"
+      }
+    ]
+  },
+  {
+    title: '文件处理',
+    items: [
+      {
+        icon: 'https://cloudconvert.com/images/logo_flat_32.png',
+        title: 'CloudConvert',
+        desc: '在线文件格式转换',
+        link: 'https://cloudconvert.com/'
+      },
+      {
+        icon: 'https://convertio.co/favicon.ico',
+        title: 'Convertio',
+        desc: '支持多格式在线转换（图片、文档等）',
+        link: 'https://convertio.co/zh/'
+      },
+      {
+        icon: 'https://www.pdfescape.com/favicon.ico',
+        title: 'PDFescape',
+        desc: '在线 PDF 编辑器',
+        link: 'https://www.pdfescape.com'
+      },
+      {
+        icon: "https://cdn.xpdf.cn/favicon.ico",
+        title: "超级PDF",
+        desc: "简单强大的PDF在线处理工具",
+        link: "https://xpdf.cn/"
+      },
+      {
+        icon: "https://qncdn.aoscdn.com/astro/lightpdf/_astro/favicon@48w.1f86f507.png",
+        title: "轻闪PDF",
+        desc: "免费在线编辑、转换PDF文件，支持智能AI文档对话，提取文档中的重要信息",
+        link: "https://lightpdf.cn/"
+      },
+      {
+        icon: "https://www.ilovepdf.com/img/favicons-pdf/favicon-32x32.png",
+        title: "iLovePDF",
+        desc: "为PDF爱好者提供的PDF文件在线处理工具",
+        link: "https://www.ilovepdf.com/zh-cn"
+      }, 
+      {
+        icon: 'https://www.ofoct.com/ebooktool/img/favicon-32x32.png',
+        title: "小熊电子书",
+        desc: "在线转换电子书的各种格式",
+        link: "https://www.ofoct.com/ebooktool/zh"
+      },
+      {
+        icon: "https://markdowntoword.io/favicon.ico",
+        title: "markdowntoword",
+        desc: "Word转Markdown转换器",
+        link: "https://markdowntoword.io/zh/tools/word-to-markdown"
+      }
+    ]
+  },
+  {
+    title: "图片素材",
+    items: [
+      {
+        icon: "https://favicon.im/unsplash.com",
+        title: "Unsplash Image",
+        desc: "提供高质量免费图片的API服务",
+        link: "https://unsplash.com/developers"
+      },
+      {
+        icon: "https://favicon.im/www.pexels.com?larger=true",
+        title: "pexels",
+        desc: "免费高质量图片素材库",
+        link: "https://www.pexels.com/zh-cn/"
+      },
+      {
+        icon: "https://favicon.im/undraw.co?larger=true",
+        title: "图片集",
+        desc: "提供各种主题的免费插画素材",
+        link: "https://undraw.co/illustrations"
+      },
+      {
+        icon: "https://favicon.im/stocksnap.io?larger=true",
+        title: "StockSnap.io",
+        desc: "提供可商用的免费高清图片素材",
+        link: "https://stocksnap.io/"
+      },
+      {
+        icon: "https://favicon.im/picsum.photos",
+        title: "picsum",
+        desc: "随机图库",
+        link: "https://picsum.photos/"
+      },
+      {
+        icon: "https://favicon.im/shigureni.com",
+        title: "shigureni 免费插画",
+        desc: "可用于商业用途的女孩免费插画素材和图标素材",
+        link: "https://shigureni.com/"
+      },
+      {
+        icon: "https://favicon.im//www.openpeeps.com",
+        title: "手绘人物图片集",
+        desc: "可自由组合的手绘人物插图素材",
+        link: "https://www.openpeeps.com/"
+      },
+    ]
+  },
+  {
+    title: '图标库',
+    items: [
+      {
+        icon: 'https://img.alicdn.com/imgextra/i4/O1CN01Z5paLz1O0zuCC7osS_!!6000000001644-55-tps-83-82.svg',
+        title: 'iconfont',
+        desc: '国内功能很强大的矢量图标库',
+        link: 'https://www.iconfont.cn'
+      },
+      {
+        icon: 'https://lf1-cdn2-tos.bytegoofy.com/bydesign/iconparksite/logo.svg',
+        title: 'IconPark 图标库',
+        desc: '',
+        link: 'https://iconpark.oceanengine.com/official'
+      },
+      {
+        icon: 'https://iconify.design/favicon.ico',
+        title: 'Iconify',
+        desc: '一个开源的图标集合和图标工具',
+        link: 'https://iconify.design'
+      },
+      {
+        icon: 'https://icones.js.org/favicon.svg',
+        title: 'Icônes',
+        desc: '基于 Iconify 的图标浏览器',
+        link: 'https://icones.js.org'
+      },
+      {
+        icon: '/icons/simpleicons.svg',
+        title: 'Simple Icons',
+        desc: '包含 2457 种流行品牌的免费 SVG 图标库',
+        link: 'https://simpleicons.org'
+      },
+      {
+        icon: "https://lucide.dev/favicon.ico",
+        title: 'Icons – Lucide',
+        desc: '',
+        link: 'https://lucide.dev/icons/'
+      },
+      {
+        icon: "https://shields.io/img/logo.png",
+        title: 'Static Badge',
+        desc: 'Shields.io 徽章生成器',
+        link: 'https://shields.io/badges'
+      },
+      {
+        icon: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAC5UlEQVR4nFxTy0uUURQ/5z7mc6YZ8zGEkb0kKorem4oeRM9FBbUpfBT9AbUI3YrYIigil60iJJM2WdSiMIlqoZtaRFSSCYlmyKQOzjh+cx+ne79JMe8wcL5zzu88fuccAQuPGABaL11eMXKCmD4ABCsjE8I4s8H7BxOrepf6ipKiLVI0rhjaL5i8AUiHBSS4Ay48w0NzZeXImzmTb+2ewP75IM6F3B+pMf3trBTJLsFlMjQzxBkaSyUwcx7ugwc8hdqomaKere/KbHzhE0c5GiuGd4gy8Q4Rygv5UDGJwiiAIF4qISwQcAlgFen4skC61rIm1Ic6p+o+MV8BltkOKYLywmyoth9LyOudNdDQXgVMADogNrRXg9dtOxqX3keIYDnEbIfHssaqH/sY4MGizlsZMHG+pYpe3stC9WqBNXUSajZIqK7l6HXnW6pJBChCnXNZ8UBTeniPcFmOCkwyDTmjFfGRzyHsPBnHVBWHc80VfgKQSHHYdSqOzka66FpLgOW0TFieP+6KhFWlySAJ12d3+x+s3eQyu+wjX4uRaf32APp78jA2WEQZIIEFy5D59tcxR7TjzpPlJYpYsxZKE6RFW2L/V5D7ORwJJDZKERhQzQFdupmOypFxBmu2xiLnmJOPNKXAmhTdb864FlxO8igaZUqz15py1hMqYwi1m2PwtmuGpsY1PL0zDc/uTsPkLxXpVm8JQPiYFpmmPGkl+lj35NoBF6wvJpKsGBrTc3sSz1yrhKnfhsaHFIx/V5CdsHT6aiU8uTWJKrTG+7rsvR5bWqT08CbO2QDjvKKQKygumdD/Fsl3XXSL5Ak2yup4Mi6J7LRWZu/DTN0g8+voBUXqomM3W56qlEIiJpJokIFxXBsvuwDoba78rDHFix6zsMrzh3Eh/WV3QiZbLZiTAsrKYOGaCDTMzTHgr2ZVrv1xZsvHRcc0//xFtkXDqk//3COEPuOILe0I0pjW4vmjzNoPS33/AgAA//+vid+ZAAAABklEQVQDADeIU9FU+g2bAAAAAElFTkSuQmCC',
+        title: 'The CSS Icons Library',
+        desc: '',
+        link: 'https://css.gg/icon/add-r'
+      },
+      {
+        icon: 'https://gitmoji.dev/static/apple-icon-144x144.png',
+        title: 'gitmoji',
+        desc: '可以在 git 中使用的 emoji 表情',
+        link: 'https://gitmoji.dev'
+      },
+      {
+        icon: "https://www.emojiall.com/favicon.ico",
+        title: 'Emoji大全',
+        desc: 'Emoji表情符号词典 📓 | Emojiall简体中文官方网站',
+        link: 'https://www.emojiall.com/zh-hans'
+      },
+    ]
+  },
+  {
+    title: '论坛、周刊与博客',
     items: [
       {
         badge: '周一更新',
@@ -90,25 +344,46 @@ export const NAV_DATA: NavData[] = [
         link: 'https://www.ruanyifeng.com/blog/archives.html'
       },
       {
-        badge: '周五更新',
-        icon: 'https://s0.ssl.qhres2.com/static/3444fd94a3c31e92.ico',
-        title: '奇舞周刊',
-        desc: '领略前端技术 阅读奇舞周刊（360 前端团队）',
-        link: 'https://weekly.75.team'
+        icon: "https://www.newsminimalist.com/favicon.ico",
+        title: '新闻极简主义',
+        desc: '所有新闻按重要性排名',
+        link: 'https://www.newsminimalist.com/'
       },
       {
-        badge: '周一更新',
-        icon: 'https://img.alicdn.com/imgextra/i3/O1CN01uKTVpD1UK8BCxFBwo_!!6000000002498-2-tps-500-500.png',
-        title: 'MDH Weekly',
-        desc: '云谦的前端周刊',
-        link: 'https://mdhweekly.com/weekly'
+        icon: "https://favicon.im/www.v2ex.com",
+        title: 'V2EX',
+        desc: '专业技术社区',
+        link: 'https://www.v2ex.com/'
       },
       {
-        badge: '每周更新',
-        icon: '/icons/geekhyt-weekly.png',
-        title: '前端食堂技术周刊',
-        desc: '周周尝鲜，人工筛选前端圈每周最新资讯',
-        link: 'https://hungryturbo.zhubai.love'
+        icon: "https://favicon.im/linux.do?larger=true",
+        title: 'LINUX DO',
+        desc: '新的理想型社区',
+        link: 'https://linux.do/'
+      },
+      {
+        icon: "https://us1.discourse-cdn.com/cursor1/original/3X/b/5/b589d2dd6e979c0b0bb40fcd7db8fde744974896.png",
+        title: 'Cursor社区',
+        desc: '',
+        link: 'https://forum.cursor.com/'
+      },
+      {
+        icon: "https://favicon.im/medium.com?larger=true",
+        title: 'medium',
+        desc: '全球最大的独立写作与技术博客平台',
+        link: 'https://medium.com/'
+      },
+      {
+        icon: "https://favicon.im/dev.to",
+        title: 'dev',
+        desc: '全球开发者社区',
+        link: 'https://dev.to/'
+      },
+      {
+        icon: "https://news.ycombinator.com/y18.svg",
+        title: '黑客新闻',
+        desc: '',
+        link: 'https://news.ycombinator.com/'
       },
       {
         icon: 'https://xiaolincoding.com/logo.webp',
@@ -117,38 +392,179 @@ export const NAV_DATA: NavData[] = [
         link: 'https://xiaolincoding.com'
       },
       {
-        icon: 'https://antfu.me/favicon.svg',
-        title: 'Blog - Anthony Fu',
-        desc: 'Vue, Vite, Nuxt 核心团队成员 | VueUse, Slidev, Vitest, UnoCSS 作者',
-        link: 'https://antfu.me/posts'
+        icon: "https://cdn.freecodecamp.org/universal/favicons/favicon.ico",
+        title: 'freecodecamp',
+        desc: '免费编程教育平台的技术文章与学习路径',
+        link: 'https://www.freecodecamp.org/news/'
       },
-      {
-        icon: '/icons/ascoders.png',
-        title: '前端精读周刊',
-        desc: '帮你理解最前沿、实用的技术',
-        link: 'https://github.com/ascoders/weekly'
-      },
-      {
-        icon: '/icons/mqyqingfeng.jpeg',
-        title: '冴羽博客',
-        desc: '四个系列：JavaScript深入系列、JavaScript专题系列、ES6系列、React系列',
-        link: 'https://github.com/mqyqingfeng/Blog'
-      }
     ]
   },
   {
     title: 'AI 导航',
     items: [
       {
+        icon: "https://favicon.im/lmarenaai.cn",
+        title: 'LMArena AI',
+        desc: '全球模型评估平台官网',
+        link: 'https://lmarenaai.cn/index.html'
+      },
+      {
+        icon: "https://huntscreens.com/favicon.ico?favicon.00b8d4db.ico",
+        title: 'HuntScreens',
+        desc: '发现最酷的 AI 工具和创新产品',
+        link: 'https://huntscreens.com/zh'
+      },
+      {
+        icon: "https://favicon.im/ai-bot.cn",
+        title: 'AI工具集官网',
+        desc: '1000+ AI工具集合，国内外AI工具集导航大全',
+        link: 'https://ai-bot.cn/'
+      },
+      {
+        icon: "https://favicon.im/mcp.so",
+        title: 'MCP Server',
+        desc: '精选 MCP Server（MCP 服务器）',
+        link: 'https://mcp.so/zh'
+      },
+      {
+        icon: "https://favicon.im/platform.claude.com",
+        title: 'Claude提示词库',
+        desc: '',
+        link: 'https://platform.claude.com/docs/zh-CN/resources/prompt-library/library'
+      },
+      {
+        icon: "https://favicon.im/promptbase.com",
+        title: '提示词交易市场',
+        desc: '',
+        link: 'https://promptbase.com/'
+      },
+      {
+        icon: "https://favicon.im/bailian.console.aliyun.com",
+        title: '阿里云百炼',
+        desc: '大模型服务平台百炼控制台',
+        link: 'https://bailian.console.aliyun.com/?spm=5176.29597918.J_SEsSjsNv72yRuRFS2VknO.2.920c7b08skvlI6&tab=model#/efm/model_experience_center/text'
+      },
+      {
+        icon: "https://favicon.im/console.volcengine.com",
+        title: '火山引擎',
+        desc: '火山方舟大模型服务平台',
+        link: 'https://console.volcengine.com/ark/region:ark+cn-beijing/model?groupType=ModelGroups&vendor=Bytedance&view=DEFAULT_VIEW'
+      },
+      {
+        icon: "https://favicon.im/aistudio.google.com",
+        title: 'Google AI Studio',
+        desc: '谷歌人工智能工作室',
+        link: 'https://aistudio.google.com/prompts/new_chat?model=gemini-3-pro-preview'
+      },
+      {
         badge: '对话',
-        icon: '/icons/chatgpt.png',
-        title: 'ChatGPT（最强）',
-        link: 'https://chat.openai.com/chat'
+        icon: "https://favicon.im/flo.ing",
+        title: 'Flowith AI',
+        desc: '多模型镜像网站',
+        link: 'https://flo.ing/blank'
+      },
+      {
+        badge: '对话',
+        icon: "https://favicon.im/xsimplechat.com",
+        title: 'XSimple',
+        desc: '多模型镜像网站',
+        link: 'https://xsimplechat.com/chat?session=inbox'
+      },
+      {
+        badge: '对话',
+        icon: "https://lobechat.com/icons/icon-192x192.png?v=1",
+        title: 'LobeChat',
+        desc: '多模型镜像网站',
+        link: 'https://lobechat.com/chat'
+      },
+      {
+        badge: '对话',
+        icon: 'https://chatgpt.com/cdn/assets/favicon-l4nq08hd.svg',
+        title: 'ChatGPT',
+        link: 'https://chatgpt.com/'
       },
       {
         icon: '/icons/chatgpt.png',
         title: 'ChatGPT 镜像站点列表',
+        desc: 'ChatGPT 镜像站点列表',
         link: 'https://github.com/xx025/carrot'
+      },
+      {
+        badge: '对话',
+        icon: "https://chat.deepseek.com/favicon.svg",
+        title: 'DeepSeek',
+        desc: '',
+        link: 'https://chat.deepseek.com/'
+      },
+      {
+        badge: '对话',
+        icon: "https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/doubao/chat/favicon.png",
+        title: '豆包',
+        desc: '',
+        link: 'https://www.doubao.com/'
+      },
+      {
+        badge: '对话',
+        icon: "https://favicon.im/www.n.cn",
+        title: '纳米AI搜索',
+        desc: '',
+        link: 'https://www.n.cn/'
+      },
+      {
+        badge: '对话',
+        icon: "https://favicon.im/kimi.moonshot.cn",
+        title: 'Kimi.ai',
+        desc: '',
+        link: 'https://kimi.moonshot.cn/?data_source=tracer&utm_campaign=TR_PbzLg2eV&utm_content=&utm_medium=%E5%BE%AE%E8%BD%AFbing&utm_source=bing&utm_term=%27kimi&msclkid=60fdbd27763615b4e67bdbb3a8e6e9d2'
+      },
+      {
+        badge: '对话',
+        icon: "https://favicon.im/www.tiangong.cn",
+        title: '天工AI',
+        desc: '搜索、对话、写作、文档分析、画画、做PPT的全能AI助手',
+        link: 'https://www.tiangong.cn/'
+      },
+      {
+        badge: '对话',
+        icon: "https://favicon.im/tongyi.aliyun.com",
+        title: '通义千问',
+        desc: '',
+        link: 'https://tongyi.aliyun.com/qianwen/'
+      },
+      {
+        badge: '对话',
+        icon: "https://favicon.im/yiyan.baidu.com",
+        title: '文心一言',
+        desc: '',
+        link: 'https://yiyan.baidu.com/'
+      },
+      {
+        badge: '对话',
+        icon: "https://chatglm.cn/img/icons/android-chrome-192x192.png",
+        title: '智谱清言',
+        desc: '',
+        link: 'https://chatglm.cn/main/alltoolsdetail'
+      },
+      {
+        badge: '对话',
+        icon: "https://favicon.im/hailuoai.com",
+        title: '海螺AI',
+        desc: 'MiniMax 旗下生产力产品，你的AI伙伴',
+        link: 'https://hailuoai.com/?type=chat&chatID=272060400463749123'
+      },
+      {
+        badge: '对话',
+        icon: "https://favicon.im/metaso.cn",
+        title: '秘塔AI搜索',
+        desc: 'AI驱动的下一代搜索引擎',
+        link: 'https://metaso.cn/'
+      },
+      {
+        badge: '智能体',
+        icon: "https://favicon.im/www.coze.cn",
+        title: '扣子',
+        desc: '',
+        link: 'https://www.coze.cn/space/7520983036427583528/develop'
       },
       {
         badge: '笔记',
@@ -158,7 +574,7 @@ export const NAV_DATA: NavData[] = [
       },
       {
         badge: '绘画',
-        icon: 'https://www.midjourney.com/apple-touch-icon.png',
+        icon: 'https://favicon.im/www.midjourney.com',
         title: 'Midjourney',
         link: 'https://www.midjourney.com'
       },
@@ -169,22 +585,211 @@ export const NAV_DATA: NavData[] = [
         link: 'https://stablediffusionweb.com'
       },
       {
-        badge: '',
+        badge: '绘画',
+        icon: "https://favicon.im/www.nano-banana.com",
+        title: 'Nano Banana Pro',
+        desc: '专业级 AI 图像生成 | 由 Gemini 3 驱动',
+        link: 'https://www.nano-banana.com/zh/nanobananapro'
+      },
+      {
+        badge: '绘画',
+        icon: "https://favicon.im/www.illustration.app",
+        title: 'illustration',
+        desc: '使用 AI 创建美丽的 Notion 风格插图',
+        link: 'https://www.illustration.app/dashboard/playground'
+      },
+      {
+        badge: '绘画、视频',
+        icon: "https://favicon.im/jimeng.jianying.com",
+        title: '即梦AI',
+        desc: '一站式AI创作平台',
+        link: 'https://jimeng.jianying.com/ai-tool/home'
+      },
+      {
+        badge: '绘画',
+        icon: "https://favicon.im/tongyi.aliyun.com",
+        title: '通义万相',
+        desc: 'AI创意作画_AI绘画_人工智能-阿里云',
+        link: 'https://tongyi.aliyun.com/wanxiang/'
+      },
+      {
+        badge: '音乐',
+        icon: "https://ai.suno.cn/home/images/icon-192x192.png",
+        title: 'Suno',
+        desc: 'AI音乐生成平台',
+        link: 'https://www.suno.cn/home/?from=Bing02&msclkid=d9e0c839e63f123a4d47a10654168243#/'
+      },
+      {
+        icon: "https://favicon.im/www.tripo3d.ai",
+        title: 'Tripo 网页版',
+        desc: '文生3D模型',
+        link: 'https://www.tripo3d.ai/app/home'
+      },
+      {
+        icon: "https://favicon.im/www.app.kaedim3d.com",
+        title: 'kaedim3d',
+        desc: '使用AI快速生成3D资产',
+        link: 'https://www.app.kaedim3d.com/assets'
+      },
+      {
+        icon: "https://favicon.im/hunyuan-3d.org",
+        title: '混元3D',
+        desc: '最佳图像转3D模型生成器',
+        link: 'https://hunyuan-3d.org/zh#3d-generator'
+      },
+      {
+        icon: "https://resource-wangsu.helplook.net/docker_production/vf0ph9/icon/icon.png",
+        title: '302.AI',
+        desc: '企业级AI资源平台',
+        link: 'https://dash.302.ai/'
+      },
+      {
+        icon: "https://favicon.im/www.shenyandayi.com",
+        title: '深言达意 – 找词找句',
+        desc: '',
+        link: 'https://www.shenyandayi.com/'
+      },
+      {
+        icon: "https://ollama.com/public/ollama.png",
+        title: 'Ollama',
+        desc: '本地部署大模型',
+        link: 'https://ollama.com/'
+      },
+      {
+        badge: '设计稿',
         icon: '/icons/readdy.ico',
         title: 'Readdy',
         desc: 'AI产品设计工具，一键生成界面与代码',
         link: 'https://readdy.ai/'
-      }
+      },
+      {
+        badge: '设计稿',
+        icon: "https://favicon.im/design.gemcoder.com",
+        title: 'GemDesign',
+        desc: 'AI时代的高保真原型设计工具',
+        link: 'https://design.gemcoder.com/#/project'
+      },
+      {
+        badge: '代码',
+        icon: "https://favicon.im/bolt.new",
+        title: 'Bolt AI builder',
+        desc: '',
+        link: 'https://bolt.new/'
+      },
+      {
+        badge: '代码',
+        icon: "https://favicon.im/www.builder.io",
+        title: 'Builder.io',
+        desc: '低代码、可视化搭建与前端性能优化技术分享',
+        link: 'https://www.builder.io/blog'
+      },
+      {
+        badge: '代码',
+        icon: "https://favicon.im/www.haisnap.com",
+        title: '响指HaiSnap',
+        desc: '人人都能创造的AI零代码应用平台',
+        link: 'https://www.haisnap.com/'
+      },
+      {
+        badge: '代码',
+        icon: "https://favicon.im/devv.ai",
+        title: 'Devv',
+        desc: 'The First AI Coding Agent to Build Full-Stack AI Products',
+        link: 'https://devv.ai/'
+      },
     ]
   },
   {
-    title: '摸鱼',
+    title: '可视化',
     items: [
       {
-        icon: 'https://qwerty.fe-mm.com/apple-touch-icon.png',
-        title: 'Qwerty Learner',
-        desc: '为键盘工作者设计的单词记忆与英语肌肉记忆锻炼软件',
-        link: 'https://qwerty.fe-mm.com'
+        icon: '/icons/echarts.png',
+        title: 'ECharts',
+        desc: '一个基于 JavaScript 的开源可视化图表库',
+        link: 'https://echarts.apache.org/zh/index.html'
+      },
+      {
+        icon: '/icons/antv.png',
+        title: 'AntV',
+        desc: '蚂蚁集团全新一代数据可视化解决方案，致力于提供一套简单方便、专业可靠、无限可能的数据可视化最佳实践。',
+        link: 'https://antv.vision/zh/'
+      },
+      {
+        icon: '/icons/antv.png',
+        title: "AntV G2",
+        desc: "AntV G2 图表库示例",
+        link: "https://g2.antv.antgroup.com/examples"
+      },
+      {
+        icon: 'https://favicon.im/d3js.org',
+        title: 'D3.js',
+        desc: '一个遵循 Web 标准用于可视化数据的 JavaScript 库',
+        link: 'https://d3js.org'
+      },
+      {
+        icon: 'https://www.chartjs.org/favicon.ico',
+        title: 'Chart.js',
+        desc: '一个简单而灵活的 JavaScript 图表库',
+        link: 'https://www.chartjs.org'
+      },
+      {
+        icon: "https://lf-dp.bytetos.com/obj/dp-open-internet-cn/visactor-site/bytedance/client/img/favicon.png",
+        title: "VTable",
+        desc: "VisActor/VTable 表格可视化库教程",
+        link: "https://visactor.com/vtable/guide/Getting_Started/Getting_Started"
+      },
+      {
+        icon: "https://lf-dp.bytetos.com/obj/dp-open-internet-cn/visactor-site/bytedance/client/img/favicon.png",
+        title: "VChart",
+        desc: "VisActor VChart 图表库",
+        link: "https://www.visactor.io/vchart/example"
+      },
+      {
+        icon: 'https://threejs.org/files/favicon.ico',
+        title: 'Three.js',
+        desc: 'JavaScript 3d 库',
+        link: 'https://threejs.org'
+      },
+      {
+        icon: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACF0lEQVR4nIxTz08TQRT+3szuwtZWTER6aggRD21C04NHIRyEcPWwHvkPPHEh8WI4eCLEkxfiQS4mNCFEryZeSQwHJHIwmpCisbXV0FDpbrczj9nShlJ+lMnubHbme99873vzBPoPYkB8mp621j1PXtjsXVgHpAdw3vPIy+e1AfC17Ogz3pTLidzSUi4sFtMBUA1d9+PjtbW/nX0rmswRFJ30LpWaTI6PP4yNjX11j49TicPDydjc3COL+X69UgEHAQqO89yEvIyUPgVUiyBvcjQf9f/g4EGqVlux9/dx17YRj8WAdBrh7i6CUslHEDhycNCJYu611bcI9tp5Gpa6rlZVrNlkMENtbIBnZizKZlkEgdC2TWRZOsKWz2KATJtNRI9lCYQhyHEEDQ9LIx+0vAza3CROJIh8n7oViG7DlJTgRoN4cZGwtUXIZIgNAWZniXO5Fkb3mHyOQHbKks0CIyOgep1JKfD8PDA1xTg6gnCciwQdD1gpNikwLSwwT0ywLhTQNGZiZ0dRoaAEc1O1sR0PrG4PzERCCM3FohKuy/L9Bwurq4DvSx664zo1o0AI68oqVI0in1kODQzIhinhv1cr+NMIf1Xit778Dhs/pNajSutShH3djjl3E58Z4lEhnqRc97Zv28HPePz722Ty87ft7UoXLDq02fnpe5Vb3pziopd7e+PSZto7W9cvTgOubKgbKbhunAAAAP//EL+2ngAAAAZJREFUAwCQws6FUaJFiwAAAABJRU5ErkJggg==',
+        title: 'React Three Fiber',
+        desc: '基于 React 的 3D 渲染库。将 three.js 的场景、相机和渲染器作为 React 组件进行封装，使得开发者可以像使用普通 React 组件一样来创建和管理 3D 元素',
+        link: 'https://r3f.docs.pmnd.rs/getting-started/introduction'
+      },
+    ]
+  },
+  {
+    title: '地图',
+    items: [
+      {
+        icon: 'https://mapapi.qq.com/web/lbs/logo/favicon.ico',
+        title: '腾讯地图开放平台',
+        desc: 'WebService API 开发指南',
+        link: 'https://lbs.qq.com/service/webService/webServiceGuide/webServiceOverview'
+      },
+      {
+        icon: 'https://a.amap.com/lbs/static/img/console/favicon.ico',
+        title: '高德开放平台',
+        desc: '控制台',
+        link: 'https://console.amap.com/dev/key/app'
+      },
+      {
+        icon: '/icons/tianditu.ico',
+        title: '天地图',
+        desc: 'WEB服务API',
+        link: 'http://lbs.tianditu.gov.cn/server/guide.html'
+      },
+      {
+        icon: 'https://img.alicdn.com/imgextra/i4/O1CN01rl7TUG21EzHHeafjC_!!6000000006954-2-tps-64-64.png',
+        title: 'DataV.GeoAtlas',
+        desc: '获取中国各省市区县边界geo数据等地理信息',
+        link: 'https://datav.aliyun.com/portal/school/atlas/area_selector'
+      },
+      {
+        icon: 'https://www.geofabrik.de/favicon.ico',
+        title: 'Geofabrik',
+        desc: '全世界geo数据免费下载',
+        link: 'https://download.geofabrik.de/'
       },
     ]
   },
@@ -204,7 +809,7 @@ export const NAV_DATA: NavData[] = [
         link: 'https://reactrouter.com'
       },
       {
-        icon: 'https://nextjs.org/static/favicon/safari-pinned-tab.svg',
+        icon: 'https://nextjs.org/favicon.ico?favicon.d29c4393.ico',
         title: 'Next.js',
         desc: '一个用于 Web 的 React 框架',
         link: 'https://nextjs.org'
@@ -216,46 +821,15 @@ export const NAV_DATA: NavData[] = [
         link: 'https://umijs.org'
       },
       {
+        icon: "https://pro.ant.design/favicon.png",
+        title: 'Ant Design Pro',
+        desc: '',
+        link: 'https://pro.ant.design/zh-CN/docs/overview'
+      },
+      {
         icon: 'https://gw.alipayobjects.com/zos/rmsportal/rlpTLlbMzTNYuZGGCVYM.png',
-        title: 'Ant Design',
-        desc: '一套企业级 UI 设计语言和 React 组件库',
-        link: 'https://ant.design'
-      },
-      {
-        icon: 'https://gw.alipayobjects.com/zos/bmw-prod/69a27fcc-ce52-4f27-83f1-c44541e9b65d.svg',
-        title: 'Ant Design Mobile',
-        desc: '构建移动 WEB 应用程序的 React 组件库',
-        link: 'https://mobile.ant.design'
-      },
-      {
-        icon: '/icons/mui.svg',
-        title: 'Material UI',
-        desc: '基于 Google Material Design 设计语言的 React 组件库',
-        link: 'https://mui.com'
-      },
-      {
-        icon: '/icons/mantine.svg',
-        title: 'Mantine UI',
-        desc: '一套功能齐全的 React 组件库',
-        link: 'https://mantine.dev'
-      },
-      {
-        icon: 'https://docs.pmnd.rs/apple-touch-icon.png',
-        title: 'Zustand',
-        desc: '一个小型、快速、可扩展的 React 状态管理解决方案',
-        link: 'https://docs.pmnd.rs/zustand/getting-started/introduction'
-      },
-      {
-        icon: 'https://valtio.pmnd.rs/favicon.ico',
-        title: 'Valtio',
-        desc: 'makes proxy-state simple for React and Vanilla',
-        link: 'https://valtio.pmnd.rs'
-      },
-      {
-        icon: 'https://jotai.org/favicon.svg',
-        title: 'Jotai',
-        desc: 'primitive and flexible state management for React',
-        link: 'https://jotai.org'
+        title: 'ProComponents',
+        link: 'https://procomponents.ant.design/'
       },
       {
         icon: 'https://cn.redux.js.org/img/redux.svg',
@@ -264,17 +838,11 @@ export const NAV_DATA: NavData[] = [
         link: 'https://cn.redux.js.org'
       },
       {
-        icon: 'https://zh.mobx.js.org/assets/mobx.png',
-        title: 'MobX',
-        desc: '一个小型、快速、可扩展的 React 状态管理解决方案',
-        link: 'https://zh.mobx.js.org'
-      },
-      {
         icon: 'https://ahooks.js.org/simple-logo.svg',
         title: 'ahooks',
         desc: '一套高质量可靠的 React Hooks 库',
         link: 'https://ahooks.js.org/zh-CN'
-      }
+      },
     ]
   },
   {
@@ -316,6 +884,35 @@ export const NAV_DATA: NavData[] = [
         desc: 'Vue Composition API 的常用工具集',
         link: 'https://vueuse.org'
       },
+    ]
+  },
+  {
+    title: 'UI组件库',
+    items: [
+      {
+        icon: 'https://gw.alipayobjects.com/zos/rmsportal/rlpTLlbMzTNYuZGGCVYM.png',
+        title: 'Ant Design',
+        desc: '一套企业级 UI 设计语言和 React 组件库',
+        link: 'https://ant.design'
+      },
+      {
+        icon: 'https://gw.alipayobjects.com/zos/bmw-prod/69a27fcc-ce52-4f27-83f1-c44541e9b65d.svg',
+        title: 'Ant Design Mobile',
+        desc: '构建移动 WEB 应用程序的 React 组件库',
+        link: 'https://mobile.ant.design'
+      },
+      {
+        icon: '/icons/mui.svg',
+        title: 'Material UI',
+        desc: '基于 Google Material Design 设计语言的 React 组件库',
+        link: 'https://mui.com'
+      },
+      {
+        icon: '/icons/mantine.svg',
+        title: 'Mantine UI',
+        desc: '一套功能齐全的 React 组件库',
+        link: 'https://mantine.dev'
+      },
       {
         icon: 'https://element-plus.org/images/element-plus-logo-small.svg',
         title: 'Element Plus',
@@ -345,24 +942,24 @@ export const NAV_DATA: NavData[] = [
         title: 'NutUI',
         desc: '京东风格的轻量级移动端组件库',
         link: 'https://nutui.jd.com'
-      }
+      },
+      {
+        icon: "https://www.naiveui.com/assets/naivelogo-BdDVTUmz.svg",
+        title: 'Naive UI',
+        desc: 'Vue 3 组件库',
+        link: 'https://www.naiveui.com/zh-CN/light'
+      },
+      {
+        icon: "https://ui.shadcn.com/favicon.ico",
+        title: 'Shadcn UI',
+        desc: '一套开源、开放代码的组件和代码分发平台，适用于各种框架和 AI 模型',
+        link: 'https://ui.shadcn.com/'
+      },
     ]
   },
   {
     title: 'CSS 相关',
     items: [
-      {
-        icon: 'https://postcss.org/assets/logo-3e39b0aa.svg',
-        title: 'PostCSS',
-        desc: '一个用 JavaScript 转换 CSS 的工具',
-        link: 'https://postcss.org'
-      },
-      {
-        icon: '/icons/sass.svg',
-        title: 'Sass',
-        desc: '一个成熟，稳定，功能强大的专业级 CSS 扩展语言',
-        link: 'https://sass-lang.com'
-      },
       {
         icon: '/icons/tailwindcss.png',
         title: 'TailwindCSS 中文网',
@@ -388,11 +985,6 @@ export const NAV_DATA: NavData[] = [
         link: 'https://qishaoxuan.github.io/css_tricks/'
       },
       {
-        title: 'CSS 常见布局',
-        desc: 'CSS 各种常见的布局实现',
-        link: 'https://sweet-kk.github.io/css-layout/'
-      },
-      {
         icon: 'https://favicon.im/animation.weizwz.com',
         title: 'funAnimation',
         desc: '有趣的样式和动画',
@@ -401,7 +993,7 @@ export const NAV_DATA: NavData[] = [
     ]
   },
   {
-    title: '小程序相关',
+    title: '小程序 & 微应用',
     items: [
       {
         icon: 'https://res.wx.qq.com/a/wx_fed/assets/res/OTE0YTAw.png',
@@ -414,24 +1006,18 @@ export const NAV_DATA: NavData[] = [
         title: '支付宝小程序文档',
         desc: '支付宝小程序官方开发者文档',
         link: 'https://opendoc.alipay.com/mini/'
-      }
+      },
+      {
+        icon: 'https://img.alicdn.com/imgextra/i4/O1CN01RtfAks1Xa6qJFAekm_!!6000000002939-2-tps-128-128.png',
+        title: '钉钉免登流程',
+        desc: 'h5微应用免登开发指南',
+        link: 'https://open.dingtalk.com/document/development/logon-free-process'
+      },
     ]
   },
   {
     title: '跨平台',
     items: [
-      {
-        icon: '/icons/electron.svg',
-        title: 'Electron',
-        desc: '使用 Web 技术构建跨平台桌面应用程序',
-        link: 'https://www.electronjs.org/zh/'
-      },
-      {
-        icon: '/icons/tauri.png',
-        title: 'Tauri',
-        desc: '使用 Web 技术构建更小、更快、更安全的桌面应用程序',
-        link: 'https://tauri.app/zh-cn/'
-      },
       {
         icon: '/icons/taro.svg',
         title: 'Taro',
@@ -445,11 +1031,11 @@ export const NAV_DATA: NavData[] = [
         link: 'https://uniapp.dcloud.net.cn'
       },
       {
-        icon: 'https://mpxjs.cn/favicon.ico',
-        title: 'Mpx',
-        desc: '增强型跨端小程序框架',
-        link: 'https://mpxjs.cn'
-      }
+        icon: '/icons/electron.svg',
+        title: 'Electron',
+        desc: '使用 Web 技术构建跨平台桌面应用程序',
+        link: 'https://www.electronjs.org/zh/'
+      },
     ]
   },
   {
@@ -468,18 +1054,6 @@ export const NAV_DATA: NavData[] = [
         link: 'https://expressjs.com'
       },
       {
-        icon: '/icons/koa.svg',
-        title: 'Koa',
-        desc: '基于 Node.js 平台的下一代 web 开发框架',
-        link: 'https://koajs.com'
-      },
-      {
-        icon: 'https://www.eggjs.org/favicon.png',
-        title: 'Egg',
-        desc: '为企业级框架和应用而生',
-        link: 'https://www.eggjs.org/zh-CN'
-      },
-      {
         icon: 'https://d33wubrfki0l68.cloudfront.net/e937e774cbbe23635999615ad5d7732decad182a/26072/logo-small.ede75a6b.svg',
         title: 'Nest.js 中文文档',
         desc: '用于构建高效且可伸缩的服务端应用程序的渐进式 Node.js 框架',
@@ -488,956 +1062,19 @@ export const NAV_DATA: NavData[] = [
     ]
   },
   {
-    title: '可视化',
+    title: 'Python',
     items: [
       {
-        icon: '/icons/echarts.png',
-        title: 'ECharts',
-        desc: '一个基于 JavaScript 的开源可视化图表库',
-        link: 'https://echarts.apache.org/zh/index.html'
-      },
-      {
-        icon: '/icons/antv.png',
-        title: 'AntV',
-        desc: '蚂蚁集团全新一代数据可视化解决方案，致力于提供一套简单方便、专业可靠、无限可能的数据可视化最佳实践。',
-        link: 'https://antv.vision/zh/'
-      },
-      {
-        icon: 'https://d3js.org/favicon.png',
-        title: 'D3.js',
-        desc: '一个遵循 Web 标准用于可视化数据的 JavaScript 库',
-        link: 'https://d3js.org'
-      },
-      {
-        icon: 'https://www.chartjs.org/favicon.ico',
-        title: 'Chart.js',
-        desc: '一个简单而灵活的 JavaScript 图表库',
-        link: 'https://www.chartjs.org'
-      },
-      {
-        icon: 'https://threejs.org/files/favicon.ico',
-        // icon: 'https://threejs.org/files/favicon_white.ico',
-        title: 'Three.js',
-        desc: 'JavaScript 3d 库',
-        link: 'https://threejs.org'
-      }
-    ]
-  },
-  {
-    title: '地图',
-    items: [
-      {
-        icon: 'https://mapapi.qq.com/web/lbs/logo/favicon.ico',
-        title: '腾讯地图开放平台',
-        desc: 'WebService API 开发指南',
-        link: 'https://lbs.qq.com/service/webService/webServiceGuide/webServiceOverview'
-      },
-      {
-        icon: 'https://a.amap.com/lbs/static/img/console/favicon.ico',
-        title: '高德开放平台',
-        desc: '控制台',
-        link: 'https://console.amap.com/dev/key/app'
-      },
-      {
-        icon: '/icons/tianditu.ico',
-        title: '天地图',
-        desc: 'WEB服务API',
-        link: 'http://lbs.tianditu.gov.cn/server/guide.html'
-      },
-      {
-        icon: 'https://img.alicdn.com/imgextra/i4/O1CN01rl7TUG21EzHHeafjC_!!6000000006954-2-tps-64-64.png',
-        title: 'DataV.GeoAtlas',
-        desc: '获取中国各省市区县边界geo数据等地理信息',
-        link: 'https://datav.aliyun.com/portal/school/atlas/area_selector'
-      },
-      {
-        icon: 'https://www.geofabrik.de/favicon.ico',
-        title: 'Geofabrik',
-        desc: '全世界geo数据免费下载',
-        link: 'https://download.geofabrik.de/'
-      },
-    ]
-  },
-  {
-    title: '开发者文档',
-    items: [
-      {
-        icon: 'https://img.alicdn.com/imgextra/i4/O1CN01RtfAks1Xa6qJFAekm_!!6000000002939-2-tps-128-128.png',
-        title: '钉钉免登流程',
-        desc: 'h5微应用免登开发指南',
-        link: 'https://open.dingtalk.com/document/development/logon-free-process'
-      },
-    ]
-  },
-  {
-    title: '编译&构建&打包',
-    items: [
-      {
-        icon: 'https://www.webpackjs.com/icon_180x180.png',
-        title: 'Webpack 中文网',
-        desc: '一个用于现代 JavaScript 应用程序的静态模块打包工具',
-        link: 'https://www.webpackjs.com'
-      },
-      {
-        icon: 'https://cn.vitejs.dev/logo.svg',
-        title: 'Vite 中文文档',
-        desc: '下一代前端工具链',
-        link: 'https://cn.vitejs.dev'
-      },
-      {
-        icon: 'https://www.rollupjs.com/img/favicon.png',
-        title: 'Rollup',
-        desc: 'Rollup 是一个 JavaScript 模块打包器',
-        link: 'https://www.rollupjs.com'
-      },
-      {
-        icon: 'https://turbo.build/images/favicon-dark/apple-touch-icon.png',
-        title: 'Turbo',
-        desc: 'Turbo is an incremental bundler and build system optimized for JavaScript and TypeScript, written in Rust',
-        link: 'https://turbo.build'
-      },
-      {
-        icon: 'https://www.babeljs.cn/img/favicon.png',
-        title: 'Babel',
-        desc: 'Babel 是一个 JavaScript 编译器',
-        link: 'https://www.babeljs.cn'
-      },
-      {
-        icon: 'https://esbuild.github.io/favicon.svg',
-        title: 'esbuild',
-        desc: 'An extremely fast bundler for the web',
-        link: 'https://esbuild.github.io'
-      },
-      {
-        icon: 'https://swc.rs/favicon/apple-touch-icon.png',
-        title: 'SWC',
-        desc: 'Rust-based platform for the Web',
-        link: 'https://swc.rs'
-      }
-    ]
-  },
-  {
-    title: '图标库',
-    items: [
-      {
-        icon: 'https://img.alicdn.com/imgextra/i4/O1CN01Z5paLz1O0zuCC7osS_!!6000000001644-55-tps-83-82.svg',
-        title: 'iconfont',
-        desc: '国内功能很强大且图标内容很丰富的矢量图标库，提供矢量图标下载、在线存储、格式转换等功能',
-        link: 'https://www.iconfont.cn'
-      },
-      {
-        icon: 'https://lf1-cdn2-tos.bytegoofy.com/bydesign/iconparksite/logo.svg',
-        title: 'IconPark 图标库',
-        desc: 'IconPark图标库是一个通过技术驱动矢量图标样式的开源图标库，可以实现根据单一 SVG 源文件变换出多种主题， 具备丰富的分类、更轻量的代码和更灵活的使用场景；致力于构建高质量、统一化、可定义的图标资源，让大多数人都能够选择适合自己的风格图标',
-        link: 'https://iconpark.oceanengine.com/official'
-      },
-      {
-        icon: '/icons/iconify.png',
-        title: 'Iconify',
-        desc: '一个开源的图标集合和图标工具',
-        link: 'https://iconify.design'
-      },
-      {
-        icon: 'https://icones.js.org/favicon.svg',
-        title: 'Icônes',
-        desc: '基于 Iconify 的图标浏览器',
-        link: 'https://icones.js.org'
-      },
-      {
-        icon: '/icons/simpleicons.svg',
-        title: 'Simple Icons',
-        desc: '包含 2457 种流行品牌的免费 SVG 图标库',
-        link: 'https://simpleicons.org'
-      },
-      {
-        icon: 'https://emoji.muan.co/appicon.png',
-        title: 'Emoji searcher',
-        desc: 'emoji 表情大全',
-        link: 'https://emoji.muan.co'
-      },
-      {
-        icon: 'https://www.webfx.com/wp-content/uploads/2021/10/favicon.png',
-        title: 'Emoji Cheat Sheet',
-        desc: '可以在 GitHub 中使用的 emoji 表情',
-        link: 'https://www.webfx.com/tools/emoji-cheat-sheet'
-      },
-      {
-        icon: 'https://gitmoji.dev/static/apple-icon-144x144.png',
-        title: 'gitmoji',
-        desc: '可以在 git 中使用的 emoji 表情',
-        link: 'https://gitmoji.dev'
-      }
-    ]
-  },
-  {
-    title: '前端学习资料',
-    items: [
-      {
-        icon: 'https://developer.mozilla.org/apple-touch-icon.6803c6f0.png',
-        title: 'MDN | Web 开发者指南',
-        desc: 'Mozilla 的开发者平台，提供了大量关于 HTML、CSS 和 JavaScript 的详细文档以及广泛的 Web API 参考资',
-        link: 'https://developer.mozilla.org/zh-CN'
-      },
-      {
-        icon: 'https://static.runoob.com/images/favicon.ico',
-        title: '菜鸟教程',
-        desc: '学的不仅是技术，更是梦想！',
-        link: 'https://www.runoob.com'
-      },
-      {
-        icon: '/icons/es6.svg',
-        title: 'ES6 入门教程',
-        desc: '阮一峰的网络日志',
-        link: 'http://es6.ruanyifeng.com'
-      },
-      {
-        badge: '官网',
-        icon: 'https://www.typescriptlang.org/icons/icon-72x72.png?v=8944a05a8b601855de116c8a56d3b3ae',
-        title: 'TypeScript',
-        desc: 'TypeScript 是具有类型语法的 JavaScript',
-        link: 'https://www.typescriptlang.org/zh/'
-      }
-    ]
-  },
-  {
-    title: '社区',
-    items: [
-      {
-        title: 'Github',
-        icon: {
-          svg: '<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>'
-        },
-        desc: '一个面向开源及私有软件项目的托管平台',
-        link: 'https://github.com'
-      },
-      {
-        icon: 'https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v=c78bd457575a',
-        title: 'Stack Overflow',
-        desc: '全球最大的技术问答网站',
-        link: 'https://stackoverflow.com'
-      },
-      {
-        title: '稀土掘金',
-        icon: 'https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web//static/favicons/apple-touch-icon.png',
-        desc: '面向全球中文开发者的技术内容分享与交流平台',
-        link: 'https://juejin.cn'
-      },
-      {
-        title: 'V2EX',
-        icon: 'https://www.v2ex.com/static/icon-192.png',
-        desc: '一个关于分享和探索的地方',
-        link: 'https://www.v2ex.com'
-      },
-      {
-        title: 'SegmentFault 思否',
-        icon: 'https://static.segmentfault.com/main_site_next/0dc4bace/touch-icon.png',
-        desc: '技术问答开发者社区',
-        link: 'https://segmentfault.com'
-      },
-      {
-        title: '博客园',
-        // icon: 'https://common.cnblogs.com/favicon.ico',
-        icon: '/icons/cnblogs.svg',
-        desc: '博客园是一个面向开发者的知识分享社区',
-        link: 'https://www.cnblogs.com'
-      }
-    ]
-  },
-  {
-    title: '摸鱼专用',
-    items: [
-      {
-        icon: 'https://momoyu.cc/icon-192.png',
-        title: '摸摸鱼热榜',
-        // desc: '聚合每日热门、搞笑、有趣、适合摸鱼的资讯',
-        link: 'https://momoyu.cc'
-      },
-      {
-        icon: '/icons/pixiv.png',
-        title: 'Pixiv',
-        // desc: '',
-        link: 'https://www.pixiv.net'
-      }
-    ]
-  },
-  {
-    title: '工具库',
-    items: [
-      {
-        title: 'lodash',
-        desc: '一个一致性、模块化、高性能的 JavaScript 实用工具库',
-        link: 'https://github.com/lodash/lodash'
-      },
-      {
-        title: 'ramda',
-        desc: '专为函数式编程而设计的工具库',
-        link: 'https://github.com/ramda/ramda'
-      },
-      {
-        title: 'qs',
-        desc: '带有一些附加安全性的请求参数 parse 和 stringify 库',
-        link: 'https://github.com/ljharb/qs'
-      }
-    ]
-  },
-  {
-    title: '时间处理',
-    items: [
-      {
-        title: 'dayjs',
-        desc: '轻量的处理时间和日期的 JavaScript 库，和 Moment.js 的 API 设计保持完全一样',
-        link: 'https://github.com/iamkun/dayjs'
-      },
-      {
-        title: 'moment',
-        desc: 'JavaScript 日期处理类库',
-        link: 'https://github.com/moment/moment'
-      },
-      {
-        title: 'date-fns',
-        desc: '轻量级的 JavaScript 日期库，纯函数实现支持模块化',
-        link: 'https://github.com/date-fns/date-fns'
-      },
-      {
-        title: 'lunar-javascript',
-        desc: '支持阳历、阴历、佛历和道历的日历工具库',
-        link: 'https://github.com/6tail/lunar-javascript'
-      },
-      {
-        title: 'calendar.js',
-        desc: '中国农历（阴阳历）和西元阳历即公历互转',
-        link: 'https://github.com/jjonline/calendar.js'
-      }
-    ]
-  },
-  {
-    title: '请求处理',
-    items: [
-      {
-        title: 'axios',
-        desc: '基于 promise 的 HTTP 库，可以用在浏览器和 Node.js 中',
-        link: 'https://github.com/axios/axios'
-      },
-      {
-        badge: 'node',
-        title: 'got',
-        desc: '一个人性化且功能强大的 Node.js HTTP 请求库',
-        link: 'https://github.com/sindresorhus/got'
-      }
-    ]
-  },
-  {
-    title: '精度处理',
-    items: [
-      {
-        title: 'big.js',
-        desc: '用于任意精度的十进制算术运算',
-        link: 'https://github.com/MikeMcl/big.js'
-      },
-      {
-        title: 'number-precision',
-        desc: '超小型精确四则运算',
-        link: 'https://github.com/nefe/number-precision'
-      }
-    ]
-  },
-  {
-    title: '字符串文本处理',
-    items: [
-      {
-        title: 'camelcase',
-        desc: '将使用破折号/点号/下划线/空格分隔的字符串转换为驼峰形式（camelCase）',
-        link: 'https://github.com/sindresorhus/camelcase'
-      },
-      {
-        title: 'change-case',
-        desc: '快速转换字符串格式，支持 camelCase, PascalCase, Capital Case, snake_case, param-case, CONSTANT_CASE 等',
-        link: 'https://github.com/blakeembrey/change-case'
-      },
-      {
-        title: 'emoji-regex',
-        desc: '匹配 emoji 的正则表达式',
-        link: 'https://github.com/mathiasbynens/emoji-regex'
-      }
-    ]
-  },
-  {
-    title: '动画',
-    items: [
-      {
-        title: 'typed.js',
-        desc: '动态打字效果',
-        link: 'https://github.com/mattboldt/typed.js'
-      },
-      {
-        title: 'countup.js',
-        desc: '数字滚动动画',
-        link: 'https://github.com/inorganik/countUp.js'
-      },
-      {
-        badge: 'react',
-        title: 'react-countup',
-        desc: '基于 countup.js 封装的 React 组件',
-        link: 'https://github.com/glennreyes/react-countup'
-      },
-      {
-        title: 'tween.js',
-        desc: '补间动画引擎',
-        link: 'https://github.com/tweenjs/tween.js'
-      },
-      {
-        title: 'lottie',
-        desc: '基于跨平台动画渲染库，用于解析使用 Bodymovin 导出为 json 的 Adobe After Effects 动画',
-        link: 'https://github.com/airbnb/lottie-web'
-      },
-      {
-        title: 'gsap',
-        desc: 'GreenSock 动画平台（GSAP）可以对 JavaScript 可以操作的所有内容进行动画处理',
-        link: 'https://github.com/greensock/GSAP'
-      },
-      {
-        badge: 'react',
-        title: 'react-transition-group',
-        desc: '基于 DOM 的过渡动画',
-        link: 'https://github.com/reactjs/react-transition-group'
-      },
-      {
-        badge: 'react',
-        title: 'framer-motion',
-        desc: '一个生产级的 React 动画库',
-        link: 'https://www.framer.com/motion'
-      },
-      {
-        badge: 'react',
-        title: 'react-spring',
-        desc: '一个基于弹性力学的现代动画库',
-        link: 'https://github.com/react-spring/react-spring'
-      }
-    ]
-  },
-  {
-    title: '本地存储',
-    items: [
-      {
-        title: 'localForage',
-        desc: '一个快速、简单的 JavaScript 存储库',
-        link: 'https://github.com/localForage/localForage'
-      }
-    ]
-  },
-  {
-    title: '滚动处理',
-    items: [
-      {
-        title: 'body-scroll-lock',
-        desc: '一种通用的 body 滚动锁定解决方案',
-        link: 'https://github.com/willmcpo/body-scroll-lock'
-      },
-      {
-        title: 'better-scroll',
-        desc: '重点解决移动端（已支持 PC）各种滚动场景需求的插件',
-        link: 'https://github.com/ustbhuangyi/better-scroll'
-      },
-      {
-        badge: 'react',
-        title: 'better-scroll',
-        desc: 'React 滚动组件',
-        link: 'https://github.com/fisshy/react-scroll'
-      },
-      {
-        badge: 'react',
-        title: 'smooth-scrollbar',
-        desc: '可定制、可扩展和高性能的自定义滚动条解决方案',
-        link: 'https://github.com/idiotWu/smooth-scrollbar'
-      }
-    ]
-  },
-  {
-    title: '事件处理',
-    items: [
-      {
-        title: 'hotkeys-js',
-        desc: '用于捕获键盘输入和输入的组合键',
-        link: 'https://github.com/jaywcjlove/hotkeys'
-      }
-    ]
-  },
-  {
-    title: '图片处理',
-    items: [
-      {
-        title: 'html2canvas',
-        desc: '页面截图（将 DOM 节点绘制为 canvas 再生成图片）',
-        link: 'https://github.com/niklasvh/html2canvas'
-      },
-      {
-        title: 'html-to-image',
-        desc: '页面截图（将 DOM 节点绘制为 canvas 或 SVG 再生成图片）',
-        link: 'https://github.com/bubkoo/html-to-image'
-      },
-      {
-        title: 'satori',
-        desc: '页面截图（将 HTML 和 CSS 转换为 SVG）',
-        link: 'https://github.com/vercel/satori'
-      },
-      {
-        title: 'medium-zoom',
-        desc: '为图片提供可缩放的功能',
-        link: 'https://github.com/francoischalifour/medium-zoom'
-      },
-      {
-        title: 'qrcode',
-        desc: 'QR 码和 2d 条码生成器（支持浏览器和 Node）',
-        link: 'https://github.com/soldair/node-qrcode'
-      },
-      {
-        badge: 'react',
-        title: 'qrcode.react',
-        desc: 'React 的二维码组件',
-        link: 'https://github.com/zpao/qrcode.react'
-      },
-      {
-        badge: 'node',
-        title: 'qrcode-terminal',
-        desc: '在终端中生成二维码',
-        link: 'https://github.com/gtanner/qrcode-terminal'
-      },
-      {
-        icon: 'https://squoosh.app/favicon.ico',
-        title: 'Squoosh',
-        desc: '图片在线压缩与格式转换',
-        link: 'https://squoosh.app'
-      },
-      {
-        icon: 'https://docsmall.com/favicon.ico',
-        title: 'DocSmall',
-        desc: '在线文档/图片压缩（备用）',
-        link: 'https://docsmall.com'
-      }
-    ]
-  },
-  {
-    title: '文件处理',
-    items: [
-      {
-        title: 'FileSaver.js',
-        desc: '保存/下载文件（受 blob 的大小和内存限制）',
-        link: 'https://github.com/eligrey/FileSaver.js'
-      },
-      {
-        title: 'StreamSaver.js',
-        desc: '保存/下载文件（不受 blob 的大小和内存限制）',
-        link: 'https://github.com/jimmywarting/StreamSaver.js'
-      },
-      {
-        title: 'sheetjs',
-        desc: '用于 Excel 的读取和导出',
-        link: 'https://github.com/SheetJS/sheetjs'
-      },
-      {
-        badge: 'node',
-        title: 'node-fs-extra',
-        desc: 'Node fs 模块的增强（如 promise 的支持）',
-        link: 'https://github.com/jprichardson/node-fs-extra'
-      },
-      {
-        badge: 'node',
-        title: 'rimraf',
-        desc: '用于删除文件和文件夹，类似 rm -rf',
-        link: 'https://github.com/isaacs/rimraf'
-      },
-      {
-        badge: 'node',
-        title: 'glob',
-        desc: '文件查找',
-        link: 'https://github.com/isaacs/node-glob'
-      },
-      {
-        badge: 'node',
-        title: 'globby',
-        desc: '使用更友好的文件查找（支持 promise、否定模式、ignore 文件配置等）',
-        link: 'https://github.com/sindresorhus/globby'
-      },
-      {
-        badge: 'node',
-        title: 'cpy',
-        desc: '使用更友好的文件复制（支持 glob 模式）',
-        link: 'https://github.com/sindresorhus/cpy'
-      },
-      {
-        icon: 'https://cloudconvert.com/favicon.ico',
-        title: 'CloudConvert',
-        desc: '在线文件格式转换',
-        link: 'https://cloudconvert.com/'
-      },
-      {
-        icon: 'https://convertio.co/favicon.ico',
-        title: 'Convertio',
-        desc: '支持多格式在线转换（图片、文档等）',
-        link: 'https://convertio.co/zh/'
-      },
-      {
-        icon: 'https://www.pdfescape.com/favicon.ico',
-        title: 'PDFescape',
-        desc: '在线 PDF 编辑器',
-        link: 'https://www.pdfescape.com'
-      }
-    ]
-  },
-  {
-    title: '数据校验',
-    items: [
-      {
-        title: 'validator.js',
-        desc: '字符串验证',
-        link: 'https://github.com/validatorjs/validator.js'
-      },
-      {
-        title: 'async-validator',
-        desc: '异步表单验证',
-        link: 'https://github.com/yiminghe/async-validator'
-      }
-    ]
-  },
-  {
-    title: '富文本',
-    items: [
-      {
-        title: 'braft-editor',
-        desc: 'React 富文本编辑器',
-        link: 'https://github.com/margox/braft-editor'
-      }
-    ]
-  },
-  {
-    title: '代码编辑器',
-    items: [
-      {
-        title: 'monaco-editor',
-        desc: '微软开源的基于 VSCode 的代码编辑器。支持智能提示、代码高亮、代码格式化等',
-        link: 'https://github.com/microsoft/monaco-editor'
-      }
-    ]
-  },
-  {
-    title: '轮播',
-    items: [
-      {
-        title: 'swiper',
-        desc: '高性能的触摸滑动插件，支持 Javascript Vue 3 React AngularJS Solid Svelte',
-        link: 'https://github.com/nolimits4web/swiper'
-      },
-      {
-        badge: 'vue',
-        title: 'vue-awesome-swiper',
-        desc: '基于 swiper 封装的 Vue 组件，支持 Vue 2 和 Vue 3',
-        link: 'https://github.com/surmon-china/vue-awesome-swiper'
-      }
-    ]
-  },
-  {
-    title: '表单处理',
-    items: [
-      {
-        badge: 'react',
-        title: 'formik',
-        desc: '提供组件和 Hooks 来管理表单状态和验证',
-        link: 'https://github.com/jaredpalmer/formik'
-      },
-      {
-        badge: 'react',
-        title: 'react-hook-form',
-        desc: '用于表单状态管理和验证的 React Hook',
-        link: 'https://github.com/react-hook-form/react-hook-form'
-      },
-      {
-        title: 'formily',
-        desc: '阿里巴巴统一前端表单解决方案，支持 React, React Native, Vue 2/3',
-        link: 'https://github.com/alibaba/formily'
-      }
-    ]
-  },
-  {
-    title: '表格',
-    items: [
-      {
-        title: 'ag-grid',
-        desc: '功能齐全的高性能表格，支持 Javascript Vue React AngularJS Web Components',
-        link: 'https://github.com/ag-grid/ag-grid'
-      }
-    ]
-  },
-  {
-    title: '拖放',
-    items: [
-      {
-        title: 'Sortable.js',
-        desc: '适用于现代浏览器和触摸设备的可重新排序的拖放列表',
-        link: 'https://github.com/SortableJS/Sortable'
-      },
-      {
-        badge: 'react',
-        title: 'dnd-kit',
-        desc: 'React 的现代、轻量级、高性能、可访问和可扩展的拖放工具包',
-        link: 'https://github.com/clauderic/dnd-kit'
-      }
-    ]
-  },
-  {
-    title: '用户体验',
-    items: [
-      {
-        title: 'shepherd',
-        desc: '用户引导动画（基于 SVG 和 floating-ui）',
-        link: 'https://github.com/shipshapecode/shepherd'
-      },
-      {
-        title: 'intro.js',
-        desc: '用户引导动画（使用 box-shadow 实现遮罩）',
-        link: 'https://github.com/usablica/intro.js'
-      },
-      {
-        title: 'driver.js',
-        desc: '用户引导动画（使用 outline 实现遮罩）',
-        link: 'https://github.com/kamranahmedse/driver.js'
-      },
-      {
-        title: 'clipboard.js',
-        desc: '复制到剪贴板',
-        link: 'https://github.com/zenorocha/clipboard.js'
-      },
-      {
-        title: 'copy-to-clipboard',
-        desc: '复制到剪贴板',
-        link: 'https://github.com/sudodoki/copy-to-clipboard'
-      },
-      {
-        badge: 'node',
-        title: 'clipboardy',
-        desc: '在 Node.js 中访问系统剪贴板',
-        link: 'https://github.com/sindresorhus/clipboardy'
-      },
-      {
-        title: 'screenfull.js',
-        desc: '将页面或任何元素全屏显示',
-        link: 'https://github.com/sindresorhus/screenfull.js'
-      },
-      {
-        title: 'nprogress',
-        desc: '轻量级的加载进度条',
-        link: 'https://github.com/rstacruz/nprogress'
-      },
-      {
-        title: 'floating-ui',
-        desc: '创建浮动元素的轻量库（气泡提示、用户引导、下拉框等）',
-        link: 'https://github.com/floating-ui/floating-ui'
-      }
-    ]
-  },
-  {
-    title: 'Webpack',
-    items: [
-      {
-        title: 'webpack-chain',
-        desc: '使用链式 API 来生成和简化 webpack 的配置的修改',
-        link: 'https://github.com/neutrinojs/webpack-chain'
-      },
-      {
-        title: 'speed-measure-webpack-plugin',
-        desc: '统计 webpack 在各阶段的构建速度',
-        link: 'https://github.com/stephencookdev/speed-measure-webpack-plugin'
-      },
-      {
-        title: 'webpack-bundle-analyzer',
-        desc: '通过可视化分析 webpack 打包文件的大小',
-        link: 'https://github.com/webpack-contrib/webpack-bundle-analyzer'
-      }
-    ]
-  },
-  {
-    title: '解析相关',
-    items: [
-      {
-        badge: 'node',
-        title: 'cheerio',
-        desc: '为服务器特别定制的，快速、灵活、实施的 jQuery 核心实现，可以解析任何 HTML 或 XML 文档',
-        link: 'https://github.com/cheeriojs/cheerio'
-      }
-    ]
-  },
-  {
-    title: '自动化工具',
-    items: [
-      {
-        title: 'puppeteer',
-        desc: '控制 Chromium 的自动化工具',
-        link: 'https://github.com/puppeteer/puppeteer'
-      },
-      {
-        title: 'playwright',
-        desc: '支持 Firefox / Chrome / WebKit(Safari) 三大浏览器的自动化工具',
-        link: 'https://github.com/microsoft/playwright'
-      },
-      {
-        title: 'puppeteer-extra',
-        desc: 'puppeteer 的插件扩展',
-        link: 'https://github.com/berstend/puppeteer-extra'
-      }
-    ]
-  },
-  {
-    title: 'lint / 格式化相关',
-    items: [
-      {
-        title: 'prettier',
-        desc: '代码格式化工具',
-        link: 'https://github.com/prettier/prettier'
-      },
-      {
-        title: 'eslint',
-        desc: 'ECMAScript/JavaScript 代码检查工具',
-        link: 'https://github.com/eslint/eslint'
-      },
-      {
-        title: 'stylelint',
-        desc: 'CSS 代码检查工具',
-        link: 'https://github.com/stylelint/stylelint'
-      },
-      {
-        title: 'markdownlint',
-        desc: 'Markdown 格式检查工具',
-        link: 'https://github.com/DavidAnson/markdownlint'
-      },
-      {
-        title: 'commitlint',
-        desc: 'Git Commit Messages 格式检查工具',
-        link: 'https://github.com/conventional-changelog/commitlint'
-      }
-    ]
-  },
-  {
-    title: '相关辅助工具',
-    tag: 'h3',
-    items: [
-      {
-        title: 'husky',
-        desc: 'Git Hooks 工具，让你操作 Git Hooks 变得更容易',
-        link: 'https://github.com/typicode/husky'
-      },
-      {
-        title: 'lint-staged',
-        desc: '只对 Git 暂存文件运行 lint 从而提高速度',
-        link: 'https://github.com/okonet/lint-staged'
-      },
-      {
-        title: 'commitizen',
-        desc: 'commit 辅助工具，获得有关提交消息格式的即时反馈',
-        link: 'https://github.com/commitizen/cz-cli'
-      }
-    ]
-  },
-  {
-    title: 'CLI 相关',
-    items: [
-      {
-        title: 'zx',
-        desc: '用 JavaScript 或 TypeScript 编写简单的命令行脚本',
-        link: 'https://github.com/google/zx'
-      },
-      {
-        title: 'inquirer',
-        desc: '交互式命令行工具',
-        link: 'https://github.com/SBoudrias/Inquirer.js'
-      },
-      {
-        title: 'enquirer',
-        desc: '交互式命令行工具（更好看）',
-        link: 'https://github.com/enquirer/enquirer'
-      },
-      {
-        title: 'prompts',
-        desc: '轻量级交互式命令行工具',
-        link: 'https://github.com/terkelg/prompts'
-      },
-      {
-        title: 'execa',
-        desc: 'Node child_process 模块的增强（如 promise 的支持、移除输出中最后的换行符等）',
-        link: 'https://github.com/sindresorhus/execa'
-      },
-      {
-        title: 'npm-run-all',
-        desc: '用于并行或串行执行多个 npm 脚本',
-        link: 'https://github.com/mysticatea/npm-run-all'
-      },
-      {
-        title: 'commander.js',
-        desc: '编写指令和处理命令行',
-        link: 'https://github.com/tj/commander.js'
-      },
-      {
-        title: 'yargs',
-        desc: '命令行参数解析',
-        link: 'https://github.com/yargs/yargs'
-      },
-      {
-        title: 'plop',
-        desc: '轻量级的项目搭建生成工具',
-        link: 'https://github.com/plopjs/plop'
-      },
-      {
-        title: 'dotenv',
-        desc: '从 .env 文件加载环境变量到 process.env',
-        link: 'https://github.com/motdotla/dotenv'
-      },
-      {
-        title: 'dotenv-expand',
-        desc: 'dotenv 的变量扩展，使 .env 文件支持变量语法',
-        link: 'https://github.com/motdotla/dotenv-expand'
-      },
-      {
-        title: 'simple-git',
-        desc: '在 node 中执行 git 命令',
-        link: 'https://github.com/steveukx/git-js'
-      },
-      {
-        title: 'cosmiconfig',
-        desc: '搜索并加载配置文件',
-        link: 'https://github.com/davidtheclark/cosmiconfig'
-      }
-    ]
-  },
-  {
-    title: '站点生成器',
-    items: [
-      {
-        icon: 'https://astro.build/favicon.svg',
-        title: 'Astro',
-        desc: '一个现代化的轻量级静态站点生成器',
-        link: 'https://astro.build'
-      },
-      {
-        icon: 'https://cn.vuejs.org/logo.svg',
-        title: 'VitePress',
-        desc: '由 Vite 和 Vue 驱动的静态网站生成器',
-        link: 'https://vitepress.dev'
-      },
-      {
-        icon: 'https://cn.vuejs.org/logo.svg',
-        title: 'VuePress',
-        desc: 'Vue 驱动的静态网站生成器',
-        link: 'https://vuepress.vuejs.org/zh'
-      },
-      {
-        icon: 'https://gw.alipayobjects.com/zos/bmw-prod/d3e3eb39-1cd7-4aa5-827c-877deced6b7e/lalxt4g3_w256_h256.png',
-        title: 'dumi',
-        desc: '基于 Umi 为组件研发而生的静态站点框架',
-        link: 'https://d.umijs.org'
-      },
-      {
-        icon: '/icons/docusaurus.svg',
-        title: 'Docusaurus',
-        desc: '基于 React 的静态网站生成器',
-        link: 'https://docusaurus.io/zh-CN'
+        icon: "https://favicon.im/js.langchain.com.cn",
+        title: 'LangChain',
+        desc: 'LangChain中文网 500页超详细中文文档教程',
+        link: 'https://js.langchain.com.cn/docs/'
+      },
+      {
+        icon: 'https://fastapi.org.cn/img/favicon.png',
+        title: 'FastAPI',
+        desc: '现代、快速（高性能）的 Web 框架，用于使用基于标准 Python 类型提示的 Python 构建 API',
+        link: 'https://fastapi.org.cn/'
       }
     ]
   },
@@ -1457,29 +1094,52 @@ export const NAV_DATA: NavData[] = [
         link: 'https://codepen.io'
       },
       {
-        icon: 'https://stackblitz.com/favicon.ico',
+        icon: 'https://favicon.im/stackblitz.com',
         title: 'StackBlitz',
         desc: '基于浏览器的在线 IDE',
         link: 'https://stackblitz.com'
       },
       {
-        icon: 'https://jsfiddle.net/favicon.ico',
+        icon: 'https://favicon.im/jsfiddle.net',
         title: 'JSFiddle',
         desc: '小型前端代码片段在线运行环境',
         link: 'https://jsfiddle.net'
-      },
-      {
-        icon: 'https://playcode.io/favicon.ico',
-        title: 'PlayCode',
-        desc: '在线 JS 沙箱（Javascript Playground）',
-        link: 'https://playcode.io'
-      },
-      {
-        icon: 'https://runjs.work/favicon.ico',
-        title: 'RunJS',
-        desc: '前端专用的快速笔记/运行工具',
-        link: 'https://runjs.work'
       }
+    ]
+  },
+  {
+    title: '算法题',
+    items: [
+      {
+        icon: "https://leetcode.cn/favicon.ico",
+        title: '力扣 (LeetCode) ',
+        desc: '全球极客挚爱的技术成长平台',
+        link: 'https://leetcode.cn/'
+      },
+      {
+        icon: "https://favicon.im/leetcode.realduang.com",
+        title: 'Leetcode-in-JavaScript',
+        desc: '',
+        link: 'https://leetcode.realduang.com/'
+      },
+      {
+        icon: "https://favicon.im/staying.fun",
+        title: 'staying',
+        desc: '实时可视化数据结构与算法',
+        link: 'https://staying.fun/zh'
+      },
+      {
+        icon: "https://favicon.im/www.programmercarl.com",
+        title: '代码随想录',
+        desc: '',
+        link: 'https://www.programmercarl.com/'
+      },
+      {
+        icon: "https://github.githubassets.com/favicons/favicon.svg",
+        title: 'LeetCodeAnimation',
+        desc: '用动画的形式呈现解LeetCode题目的思路',
+        link: 'https://github.com/MisterBooo/LeetCodeAnimation?tab=readme-ov-file'
+      },
     ]
   },
   {
@@ -1502,6 +1162,182 @@ export const NAV_DATA: NavData[] = [
         title: 'regexper',
         desc: '将正则表达式转为可视化图',
         link: 'https://regexper.com'
+      }
+    ]
+  },
+  {
+    title: '工具库',
+    items: [
+      {
+        badge: '时间处理',
+        title: 'lunar-javascript',
+        desc: '支持阳历、阴历、佛历和道历的日历工具库',
+        link: 'https://github.com/6tail/lunar-javascript'
+      },
+      {
+        badge: '时间处理',
+        title: 'calendar.js',
+        desc: '中国农历（阴阳历）和西元阳历即公历互转',
+        link: 'https://github.com/jjonline/calendar.js'
+      },
+      {
+        badge: '精度处理',
+        title: 'big.js',
+        desc: '用于任意精度的十进制算术运算',
+        link: 'https://github.com/MikeMcl/big.js'
+      },
+      {
+        badge: '精度处理',
+        title: 'number-precision',
+        desc: '超小型精确四则运算',
+        link: 'https://github.com/nefe/number-precision'
+      }, {
+        badge: '动画',
+        title: 'typed.js',
+        desc: '动态打字效果',
+        link: 'https://github.com/mattboldt/typed.js'
+      },
+      {
+        badge: '动画',
+        title: 'countup.js',
+        desc: '数字滚动动画',
+        link: 'https://github.com/inorganik/countUp.js'
+      },
+      {
+        badge: '动画',
+        title: 'tween.js',
+        desc: '补间动画引擎',
+        link: 'https://github.com/tweenjs/tween.js'
+      },
+      {
+        badge: '动画',
+        title: 'lottie',
+        desc: '基于跨平台动画渲染库，用于解析使用 Bodymovin 导出为 json 的 Adobe After Effects 动画',
+        link: 'https://github.com/airbnb/lottie-web'
+      },
+      {
+        badge: '动画',
+        title: 'gsap',
+        desc: 'GreenSock 动画平台（GSAP）可以对 JavaScript 可以操作的所有内容进行动画处理',
+        link: 'https://github.com/greensock/GSAP'
+      },
+      {
+        badge: '动画',
+        title: 'motion',
+        desc: '一个生产级的动画库',
+        link: 'https://motion.dev/docs'
+      },
+      {
+        badge: '图片处理',
+        title: 'html2canvas',
+        desc: '页面截图（将 DOM 节点绘制为 canvas 再生成图片）',
+        link: 'https://github.com/niklasvh/html2canvas'
+      },
+      {
+        badge: '图片处理',
+        title: 'html-to-image',
+        desc: '页面截图（将 DOM 节点绘制为 canvas 或 SVG 再生成图片）',
+        link: 'https://github.com/bubkoo/html-to-image'
+      },
+      {
+        badge: '图片处理',
+        title: 'medium-zoom',
+        desc: '为图片提供可缩放的功能',
+        link: 'https://github.com/francoischalifour/medium-zoom'
+      },
+      {
+        badge: '图片处理',
+        title: 'qrcode',
+        desc: 'QR 码和 2d 条码生成器（支持浏览器和 Node）',
+        link: 'https://github.com/soldair/node-qrcode'
+      },{
+        badge: '富文本编辑器',
+        title: 'braft-editor',
+        desc: 'React 富文本编辑器',
+        link: 'https://github.com/margox/braft-editor'
+      },
+      {
+        badge: '代码编辑器',
+        title: 'monaco-editor',
+        desc: '微软开源的基于 VSCode 的代码编辑器。支持智能提示、代码高亮、代码格式化等',
+        link: 'https://github.com/microsoft/monaco-editor'
+      },
+      {
+        badge: '轮播',
+        title: 'swiper',
+        desc: '高性能的触摸滑动插件，支持 Javascript Vue 3 React AngularJS Solid Svelte',
+        link: 'https://github.com/nolimits4web/swiper'
+      },
+      {
+        badge: '轮播',
+        title: 'vue-awesome-swiper',
+        desc: '基于 swiper 封装的 Vue 组件，支持 Vue 2 和 Vue 3',
+        link: 'https://github.com/surmon-china/vue-awesome-swiper'
+      },
+      {
+        badge: '拖放',
+        title: 'Sortable.js',
+        desc: '适用于现代浏览器和触摸设备的可重新排序的拖放列表',
+        link: 'https://github.com/SortableJS/Sortable'
+      },
+      {
+        badge: '拖放',
+        title: 'dnd-kit',
+        desc: 'React 的现代、轻量级、高性能、可访问和可扩展的拖放工具包',
+        link: 'https://github.com/clauderic/dnd-kit'
+      },
+      {
+        badge: '用户体验',
+        title: 'intro.js',
+        desc: '用户引导动画（使用 box-shadow 实现遮罩）',
+        link: 'https://github.com/usablica/intro.js'
+      },
+      {
+        badge: '用户体验',
+        title: 'driver.js',
+        desc: '用户引导动画（使用 outline 实现遮罩）',
+        link: 'https://github.com/kamranahmedse/driver.js'
+      },
+      {
+        badge: '用户体验',
+        title: 'clipboard.js',
+        desc: '复制到剪贴板',
+        link: 'https://github.com/zenorocha/clipboard.js'
+      },
+      {
+        badge: '用户体验',
+        title: 'copy-to-clipboard',
+        desc: '复制到剪贴板',
+        link: 'https://github.com/sudodoki/copy-to-clipboard'
+      },
+      {
+        badge: '用户体验',
+        title: 'screenfull.js',
+        desc: '将页面或任何元素全屏显示',
+        link: 'https://github.com/sindresorhus/screenfull.js'
+      },
+      {
+        badge: '用户体验',
+        title: 'nprogress',
+        desc: '轻量级的加载进度条',
+        link: 'https://github.com/rstacruz/nprogress'
+      },
+    ]
+  },
+  {
+    title: '摸鱼',
+    items: [
+      {
+        icon: 'https://qwerty.fe-mm.com/apple-touch-icon.png',
+        title: 'Qwerty Learner',
+        desc: '为键盘工作者设计的单词记忆与英语肌肉记忆锻炼软件',
+        link: 'https://qwerty.fe-mm.com'
+      },
+      {
+        icon: 'https://momoyu.cc/icon-192.png',
+        title: '摸摸鱼热榜',
+        desc: '聚合每日热门、搞笑、有趣、适合摸鱼的资讯',
+        link: 'https://momoyu.cc'
       }
     ]
   },
