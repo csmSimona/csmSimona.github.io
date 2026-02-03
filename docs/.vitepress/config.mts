@@ -124,10 +124,10 @@ export default defineConfig({
         }
       }
     },
-    footer: {
-      message: "Released under the MIT License.",
-      // 自动更新时间
-      copyright: `Copyright © 2025-${new Date().getFullYear()} 备案号：<a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备2025215771号</a>`,
-    },
+    // footer: {
+    //   message: "Released under the MIT License.",
+    //   // 自动更新时间
+    //   copyright: `Copyright © 2025-${new Date().getFullYear()} 备案号：<a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备2025215771号</a>`,
+    // },
   },
 })
