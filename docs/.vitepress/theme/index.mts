@@ -1,6 +1,7 @@
 import { h, watch, onMounted, nextTick } from 'vue'
 import DefaultTheme from 'vitepress/theme'
 import googleAnalytics from 'vitepress-plugin-google-analytics'
+import { inject } from '@vercel/analytics'
 import mediumZoom from 'medium-zoom'
 import { NProgress } from 'nprogress-v2/dist/index.js' // 进度条组件
 import 'nprogress-v2/dist/index.css' // 进度条样式
@@ -81,11 +82,14 @@ export default {
         NProgress.done() // 停止进度条
       }
     }
-
+    
     // 谷歌分析
     googleAnalytics({
       id: 'G-T1X5LGNGJ3', // 跟踪ID，在analytics.google.com注册即可
     })
+
+    // Vercel Analytics
+    inject()
   },
   Layout() {
     const props: Record<string, any> = {}

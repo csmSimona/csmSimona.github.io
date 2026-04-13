@@ -1,4 +1,4 @@
-# Typescript面试题（待整理）
+# Typescript面试题
 
 [TypeScript面试题](https://www.mianshipai.com/docs/first-exam/TS.html)
 

@@ -191,10 +191,10 @@ span不是块级元素，是不支持行高的，但是style中有了个`float: 
 div，h1-h6，p，pre，ul，ol，li，form，table等。
 
 2.常见的行内元素（无法自动换行，无法设置宽高）有：
-a，img，span，i（斜体），em（强调），sub（下标），sup（上标），label等。
+a，span，i（斜体），em（强调），sub（下标），sup（上标），label等。
 
 3.常见的行块级元素（拥有内在尺寸，可设置宽高，不会自动换行）有：
-button，input，textarea，select等。
+button，img，input，textarea，select等。
 
 ### 11、手动写动画最小时间间隔为16.7ms
 

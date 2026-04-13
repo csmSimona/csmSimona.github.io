@@ -1,4 +1,4 @@
-# Nodejs 面试题（待整理）
+# Nodejs 面试题
 
 [Nodejs面试题](https://www.mianshipai.com/docs/second-exam/nodejs.html)
 

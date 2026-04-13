@@ -43,23 +43,6 @@ export const nav: DefaultTheme.Config['nav'] = [
     ],
   },
   {
-    text: "算法",
-    items: [
-      { text: "排序", link: "/算法/排序" },
-      { text: "算法题", link: "/算法/算法题" },
-    ],
-  },
-  {
-    text: "其他",
-    items: [
-      { text: "TypeScript小记", link: "/其他/TypeScript小记" },
-      { text: "NodeJs小记", link: "/其他/NodeJs小记" },
-      { text: "Git小记", link: "/其他/Git小记" },
-      { text: "Linux基本命令", link: "/其他/Linux基本命令" },
-      { text: "正则表达式入门", link: "/其他/正则表达式入门" },
-    ],
-  },
-  {
     text: "可视化",
     items: [
       { text: "Echarts基本使用", link: "/可视化/Echarts基本使用" },
@@ -128,6 +111,16 @@ export const nav: DefaultTheme.Config['nav'] = [
         text: "浙政钉、浙里办、浙江政务服务网应用上架指南",
         link: "/开发记录/浙政钉、浙里办、浙江政务服务网应用上架指南/浙政钉、浙里办、浙江政务服务网应用上架指南",
       },
+    ],
+  },
+  {
+    text: "其他",
+    items: [
+      { text: "TypeScript小记", link: "/其他/TypeScript小记" },
+      { text: "NodeJs小记", link: "/其他/NodeJs小记" },
+      { text: "Git小记", link: "/其他/Git小记" },
+      { text: "Linux基本命令", link: "/其他/Linux基本命令" },
+      { text: "正则表达式入门", link: "/其他/正则表达式入门" },
     ],
   },
   { text: "关于", link: "/about" },

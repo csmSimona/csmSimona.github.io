@@ -42,29 +42,6 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
       ]
     }
   ],
-  '/算法/': [
-    {
-      text: '算法',
-      collapsed: true,
-      items: [
-        { text: "排序", link: "/算法/排序" },
-        { text: "算法题", link: "/算法/算法题" },
-      ]
-    }
-  ],
-  '/其他/': [
-      {
-      text: '其他',
-      collapsed: true,
-      items: [
-        { text: "TypeScript小记", link: "/其他/TypeScript小记" },
-        { text: "NodeJs小记", link: "/其他/NodeJs小记" },
-        { text: "Git小记", link: "/其他/Git小记" },
-        { text: "Linux基本命令", link: "/其他/Linux基本命令" },
-        { text: "正则表达式入门", link: "/其他/正则表达式入门" },
-      ]
-      }
-  ],
   '/可视化/': [
     {
       text: '可视化',
@@ -230,5 +207,18 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
         },
       ]
     }
-  ]
+  ],
+  '/其他/': [
+      {
+      text: '其他',
+      collapsed: true,
+      items: [
+        { text: "TypeScript小记", link: "/其他/TypeScript小记" },
+        { text: "NodeJs小记", link: "/其他/NodeJs小记" },
+        { text: "Git小记", link: "/其他/Git小记" },
+        { text: "Linux基本命令", link: "/其他/Linux基本命令" },
+        { text: "正则表达式入门", link: "/其他/正则表达式入门" },
+      ]
+      }
+  ],
 }
